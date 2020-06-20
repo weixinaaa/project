@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>个人中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/all.css">
+	<link rel="stylesheet" type="text/css" href="./icon-css/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/person.css">
+	<style type="text/css">
+		.zc{
+			text-align: center;
+		}
+		.zc div{
+			padding: 10px 20px;
+			width: 80px;
+			margin: 10px auto;
+			background-color: rgb(47,159,240);
+			border-radius: 50px;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+<!--返回-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >个人中心</p>
+</div>
+
+<!-- 注册 -->
+<div class="zc">
+	<img src="./image/jr.jpg" class="touxiang">
+	<div class="login">登录</div>
+	<div class="out">注册</div>
+</div>
+<!-- 已登录 -->
+<!-- 	<div class="top">
+		<img src="./image/jr.jpg" class="touxiang">
+		<p>遥远的救世主</p>
+		<p>超级会员</p>
+		<div class="erweima">
+			<i class="fa fa-qrcode" aria-hidden="true"></i>
+		</div>
+	</div> -->
+
+
+<!-- 我的团队 -->
+		<a href="team.html" class="list">
+			<img src="./image/icon/user.jpg">
+			<span>我的团队</span>
+		</a>
+	<!-- 个人资料 -->
+		<a href="data.html" class="list">
+			<img src="./image/icon/jinbi.jpg">
+			<span>个人资料</span>
+		</a>
+	<!-- 我的收益 -->
+		<a href="shouyi.html" class="list">
+		<img src="./image/icon/money.jpg">
+		<span>我的收益</span>
+	</a>
+	<!-- 我的提现 -->
+	<a class="list" href="history.html">
+		<img src="./image/icon/qianbao.jpg">
+		<span>我的提现</span>
+	</a>
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./layui/layui.js"></script>
+<script>
+    
+    $(".back").click(function () {
+        window.location.href="person.html"  //点击跳转
+    })
+    $(".erweima").click(function () {
+        window.location.href="tuiguang.html"  //点击跳转
+    })
+</script>
+</html>

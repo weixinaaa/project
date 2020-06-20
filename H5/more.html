@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>更多</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<link rel="stylesheet" type="text/css" href="./css/more.css">
+	<link rel="stylesheet" type="text/css" href="./css/all.css">
+</head>
+<body>
+<!--返回-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >更多</p>
+</div>
+<!--广告列表-->
+	<div id="guanggao_list">
+		<a href="list_detail.html">
+			<div class="list">
+			<img src="./image/jr.jpg">
+			<div class="div">
+				<div class="first">
+					<span>玫琳凯的广告</span>
+					<b class="number">点击量：999</b>
+				</div>
+				<p class="text">玫琳凯投放在今日头条上的广告，每日点击量不低</p>
+				<p class="time">2020-2-23</p>
+			</div>
+		</div>
+		</a>
+	</div>
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/ajax.js"></script>
+<script>
+list_guanggao()
+$(".back").click(function () {
+    window.location.href="index.html"  //点击跳转
+})
+	</script>
+</html>

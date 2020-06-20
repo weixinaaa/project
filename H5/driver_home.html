@@ -1,0 +1,104 @@
+<!DOCTYPE  html>
+<html>
+<head>
+	<title>司机之家</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<link rel="stylesheet" type="text/css" href="./css/all.css">
+	<script src="./js/jquery.js"></script>
+</head>
+<style type="text/css">
+ 
+	.list{
+		/*width: calc(50% - 20px);*/
+		/*margin: 0 10px;*/
+		padding: 10px 0;
+		background-color: white;
+		margin: 10px 0;
+		display: block;
+	}
+	.list img{
+		width: 100%
+	}
+	.list p{
+		/*text-align: center;*/
+		margin-left: 10px;
+	}
+
+</style>
+<body>
+	<div class="content">
+	<a href="index.html">
+		<div class="back">
+			<img src="./image/back.png">
+			<p >司机之家</p>
+		</div>
+	</a>
+	
+	<div style="margin-top: 10px;">
+		<a href="" class="list">
+			<!-- <div> -->
+				<!-- <img src="./image/jr.jpg"> -->
+				<p>广告形式</p>
+			<!-- </div> -->
+		</a>
+		<a href="son.html?id=4&title=司机之家" class="list">
+			<!-- <div > -->
+				<!-- <img src="./image/jr.jpg"> -->
+				<p>司机之家（合伙人）</p>
+			<!-- </div> -->
+		</a>
+		<a href="./driverhome/driver_service.html" class="list">
+			<!-- <div > -->
+				<!-- <img src="./image/jr.jpg"> -->
+				<p>司机服务</p>
+			<!-- </div> -->
+		</a>
+		<a href="SelectCity.html" class="list">
+			<!-- <div > -->
+				<!-- <img src="./image/jr.jpg"> -->
+				<p>租/买车</p>
+			<!-- </div> -->
+		</a>
+		<a href="./page/homecenter/regdriver.html" class="list">
+			<!-- <div > -->
+				<!-- <img src="./image/jr.jpg"> -->
+				<p>司机注册</p>
+			<!-- </div> -->
+		</a>
+		<a href="" class="list">
+			<!-- <div > -->
+				<!-- <img src="./image/jr.jpg"> -->
+				<p>招聘</p>
+			<!-- </div> -->
+		</a>
+
+	</div>
+</div>
+</body>
+</html>
+
+<script>
+$(function(){
+	if(window.history && window.history.pushState) {
+	$(window).on('popstate', function() {
+		var hashLocation = location.hash;
+		var hashSplit = hashLocation.split("#!/");
+		var hashName = hashSplit[1];
+		if(hashName !== '') {
+			var hash = window.location.hash;
+			if(hash === '') {
+				//alert("你点击了返回键");
+				window.location.href="index.html";
+			}
+		}
+	});
+	// window.history.pushState('forward', null, './#forward');
+}
+});
+</script>
+
+
+
+
+

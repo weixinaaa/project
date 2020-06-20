@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/ajax.js"></script>
+    <script src="../../js/all.js"></script>
+    <script src="../../utils/rem.js"></script>
+    <script src="../../swiper/js/swiper.min.js"></script>
+    <script src="./homecenter.js"></script>
+    <title>成为合伙人</title>
+    <link rel="stylesheet" href="../../css/all.css" />
+    <link rel="stylesheet" href="./partner.css" />
+    <link
+      href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../icon-css/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../../swiper/css/swiper.min.css" />
+   
+  </head>
+
+  <body>
+    <div class="top">
+      <i class="fa fa-chevron-left fa-2x" aria-hidden="true" onclick="back()"></i>
+      <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <img src="../../image/icon/banner.png" class="swiper-slide" onclick="swiperimg('banner')"/>
+          <img src="../../image/icon/cjj.jpg" class="swiper-slide" onclick="swiperimg('cjj')"/>
+          <img src="../../image/icon/look.png" class="swiper-slide" onclick="swiperimg('look')"/>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+      </div>
+    <input class="name" placeholder="请输入姓名" />
+    <input class="phone" placeholder="请输入联系方式" />
+    <div class="message">备注留言</div>
+    <textarea class="text"></textarea>
+    <button onclick="submit()" class="sub">提交</button>
+   
+
+  </body>
+  <script>
+    function submit() {
+      window.location.href = "./cooperation.html";
+    }
+    var mySwiper = new Swiper(".swiper-container", {
+    // 轮播图的方向，也可以是vertical方向
+    direction: "horizontal",
+    loop: true,
+    // 自动播放时间
+    autoplay: 2000,
+    // 播放的速度
+    speed: 700,
+    // 如果需要分页器，即下面的小圆点
+    pagination: ".swiper-pagination",
+    // 这样，即使我们滑动之后， 定时器也不会被清除
+    autoplayDisableOnInteraction: false,
+  });  
+ 
+  function back(){
+        window.history.back(-1);
+    }
+
+  </script>
+</html>
+
+
+
+
+
+

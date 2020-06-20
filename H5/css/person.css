@@ -1,0 +1,35 @@
+	body{
+		background-color: rgb(242,245,254);
+		margin: 0
+	}
+	a{
+		text-decoration:none;
+	}
+	.top{
+		text-align: center;
+		padding: 20px 0;
+	}
+	.touxiang{
+		width: 30%;
+		border-radius: 100%;
+		border:5px solid rgba(128,136,254,0.5)
+	}
+
+	/*列表*/
+	.list{
+		text-decoration:none;
+		color: black;
+		background-color: white;
+		display: flex;
+		padding: 0 30px;
+		width: calc(100% - 60px);
+		align-items: center;
+		margin: 10px 0;
+	}
+	.list img{
+		width: 20%;margin: 10px;
+	}
+
+	.erweima{
+		position: absolute;right: 0;top:150px;background-color: blue;padding:5px 10px;color: white;
+	}

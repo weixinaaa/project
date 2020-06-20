@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <script src="./js/jquery.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/all.js"></script>
+    <script src="./utils/rem.js"></script>
+    <script
+      type="text/javascript"
+      src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=859d16285fd000feec89e9032513f8bb"
+    ></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/all.css" />
+
+    <link
+      href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./icon-css/css/font-awesome.min.css"
+    />
+
+    <style>
+      body {
+        /* display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto 0; */
+
+        background-color: white;
+      }
+
+      .title {
+        text-align: center;
+        width: 100%;
+      }
+
+      .top {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 1rem;
+        width: 7.5rem;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #f1f1f1;
+      }
+
+      .fa-chevron-left {
+        margin-left: 0.2rem;
+      }
+
+      .fa-times {
+        margin-left: 6.2rem;
+      }
+
+      #allmap {
+        width: 100%;
+        height: 3.5rem;
+        overflow: hidden;
+        margin-top: 1rem;
+        font-family: "微软雅黑";
+      }
+      .getcar {
+        font-size: 0.35rem;
+        margin: 1rem 0 0 0.5rem;
+      }
+      .getinput {
+        border: 1px solid #4d5ef0;
+        margin: 1.5rem 0 0 0.5rem;
+        width: 6.5rem;
+        height: 0.7rem;
+        border-radius: 6px;
+        padding:0 0 0 0.2rem;
+      }
+      .choosecar {
+        margin: 3rem 0 0 1.7rem;
+        background-color: #ff0101;
+        width: 4rem;
+        height: 1rem;
+        color: white;
+        font-size: 0.4rem;
+        text-align: center;
+        line-height: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top">
+      <i
+        class="fa fa-chevron-left fa-2x"
+        aria-hidden="true"
+        onclick="reg()"
+      ></i>
+      <i class="fa fa-times fa-2x" aria-hidden="true" onclick="contactus()"></i>
+    </div>
+
+    <div id="allmap"></div>
+
+    <!-- <div class="getcar" >取车地址</div> -->
+    <input
+      type="text"
+      id="picker"
+      class="getinput"
+      placeholder="请选择地址"
+      onclick="area()"
+      
+    />
+    <div class="choosecar" onclick="tochoose()">去选车</div>
+
+    <!-- <div class="form-group">
+        <label class="title">所在地址</label>
+        <div class="col-sm-8">
+
+            <div class="col-sm-4">
+                <select name="input_province" id="input_province" class="form-control">
+                    <option value="">--请选择--</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <select name="input_city" id="input_city" class="form-control">
+                    <option value="">--请选择--</option>
+                </select>
+            </div>
+        </div>
+    </div> -->
+  </body>
+  <script>
+    function contactus() {
+      
+    }
+
+    function tochoose() {
+        if($("#picker").val() == ""){
+            alert("请选择地址");
+            return;
+        }
+      window.location.href = "./page/homecenter/modellist.html";
+    }
+
+    function reg() {
+      window.history.back(-1);
+    }
+
+    function area() {
+
+    //   $.ajax({
+    //       type:"get",
+    //       url:"http://47.96.28.95/msfw/pca/selPro",
+    //       data:{},
+    //       success:res =>{
+    //           console.log(res);
+    //       }
+    //   });
+    //   $.ajax({
+    //       type:"get",
+    //       url:"http://47.96.28.95/msfw/pca/selCity",
+    //       data:{
+    //           pid:"52",
+    //       },
+    //       success:res =>{
+    //           console.log(res);
+    //       }
+    //   });
+    //   $.ajax({
+    //       type:"get",
+    //       url:"http://47.96.28.95/msfw/pca/selArea",
+    //       data:{
+    //           pid:"1101",
+    //       },
+    //       success:res =>{
+    //           console.log(res);
+    //       }
+    //   });
+    }
+
+   
+
+
+    // $(function () {
+    //     var html = "";
+    //     var province_idx;
+    //     $("#input_city").append(html);
+
+    //     $.each(cityMessage, function (idx, item) {
+    //         if (item.parid == '1') {
+    //             html += "<option value='" + item.regname + "' exid='" + item.regid + "'>" + item.regname + "</option>";
+    //         }
+
+    //     });
+    //     $("#input_province").append(html);
+    //     $("#input_province").change(function (e) {
+    //         var province = $(this).val();
+    //         var cityList = [];
+    //         if (province == "") return;
+    //         $("#input_city option").remove();
+    //         var html = "<option value=''>--请选择--</option>";
+
+    //         //					获取已选择的省份的数组下标
+    //         $.each(cityMessage, function (idx, item) {
+    //             if (province == item.regname && item.parid == '1') {
+    //                 province_idx = idx
+    //             }
+    //         })
+
+    //         //					获取已选择的省份的城市列表
+    //         $.each(cityMessage, function (idx, item) {
+    //             if (cityMessage[idx].parid == cityMessage[province_idx].regid) {
+    //                 cityList.push(cityMessage[idx])
+    //             }
+    //         })
+
+    //         //					添加城市信息给标签
+    //         if (cityList instanceof Array && cityList.length > 0) {
+    //             $.each(cityList, function (idx, item) {
+    //                 console.log(item)
+    //                 html += "<option value='" + item.regname + "' exid='" + item.regid + "'>" + item.regname + "</option>";
+
+    //             });
+    //         } else {
+    //             html += "<option value='" + cityMessage[province_idx].regname + "' exid='" + cityMessage[province_idx].regid + "'>" + cityMessage[province_idx].regname + "</option>";
+
+    //         }
+    //         $("#input_city").append(html);
+    //     });
+    // });
+  </script>
+
+  <script src="./scripts/picker.min.js"></script>
+  <script type="text/javascript" src="./scripts/city.js"></script>
+  <script type="text/javascript" src="./scripts/index.js"></script>
+</html>
+
+<script type="text/javascript">
+  // GL版命名空间为BMapGL
+  // 按住鼠标右键，修改倾斜角和角度
+  var map = new BMapGL.Map("allmap"); // 创建Map实例
+  map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
+  map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+</script>

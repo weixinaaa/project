@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>首页</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!--手机端适配-->
+</head>
+<link rel="stylesheet" type="text/css" href="./swiper/css/swiper.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/index.css" />
+<link rel="stylesheet" type="text/css" href="./css/all.css" />
+
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script src="./swiper/js/swiper.min.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./js/ajax_url.js"></script>
+<script src="./js/main.js"></script>
+
+<body>
+  <!--返回-->
+  <div class="back">
+    <!-- <img src="./image/back.png"> -->
+    <p style="width: 100%; margin: 0;" ><a href="./test/test.html">首页</a></p>
+  </div>
+  <!-- 顶部banner -->
+  <div class="swiper-container banner">
+    <div class="swiper-wrapper">
+        <img src="./image/icon/banner.png" class="swiper-slide" onclick="swiperimg('banner')"/>
+        <img src="./image/icon/cjj.jpg" class="swiper-slide" onclick="swiperimg('cjj')"/>
+        <img src="./image/icon/look.png" class="swiper-slide" onclick="swiperimg('look')"/>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="list_icon">
+    <div class="list-icon"></div>
+  </div>
+  <!--底部图片-->
+  <img src="./image/img (2).png" alt="" style="width: 100%; background: white; padding: 10px 0;" onclick="bottomimg('img2')"/>
+  <img src="./image/img (4).png" alt="" style="width: 100%; background: white; padding: 10px 0;" onclick="bottomimg('img4')"/>
+  <img src="./image/img (3).png" alt="" style="width: 100%; background: white; padding: 10px 0;" onclick="bottomimg('img3')"/>
+  <img src="./image/img (1).png" alt="" style="width: 100%; background: white; padding: 10px 0;" onclick="bottomimg('img1')"/>
+
+  <!--广告跳转-->
+  <!-- <a href="more.html"><p style="text-align: right;margin-bottom: 0;">更多</p></a> -->
+  <!-- 广告列表 -->
+  <!-- <div id="guanggao_list">
+	</div> -->
+</body>
+
+<script>
+ // list_guanggao();
+
+  var swiper = new Swiper(".banner", {
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+  var icon = [
+    {
+      imgurl: "./image/icon/finance.png",
+      title: "金融保险",
+      url: "son.html",
+    },
+    {
+      imgurl: "./image/icon/service.png",
+      title: "财税服务",
+      url: "son.html",
+    },
+    {
+      imgurl: "./image/icon/law.png",
+      title: "法律政务",
+      url: "son.html",
+    },
+    {
+      imgurl: "./image/icon/shoppingcar.png",
+      title: "精品特产",
+      url: "son.html",
+    },
+    {
+      imgurl: "./image/icon/car (2).png",
+      title: "司机之家",
+      url: "son.html?id=9",
+    },
+    {
+      imgurl: "./image/icon/book (2).png",
+      title: "精品小说",
+      url: "son.html",
+    },
+    {
+      imgurl: "./image/icon/game (2).png",
+      title: "游戏",
+      url: "son.html",
+    },
+    {
+      imgurl: "./image/icon/wheel.png",
+      title: "轿车代驾",
+      url: "son.html",
+    },
+  ];
+  //图标列表
+  function list() {
+    var html = "";
+
+    for (i = 0; i < icon.length; i++) {
+      //console.log(i);1
+      html +=
+        '<a href="' +
+        icon[i].url +
+        "?id=" +
+        i +
+        "&title=" +
+        icon[i].title +
+        '" class="list-icon">' +
+        "<div >" +
+        '<img src="' +
+        icon[i].imgurl +
+        '">' +
+        "<p>" +
+        icon[i].title +
+        "</p>" +
+        "</div>" +
+        "</a>";
+    }
+    $(".list_icon").html(html);
+  }
+  list();
+  $(function () {
+    //  userLogin(1111);
+   
+  });
+  wx.getLocation({
+    type: "wgs84", // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+    success: function (res) {
+      console.log("hhh");
+      var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+      var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+      var speed = res.speed; // 速度，以米/每秒计
+      var accuracy = res.accuracy; // 位置精度
+    },
+  });
+</script>
+
+</html>

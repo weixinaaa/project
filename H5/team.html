@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我的团队</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<style type="text/css">
+body{
+	background-color: rgb(242,245,254);
+	margin: 0;
+	padding: 0;
+}
+.top{
+	width: 80%; margin: 0 auto;display: flex;
+}
+.list{
+	background-color:white;
+	padding: 15px 0;
+	margin: 10px 0
+}
+.list-in{
+	width: 80%;margin:0 auto;display: flex;align-items: center;
+}
+.list-tx{
+	width: 20%;border-radius: 100%;margin: 0 10px;
+}
+.list-teamname{
+	width: 55%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical
+}
+.list-name{
+	text-overflow: ellipsis;
+	display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+	-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+	-webkit-line-clamp: 1; /** 显示的行数 **/
+	overflow: hidden;  /** 隐藏超出的内容 **/
+}
+</style>
+<body>
+<!--返回-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >我的团队</p>
+</div>
+
+	<div class="top" id="top">
+		<p style="width: 85%">团队成员</p>
+		<p style="text-align: center;">30人</p>
+	</div>
+<div id="team">
+
+	<!--<div class="list">-->
+		<!--<div class="list-in">-->
+			<!--<img src="./image/jr.jpg" class="list-tx">-->
+			<!--<span class="list-teamname">团队昵称1团队昵称1</span>-->
+			<!--<span class="list-name">李某某</span>-->
+		<!--</div>-->
+	<!--</div>-->
+</div>
+
+</body>
+<script src="./js/ajax.js"></script>
+<script src="./js/jquery.js"></script>
+<script>
+	$.ajax({
+		url:url+"/user/queryTeamByUserId",
+		data:{
+		    userId:1,
+			pageNo:1,
+			pageSize:10,
+		},
+		success:res=>{
+		    console.log(res)
+			let html='';
+		    let top='';
+		    for (i=0;i<res.data.length;i++){
+		        html+='<div class="list">\n' +
+                    '\t\t<div class="list-in">\n' +
+                    '\t\t\t<img src="'+ res.data[i].img+'" class="list-tx">\n' +
+                    '\t\t\t<span class="list-teamname">'+ res.data[i].teamNickname+'</span>\n' +
+                    '\t\t\t<span class="list-name">'+ res.data[i].name+'</span>\n' +
+                    '\t\t</div>\n' +
+                    '\t</div>'
+				}
+            top+='<p style="width: 85%">团队成员</p>\n' +
+                '\t\t<p style="text-align: center;">'+ res.data.length+'人</p>'
+
+            document.getElementById("team").innerHTML=html
+            document.getElementById("top").innerHTML=top
+		}
+	})
+
+    $(".back").click(function () {
+        window.location.href="person.html"  //点击跳转
+    })
+</script>
+</html>

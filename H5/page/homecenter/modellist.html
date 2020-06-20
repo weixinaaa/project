@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/ajax.js"></script>
+    <script src="../../js/all.js"></script>
+    <script src="../../utils/rem.js"></script>
+    <script src="../../swiper/js/swiper.min.js"></script>
+    <title>车型列表</title>
+    <link rel="stylesheet" href="../../css/all.css" />
+    <link rel="stylesheet" href="./modellist.css" />
+    <link
+      href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../icon-css/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../swiper/css/swiper.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="top">
+      <i class="fa fa-chevron-left fa-2x" aria-hidden="true" onclick="back()"></i>
+      <i class="fa toptext"><div class="toptexttwo">车型列表</div></i>
+      <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+    </div>
+    <div class="addressinfo">
+      <div class="delivery">
+        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+        <i class="fa addressone" id="addressone">杭州市余杭体育中心</i><i class="fa">-送车点</i>
+      </div>
+      <div class="addresstwo" id="addresstwo">杭州市余杭体育中心</div>
+      <div class="worktime">营业时间: 08:00-22:00</div>
+    </div>
+    <div class="content" id="contentall">
+      <!-- 
+            <div class="carinfo" id="carinfor">
+            <div class="carpic">
+                <img src="../../image/cark.jpg" />
+            </div>
+            <div class="cardata">
+                <div class="topdata">
+                    <div class="carname">
+                        <div class="nametext">众泰 SR9</div>
+                        <div class="configure">SUV | 2.0T 自动 | 5座</div>
+                    </div>
+                    <div class="reserve">
+                        <div class="reservecar">预定</div>
+                    </div>
+                </div>
+               <div class="bottomdata">
+                   <div class="splitline">
+                    <div class="hrline"></div>
+                   </div>
+                   <div class="price">
+                        ￥<b class="pricered">340</b><b class="day">/日均</b>
+                   </div>
+               </div>
+            </div>
+        </div>  
+    --></div>
+  </body>
+  <script>
+    function submit() {
+      // window.location.href = "./page/homecenter/contactus.html";
+    }
+    $.ajax({
+      type: "get",
+      url: "http://47.96.28.95/msfw/carRental/getCarRental",
+      success: (res) => {
+        console.log(res);
+        console.log(res.msg);
+        document.getElementById("addressone").innerHTML = res.rows[0].address;
+        document.getElementById("addresstwo").innerHTML = res.rows[0].address;
+        var carlist = "";
+        var dayave = "/日均";
+        for (let i = 0; i < res.rows.length; i++) {
+            var picture = res.rows[i].img;
+        var carname = res.rows[i].carName;
+        var cartype =res.rows[i].carType;
+        var engine = res.rows[i].engineType;
+        var geartype = res.rows[i].gearType;
+        if(geartype == 0){
+            geartype="手动";
+        }else if(geartype == 1){
+            geartype="自动";
+        }
+        var seat = res.rows[0].seatNum;
+        var btntext = "预定";
+        var price = res.rows[0].dailyRentPrice;
+          carlist +=
+            "<div class='carinfo' id='carinfor'>" +
+            "<div class='carpic'>" +
+            "<img src=" +
+            picture +
+            " />" +
+            "</div>" +
+            "<div class='cardata'>" +
+            "<div class='topdata'>" +
+            "<div class='carname'>" +
+            "<div class='nametext'>" +
+            carname +
+            "</div>" +
+            "<div class='configure'>" +
+            cartype +" | "+engine+" "+geartype+ " | "+seat+"座"+
+            "</div>" +
+            "</div>" +
+            "<div class='reserve'>" +
+            "<div class='reservecar'>" +
+            btntext +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "<div class='bottomdata'>" +
+            "<div class='splitline'>" +
+            "<div class='hrline'>" +
+            "</div>" +
+            "</div>" +
+            "<div class='price'>" +
+            "￥" +
+            "<b class='pricered'>" +
+            price +
+            "</b>" +
+            "<b class='day'>" +
+            dayave +
+            "</b>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
+        }
+        $("#contentall")[0].innerHTML = carlist;
+        //  $("#contentall").html(item);
+        //   document.getElementById("contentall").innerHTML = item;
+      },
+    });
+
+    function back(){
+        window.history.back(-1);
+    }
+  </script>
+</html>

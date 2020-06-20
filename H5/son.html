@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <script
+      type="text/javascript"
+      src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"
+    ></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/ajax_url.js"></script>
+    <script src="./js/all.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/all.css" />
+  </head>
+  <style>
+    .content {
+      overflow-x: hidden;
+    }
+    .list {
+      display: flex;
+      padding: 10px 0;
+      background: white;
+      align-items: center;
+    }
+
+    .list-title {
+      width: 80%;
+    }
+
+    .list-left {
+      width: 10%;
+      margin: 0 20px;
+    }
+
+    .list-right {
+      /*width: 10%;*/
+      margin-right: 20px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .type {
+      display: flex;
+      flex-flow: row;
+      width: 100%;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .type .fir {
+      text-align: center;
+      flex: 1;
+    }
+  </style>
+
+  <body>
+    <div class="content">
+      <!--返回-->
+      <div class="back">
+        <img src="./image/back.png" onclick="toUrl()" />
+        <p id="title"></p>
+      </div>
+      <span class="type" id="type"> </span>
+      <!--列表-->
+      <div id="list"></div>
+    </div>
+  </body>
+
+  <script>
+    $(function () {
+      //   alert("654");
+
+      let myphone = localStorage.getItem("myphone");
+      //  alert(myphone)
+      //  alert(checkPhone(myphone))
+      if (!checkPhone(myphone)) {
+        // alert("123");
+        var isbeauty = confirm("您还未注册,确认前往注册页面？");
+            if (isbeauty) {
+              window.location.href = "zhuce.html";
+            } else {
+              window.location.href = "index.html";
+            }
+       
+      }
+      //alert("456");
+      else{
+      $.ajax({
+        url: url + "/user/register",
+        data: {
+          tel: myphone,
+          password: "password",
+        },
+        success: (res) => {
+          // console.log(res);
+          // console.log(myphone);
+          // console.log(res.msg);
+          if (res.msg == "该手机号已被注册！") {
+            // console.log(res.msg);
+
+            var hhh = [];
+            var id = GetUrlParam("id") * 1;
+            if(id == 9){
+              window.location.href = "driver_home.html";
+              return;
+            }
+            if (id == 4 || id == 7) {
+              $("#type").html(
+                ' <div class="fir">货车</div><div class="fir">轿车</div>'
+              );
+            }
+            switch (id) {
+              case 0:
+                hhh = [
+                  {
+                    imgurl: "./image/icon/gg.png",
+                    title: "xxxx",
+                    url:
+                      "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
+                  },
+                ];
+                break;
+              case 1:
+                hhh = [
+                  {
+                    imgurl: "./image/icon/gg.png",
+                    title: "好会计",
+                    url: "http://h.chanjet.com/?p=59&a=hzstkj&c=chejiajia ",
+                  },
+                  {
+                    imgurl: "./image/icon/gg.png",
+                    title: "好会计精品课",
+                    url: "http://wk.chanjet.com/?a=hzstkj&c=chejiajia&p=59",
+                  },
+                ];
+                break;
+              case 2:
+                hhh = [
+                  {
+                    imgurl: "./image/icon/gg.png",
+                    title: "法宝网",
+                    url: "http://lxb.365lawhelp.com/?drivercode=0000&agentid=3",
+                  },
+                ];
+                break;
+              case 4:
+                hhh = [
+                  {
+                    imgurl: "./image/icon/car.png",
+                    title: "首汽约车",
+                    url: "http://mail.01zhuanche.com/",
+                  },
+                  {
+                    imgurl: "./image/icon/car1.png",
+                    title: "神州专车",
+                    url: "https://www.10101111.com/",
+                  },
+                  {
+                    imgurl: "./image/icon/car1.png",
+                    title: "滴滴",
+                    url: "https://www.didiglobal.com/",
+                  },
+                ];
+                break;
+              case 5:
+                hhh = [
+                  {
+                    imgurl: "./image/icon/gg.png",
+                    title: "悠书阁",
+                    url:
+                      "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
+                  },
+                ];
+                break;
+              default:
+                hhh = [
+                  {
+                    imgurl: "./image/icon/gg.png",
+                    title: "xxxx",
+                    url:
+                      "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
+                  },
+                ];
+            }
+            var html = "";
+            var title = GetUrlParam("title");
+            $("#title").html("<div>" + title + "</div>");
+
+            for (i = 0; i < hhh.length; i++) {
+              html +=
+                "<a href=" +
+                hhh[i].url +
+                ">" +
+                '<div class="list">' +
+                '<div class="list-left">' +
+                '<img src="' +
+                hhh[i].imgurl +
+                '" >' +
+                "</div>" +
+                '<p class="list-title">' +
+                hhh[i].title +
+                "</p>" +
+                '<div class="list-right">' +
+                '<img  src="./image/open.png" alt="">' +
+                "</div>" +
+                "</div>" +
+                "</a>";
+            }
+            $("#list").html(html);
+          } else {
+            var isbeauty = confirm("信息有误,确认前往注册页面？");
+            if (isbeauty) {
+              window.location.href = "zhuce.html";
+            } else {
+              window.location.href = "index.html";
+            }
+            
+          }
+        },
+      });
+    }
+
+    });
+  
+  </script>
+</html>

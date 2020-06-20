@@ -1,0 +1,13 @@
+body{
+	background-color: rgb(242,245,254);margin: 0
+}
+.list{
+	display: flex;
+	align-items: center;
+	margin: 10px auto;
+	background-color: white
+}
+
+.money{
+	position: absolute;right: 12%
+}

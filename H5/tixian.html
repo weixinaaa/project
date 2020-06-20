@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>申请提现</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<link rel="stylesheet" href="./css/all.css">
+	<link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<style type="text/css">
+	body{
+		margin: 0;
+		background-color: white;
+	}
+	input{
+		border: 0;
+		color: #ccc;
+		background-color: rgb(242,245,254);
+		height: 40px;
+		border-radius: 15px;
+		width: calc(100% - 40px);
+		padding:0 20px;
+	}
+	p{
+		text-align: left;
+	}
+	#onload{
+		width: 60%;
+		background-color: rgb(62,157,254);
+		color:white;
+		height: 40px;
+		border-radius: 15px;
+		border: 0;
+		margin: 30px auto;
+	}
+</style>
+<body>
+<!--返回-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >申请提现</p>
+</div>
+<p style="background-color: rgb(242,245,254);height: 20px;width: 100%;margin: 0;"></p>
+	<div style="width: 90%;margin: 0 auto;text-align: center;">
+		<p>收款银行账号</p>
+		<input type="" placeholder="请输入银行卡卡号" name="" maxlength="19" id="banknumber">
+		<p>开户行</p>
+		<input type="" placeholder="请输入开户银行" name="" id="bank">
+		<p>开户姓名</p>
+		<input type="" placeholder="请输入开户姓名" name="" id="name">
+		<p>提现金额</p>
+		<input type="" placeholder="请输入提现金额" name="" max="999" id="number">
+		<div style="margin-left: 20px;margin-top: 20px;text-align: left;">
+			<span>可提现金额</span>
+			<span style="color: rgb(95,173,254)">￥999.88</span>
+		</div>
+		<button id="onload">提现</button>
+	</div>
+</body>
+<script src="./js/ajax.js"></script>
+<script src="./js/jquery.js"></script>
+<script src="./layui/layui.js"></script>
+<script>
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        $("#onload").click(function () {
+            var banknumber=$("#banknumber").val()
+            var bank=$("#bank").val();
+            var name=$("#name").val();
+            var number=$("#number").val();
+            if (banknumber==""){
+                layer.msg("请输入正确的银行卡卡号");
+                return;
+            }
+            if (bank==""){
+                layer.msg("请输入开户银行");
+                return;
+            }
+            if (name==""){
+                layer.msg("请输入开户姓名");
+                return;
+            }
+            if (number=="" ){
+                layer.msg("请输入提现金额");
+                return;
+            }
+            // if (number == 0 ){
+             //    layer.msg("请输入大于0")
+			// 	return;
+			// }
+            if (number > 999 | number < 0 ){
+                layer.msg("请输入正确的提现金额");
+                return;
+            }
+
+            $.ajax({
+				url:url+"/user/addCashWithdrawalBill",
+				data:{
+                    userId:1,
+                    openingBank:bank,
+                    nameOfAccountHolder:name,
+                    bankCardNumber:banknumber,
+                    amountOfMoney:number,
+				},
+				success:res=>{
+				    console.log(res)
+				    layer.msg("提现成功")
+				}
+			})
+        })
+    });
+
+
+
+
+    $(".back").click(function () {
+        window.location.href="shouyi.html"  //点击跳转
+    })
+</script>
+</html>

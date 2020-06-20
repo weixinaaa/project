@@ -1,0 +1,74 @@
+
+.body{
+	background-color: white;
+	width: 100%;
+	padding-bottom: 50px;
+	padding-top: 30px;
+}
+
+.write{
+	padding-left: 10px;
+	background-color: rgb(249,249,249);
+	height: 40px;
+	color: rgb(155,155,155);
+	width: calc(100% - 10px);
+	border-radius: 10px;
+	border: 0;
+}
+.fa{
+	padding-right: 8px;
+}
+.one{
+	width: 90%;
+	margin: 15px auto;
+}
+.two{
+	display: flex;
+	align-items: center;
+	margin: 5px 0
+}
+#car {
+	padding: 10px 0;
+	border: 0;
+	font-size: 15px;
+	width: 80%;
+}
+button{
+		background-color: rgb(62,157,254);
+	height: 40px;
+	border-radius: 10px;
+	border: 0;
+	color: white;
+}
+.yzm-button{
+	width: 40%;
+}
+.yzm-input{
+	width: calc(60% - 10px);
+	margin-right: 10px;
+}
+.zc-button{
+	width: 60%;
+	margin: 0 auto;
+	display: block;
+	margin-top: 50px;
+}
+.top{
+	/*display: flex;*/
+}
+.top p{
+	/*width: 50%;*/
+	padding: 10px 0;
+	text-align: center;
+	background-color: white;
+}
+#left{
+	margin: 0 auto;padding: 10px 0;
+}
+#right{
+	margin: 0 auto;
+	display: none;
+}
+.active{
+	/*border-bottom: 5px solid black;*/
+}

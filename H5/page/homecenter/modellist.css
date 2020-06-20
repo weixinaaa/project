@@ -1,0 +1,183 @@
+body {
+  background-color: white;
+}
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 7.5rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.toptext {
+  width: 4rem;
+
+  margin: 0 0 0 1rem;
+  text-align: center;
+}
+
+.toptexttwo {
+  height: 0.4rem;
+  line-height: 0.4rem;
+  font-size: 0.35rem;
+}
+
+.fa-chevron-left {
+  margin-left: 0.2rem;
+}
+
+.fa-times {
+  margin-left: 1.2rem;
+}
+
+.addressinfo {
+  padding: 0.1rem 0 0.1rem 0;
+  border: 1px solid #9a9a9a;
+  margin: 1.02rem 0 0 0;
+}
+
+.delivery {
+  margin: 0rem 0 0 0.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.35rem;
+}
+
+.addressone {
+  margin: 0 0 0 0.2rem;
+}
+
+.addresstwo {
+  margin: 0.3rem 0 0 0.8rem;
+  font-size: 0.3rem;
+}
+
+.worktime {
+  margin: 0.3rem 0 0 0.8rem;
+  font-size: 0.3rem;
+}
+
+.content {
+  margin: 0rem 0 0 0;
+  height: 10rem;
+  background-color: white;
+}
+
+.carinfo {
+  margin: 0.05rem 0 0 0;
+  height: 2.35rem;
+  background-color: white;
+  border: 1px solid #9a9a9a;
+  display: flex;
+  flex-direction: row;
+}
+
+.carpic {
+  width: 2.3rem;
+  height: 2.3rem;
+  background-color: rgb(235, 227, 157);
+}
+
+.carpic img {
+  width: 2.3rem;
+  height: 2.3rem;
+  object-fit: fill;
+}
+
+.cardata {
+  display: flex;
+  flex-direction: column;
+  width:5.2rem;
+  height:2.3rem;
+}
+.topdata{
+    display: flex;
+  flex-direction: row;
+  width:5.2rem;
+  height: 1.2rem;
+  border: none;
+}
+.bottomdata{
+    width:5.17rem;
+  height: 1.1rem;
+}
+.carname {
+  width: 3.7rem;
+  height: 1.2rem;
+  background-color: white;
+  border: none;
+}
+
+.reserve {
+  width: 1.47rem;
+  height: 1.2rem;
+  background-color: white;
+  display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.nametext{
+   height: 0.6rem;
+   line-height: 0.6rem;
+   margin: 0 0 0 0.3rem;
+   font-size: 0.35rem;
+}
+
+.configure{
+    height: 0.6rem;
+   line-height: 0.6rem;
+   margin: 0 0 0 0.3rem;
+   
+}
+
+
+.reservecar{
+    width:1rem;
+    height: 0.5rem;
+    background-color:white;
+    line-height: 0.5rem;
+    text-align: center;
+    border: 1px solid #ff0000;
+    border-radius: 6px;
+}
+
+.splitline{
+    height:0.35rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.price{
+    height:0.75rem;
+    line-height: 0.75rem;
+    background-color: white;
+    font-size: 0.4rem;
+    margin:0 0 0 0.2rem;
+}
+
+.hrline{
+    height:0.2rem;
+    width:4.6rem;
+   border-bottom: 1px solid #000000;
+}
+
+.pricered{
+    color: red;
+}
+
+.day{
+    font-size: 0.3rem;
+}
+
+
+
+
+
+
+

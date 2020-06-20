@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <script src="../../js/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <style>
+    
+  </style>
+</head>
+
+<body>
+
+  <div>    
+                    <input type="checkbox" name="ckb" value="1" />1    
+                    <input type="checkbox" name="ckb" value="2" />2    
+                   <input type="checkbox" name="ckb" value="3" />3    
+                   <input type="checkbox" name="ckb" value="4" />4    
+                    <input type="checkbox" name="ckb" value="5" />5    
+                    <input type="checkbox" name="ckb" value="6" />6    
+                    <input type="checkbox" name="ckb" value="7" />7    
+                    <input type="checkbox" name="ckb" value="8" />8    
+                   <input type="checkbox" name="ckb" value="9" />9    
+                   <input type="checkbox" name="ckb" value="10" />10<br>    
+                   <input type="button" id="btn" value="遍历"/>    
+                   <div id="txt"></div>    
+              </div>   
+</body>
+
+</html>
+
+<script>
+  $(document).ready(function(){    
+                      $("#btn").click(function(){    
+                          var str = "";    
+                          $("input[type='checkbox']").each(function(){    
+                              if($(this).is(":checked"))    
+                              {    
+                                  str = "yes";   
+                              }    else{
+                                  str = "no";
+                             }
+                               console.log(str);
+                         });                    
+                    });    
+                 });    
+</script>
