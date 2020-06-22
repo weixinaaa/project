@@ -13,7 +13,7 @@
     <script src="./utils/rem.js"></script>
     <script
       type="text/javascript"
-      src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=859d16285fd000feec89e9032513f8bb"
+      src="https://webapi.amap.com/maps?v=1.4.15&key=329e6c3e474acfac7591e493212ac047&plugin=AMap.CitySearch"
     ></script>
     <title>Title</title>
     <link rel="stylesheet" href="./css/all.css" />
@@ -242,9 +242,31 @@
 </html>
 
 <script type="text/javascript">
-  // GL版命名空间为BMapGL
-  // 按住鼠标右键，修改倾斜角和角度
-  var map = new BMapGL.Map("allmap"); // 创建Map实例
-  map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11); // 初始化地图,设置中心点坐标和地图级别
-  map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+  var map = new AMap.Map("allmap", {
+    resizeEnable: true,
+    center: [116.397428, 39.90923],
+    zoom: 13,
+  });
+  //获取用户所在城市信息
+  function showCityInfo() {
+    //实例化城市查询类
+    var citysearch = new AMap.CitySearch();
+    //自动获取用户IP，返回当前城市
+    citysearch.getLocalCity(function (status, result) {
+      if (status === "complete" && result.info === "OK") {
+        if (result && result.city && result.bounds) {
+          console.log(result);
+          var proinfo = result.province;
+          var cityinfo = result.city;
+          var cityinfo = result.city;
+          var citybounds = result.bounds;
+          console.log("您当前所在城市为：" + proinfo + cityinfo);
+            
+          //地图显示当前城市
+          map.setBounds(citybounds);
+        }
+      }
+    });
+  }
+  showCityInfo();
 </script>
