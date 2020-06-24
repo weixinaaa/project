@@ -84,151 +84,153 @@
       if (!checkPhone(myphone)) {
         // alert("123");
         var isbeauty = confirm("您还未注册,确认前往注册页面？");
-            if (isbeauty) {
-              window.location.href = "zhuce.html";
-            } else {
-              window.location.href = "index.html";
-            }
-       
+        if (isbeauty) {
+          window.location.href = "zhuce.html";
+        } else {
+          window.location.href = "index.html";
+        }
       }
       //alert("456");
-      else{
-      $.ajax({
-        url: url + "/user/register",
-        data: {
-          tel: myphone,
-          password: "password",
-        },
-        success: (res) => {
-          // console.log(res);
-          // console.log(myphone);
-          // console.log(res.msg);
-          if (res.msg == "该手机号已被注册！") {
+      else {
+        $.ajax({
+          url: url + "/user/register",
+          data: {
+            tel: myphone,
+            password: "password",
+          },
+          success: (res) => {
+            // console.log(res);
+            // console.log(myphone);
             // console.log(res.msg);
+            if (res.msg == "该手机号已被注册！") {
+              // console.log(res.msg);
 
-            var hhh = [];
-            var id = GetUrlParam("id") * 1;
-            if(id == 9){
-              window.location.href = "driver_home.html";
-              return;
-            }
-            if (id == 4 || id == 7) {
-              $("#type").html(
-                ' <div class="fir">货车</div><div class="fir">轿车</div>'
-              );
-            }
-            switch (id) {
-              case 0:
-                hhh = [
-                  {
-                    imgurl: "./image/icon/gg.png",
-                    title: "xxxx",
-                    url:
-                      "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
-                  },
-                ];
-                break;
-              case 1:
-                hhh = [
-                  {
-                    imgurl: "./image/icon/gg.png",
-                    title: "好会计",
-                    url: "http://h.chanjet.com/?p=59&a=hzstkj&c=chejiajia ",
-                  },
-                  {
-                    imgurl: "./image/icon/gg.png",
-                    title: "好会计精品课",
-                    url: "http://wk.chanjet.com/?a=hzstkj&c=chejiajia&p=59",
-                  },
-                ];
-                break;
-              case 2:
-                hhh = [
-                  {
-                    imgurl: "./image/icon/gg.png",
-                    title: "法宝网",
-                    url: "http://lxb.365lawhelp.com/?drivercode=0000&agentid=3",
-                  },
-                ];
-                break;
-              case 4:
-                hhh = [
-                  {
-                    imgurl: "./image/icon/car.png",
-                    title: "首汽约车",
-                    url: "http://mail.01zhuanche.com/",
-                  },
-                  {
-                    imgurl: "./image/icon/car1.png",
-                    title: "神州专车",
-                    url: "https://www.10101111.com/",
-                  },
-                  {
-                    imgurl: "./image/icon/car1.png",
-                    title: "滴滴",
-                    url: "https://www.didiglobal.com/",
-                  },
-                ];
-                break;
-              case 5:
-                hhh = [
-                  {
-                    imgurl: "./image/icon/gg.png",
-                    title: "悠书阁",
-                    url:
-                      "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
-                  },
-                ];
-                break;
-              default:
-                hhh = [
-                  {
-                    imgurl: "./image/icon/gg.png",
-                    title: "xxxx",
-                    url:
-                      "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
-                  },
-                ];
-            }
-            var html = "";
-            var title = GetUrlParam("title");
-            $("#title").html("<div>" + title + "</div>");
+              var hhh = [];
+              var id = GetUrlParam("id") * 1;
+              if (id == 9) {
+                window.location.href = "driver_home.html";
+                return;
+              }
+              if (id == 4 || id == 7) {
+                $("#type").html(
+                  ' <div class="fir">货车</div><div class="fir">轿车</div>'
+                );
+              }
+              switch (id) {
+                case 0:
+                  hhh = [
+                    {
+                      imgurl: "./image/icon/gg.png",
+                      title: "广告形式",
+                      url:
+                        "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
+                    },
+                    {
+                      imgurl: "./image/icon/司机之家@2x.png",
+                      title: "司机之家（合伙人）",
+                      url: "son.html?id=4&title=司机之家",
+                    },
+                  ];
+                  break;
+                case 1:
+                  hhh = [
+                    {
+                      imgurl: "./image/icon/gg.png",
+                      title: "好会计",
+                      url: "http://h.chanjet.com/?p=59&a=hzstkj&c=chejiajia ",
+                    },
+                    {
+                      imgurl: "./image/icon/gg.png",
+                      title: "好会计精品课",
+                      url: "http://wk.chanjet.com/?a=hzstkj&c=chejiajia&p=59",
+                    },
+                  ];
+                  break;
+                case 2:
+                  hhh = [
+                    {
+                      imgurl: "./image/icon/gg.png",
+                      title: "法宝网",
+                      url:
+                        "http://lxb.365lawhelp.com/?drivercode=0000&agentid=3",
+                    },
+                  ];
+                  break;
+                case 4:
+                  hhh = [
+                    {
+                      imgurl: "./image/icon/car.png",
+                      title: "首汽约车",
+                      url: "http://mail.01zhuanche.com/",
+                    },
+                    {
+                      imgurl: "./image/icon/car1.png",
+                      title: "神州专车",
+                      url: "https://www.10101111.com/",
+                    },
+                    {
+                      imgurl: "./image/icon/car1.png",
+                      title: "滴滴",
+                      url: "https://www.didiglobal.com/",
+                    },
+                  ];
+                  break;
+                case 5:
+                  hhh = [
+                    {
+                      imgurl: "./image/icon/gg.png",
+                      title: "悠书阁",
+                      url:
+                        "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
+                    },
+                  ];
+                  break;
+                default:
+                  hhh = [
+                    {
+                      imgurl: "./image/icon/gg.png",
+                      title: "广告形式",
+                      url:
+                        "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
+                    },
+                  ];
+              }
+              var html = "";
+              var title = GetUrlParam("title");
+              $("#title").html("<div>" + title + "</div>");
 
-            for (i = 0; i < hhh.length; i++) {
-              html +=
-                "<a href=" +
-                hhh[i].url +
-                ">" +
-                '<div class="list">' +
-                '<div class="list-left">' +
-                '<img src="' +
-                hhh[i].imgurl +
-                '" >' +
-                "</div>" +
-                '<p class="list-title">' +
-                hhh[i].title +
-                "</p>" +
-                '<div class="list-right">' +
-                '<img  src="./image/open.png" alt="">' +
-                "</div>" +
-                "</div>" +
-                "</a>";
-            }
-            $("#list").html(html);
-          } else {
-            var isbeauty = confirm("信息有误,确认前往注册页面？");
-            if (isbeauty) {
-              window.location.href = "zhuce.html";
+              for (i = 0; i < hhh.length; i++) {
+                html +=
+                  "<a href=" +
+                  hhh[i].url +
+                  ">" +
+                  '<div class="list">' +
+                  '<div class="list-left">' +
+                  '<img src="' +
+                  hhh[i].imgurl +
+                  '" >' +
+                  "</div>" +
+                  '<p class="list-title">' +
+                  hhh[i].title +
+                  "</p>" +
+                  '<div class="list-right">' +
+                  '<img  src="./image/open.png" alt="">' +
+                  "</div>" +
+                  "</div>" +
+                  "</a>";
+              }
+              $("#list").html(html);
             } else {
-              window.location.href = "index.html";
+              var isbeauty = confirm("信息有误,确认前往注册页面？");
+              if (isbeauty) {
+                window.location.href = "zhuce.html";
+              } else {
+                window.location.href = "index.html";
+              }
             }
-            
-          }
-        },
-      });
-    }
-
+          },
+        });
+      }
     });
-  
   </script>
 </html>

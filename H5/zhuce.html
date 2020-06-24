@@ -158,28 +158,34 @@
         return;
       }
       // alert("ID:"+ID);
-      console.log(Title);
-      $.ajax({
-        url: url + "/user/register",
-        data: {
-          tel: phone,
-          password: password,
-        },
-        success: (res) => {
-          console.log(res);
-          console.log(phone);
-          console.log(res.msg);
-          if (res.msg == "成功") {
-            localStorage.setItem("myphone", phone);
-            alert("注册成功!");
-            window.location.href = "index.html";
-          } else {
-            alert("注册失败,请重新注册!");
-          }
+      //下面两行测试用的,
+      alert("注册成功!");
+      window.location.href = "index.html";
 
-          // toUrl("driver_home.html?id=" + ID + "&title=" + Title);
-        },
-      });
+      console.log(Title);
+      // $.ajax({
+      //   url: "http://47.96.28.95:80/msfw/user/register",
+      //   data: {
+      //     tel: phone,
+      //     verificationCode: phoneverify,
+      //     InvitationCode1:invitation,
+      //     password:"",
+      //   },
+      //   success: (res) => {
+      //     console.log(res);
+      //     console.log(phone);
+      //     console.log(res.msg);
+      //     if (res.msg == "成功") {
+      //       localStorage.setItem("myphone", phone);
+      //       alert("注册成功!");
+      //     //  window.location.href = "index.html";
+      //     } else {
+      //       alert("注册失败,请重新注册!");
+      //     }
+
+      //     // toUrl("driver_home.html?id=" + ID + "&title=" + Title);
+      //   },
+      // });
     });
 
     $(".back").click(function () {
@@ -205,7 +211,6 @@
         return;
       }
       setTime();
-      //http://47.96.28.95/msfw/user/send?tel=13093761812
       // $.ajax({
       //   url: "http://47.96.28.95/msfw/user/send",
       //   // crossDomain: true,

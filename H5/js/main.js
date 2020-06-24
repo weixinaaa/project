@@ -375,11 +375,11 @@ function loginIMToken(userId) {
 function swiperimg(data){
   //console.log(data)
   switch(data){
-    case 'banner': window.location.href="../page/homecenter/cooperation.html";
+    case 'banner': window.location.href="./page/homecenter/cooperation.html";
     break;
-    case 'cjj': window.location.href="../page/homecenter/partner.html";
+    case 'cjj': window.location.href="./page/homecenter/partner.html";
     break;
-    case 'look': window.location.href="../page/homecenter/contactus.html";
+    case 'look': window.location.href="./page/homecenter/contactus.html";
     break;
     default: return;
   }

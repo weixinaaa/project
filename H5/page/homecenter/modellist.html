@@ -79,28 +79,29 @@
     }
     $.ajax({
       type: "get",
-      url: "http://47.96.28.95/msfw/carRental/getCarRental",
+      url: "http://47.96.28.95:80/msfw/carRental/getCarRental",
       success: (res) => {
         console.log(res);
         console.log(res.msg);
-        document.getElementById("addressone").innerHTML = res.rows[0].address;
-        document.getElementById("addresstwo").innerHTML = res.rows[0].address;
+        var address=res.data[0].proName+res.data[0].cityName+res.data[0].areaName;
+        document.getElementById("addressone").innerHTML = address;
+        document.getElementById("addresstwo").innerHTML = address;
         var carlist = "";
         var dayave = "/日均";
-        for (let i = 0; i < res.rows.length; i++) {
-            var picture = res.rows[i].img;
-        var carname = res.rows[i].carName;
-        var cartype =res.rows[i].carType;
-        var engine = res.rows[i].engineType;
-        var geartype = res.rows[i].gearType;
+        for (let i = 0; i < res.data.length; i++) {
+            var picture = res.data[i].img;
+        var carname = res.data[i].carName;
+        var cartype =res.data[i].carTypeName;
+        var engine = res.data[i].engineType;
+        var geartype = res.data[i].gearType;
         if(geartype == 0){
             geartype="手动";
         }else if(geartype == 1){
             geartype="自动";
         }
-        var seat = res.rows[0].seatNum;
+        var seat = res.data[0].seatNum;
         var btntext = "预定";
-        var price = res.rows[0].dailyRentPrice;
+        var price = res.data[0].dailyRentPrice;
           carlist +=
             "<div class='carinfo' id='carinfor'>" +
             "<div class='carpic'>" +
