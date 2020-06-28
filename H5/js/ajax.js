@@ -6,7 +6,7 @@ function ziliao() {
 
         url: url + "/user/PersonalInformation",
         data: {
-            userId: 1
+            userId: 1,
         },
         success: res => {
             console.log(res)
@@ -81,7 +81,7 @@ function ziliao_onload() {
 
     console.log(name, mail, phone, sex)
     $.ajax({
-        url: url + '/user/updateUser',
+        url: 'http://47.96.28.95:80/msfw//user/updateUser',
         data: {
             Id: 1,
             name: name,
@@ -94,9 +94,11 @@ function ziliao_onload() {
         success: res => {
             console.log(res)
             if (res.code == "-1") {
+                alert("111");
                 layer.msg(res.msg);
                 return
             } else {
+                alert("222");
                 layer.msg(res.msg);
             }
         },
@@ -130,7 +132,6 @@ function tixina() {
                 if (res.data[i].state == 2) {
                     sh = '已到账'
                     imgurl = './image/icon/shouqian.jpg'
-
                 }
 
                 html += '<div class="list-left">\n' +
@@ -319,7 +320,7 @@ function allcar() {
     $.ajax({
         url: url + "/bookACar/getVehicleTypeAll",
         success: res => {
-            console.log(res)
+            console.log(res);
             html1 += '<img src="' + res.data[0].img + '">\n' +
                 '\t\t<div class="right">\n' +
                 '\t\t\t<div>\n' +

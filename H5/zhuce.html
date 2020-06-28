@@ -158,7 +158,8 @@
         return;
       }
       // alert("ID:"+ID);
-      //下面两行测试用的,
+      //下面三行测试用的,
+      localStorage.setItem("myphone", phone);
       alert("注册成功!");
       window.location.href = "index.html";
 
@@ -173,10 +174,14 @@
       //   },
       //   success: (res) => {
       //     console.log(res);
+      //     console.log(res.rows[0].userId);
       //     console.log(phone);
       //     console.log(res.msg);
-      //     if (res.msg == "成功") {
+      //     var userid = res.rows[0].userId;
+      //     if (res.msg == "成功!") {
       //       localStorage.setItem("myphone", phone);
+      //       sessionStorage.setItem("userid", userid);
+            
       //       alert("注册成功!");
       //     //  window.location.href = "index.html";
       //     } else {

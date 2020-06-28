@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>申请提现</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+  </head>
+  <style type="text/css">
+    body {
+      margin: 0;
+      background-color: white;
+    }
+    button{
+        margin: 100px 100px;
+    }
+  </style>
+  <body>
+      <div>
+          <button id="onload">点击</button>
+      </div>
+  </body>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./layui/layui.js"></script>
+  <script>
+    layui.use("layer", function () {
+      var layer = layui.layer;
+      $("#onload").click(function () {
+        layer.msg("请输入正确的银行卡卡号");
+      });
+    });
+  </script>
+</html>
+
+
+

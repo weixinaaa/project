@@ -1,5 +1,6 @@
 body {
   background-color: white;
+  overflow-x: hidden;
 }
 
 .top {
@@ -15,7 +16,6 @@ body {
 
 .toptext {
   width: 4rem;
-
   margin: 0 0 0 1rem;
   text-align: center;
 }

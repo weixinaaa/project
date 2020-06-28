@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/vant@1.6/lib/index.css"
+    />
+    <title>filmMobile</title>
+  </head>
+  <body>
+    <div id="app">
+      <van-button type="default">默认按钮</van-button>
+      <van-button type="primary">主要按钮</van-button>
+      <van-button type="info">信息按钮</van-button>
+      <van-button type="warning">警告按钮</van-button>
+      <van-button type="danger">危险按钮</van-button>
+      <div>
+        <p>{{message}}</p>
+      </div>
+    </div>
+  </body>
+
+  <!-- 引入组件 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vant@1.6/lib/vant.min.js"></script>
+  <script>
+    // 必须实例化
+    var app = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello ",
+      },
+      mounted() {
+        this.$toast("提示文案");
+        // this.$dialog.alert({
+        //   message: "弹窗内容",
+        // });
+      },
+    });
+  </script>
+</html>

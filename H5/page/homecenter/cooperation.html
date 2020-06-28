@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <!--手机端适配-->
-    <script src="../../js/jquery.js"></script>
-    <script src="../../js/ajax.js"></script>
-    <script src="../../js/all.js"></script>
-    <script src="../../utils/rem.js"></script>
-    <script src="../../swiper/js/swiper.min.js"></script>
-    <script src="./homecenter.js"></script>
-    <title>商家合作</title>
-    <link rel="stylesheet" href="../../css/all.css" />
-    <link rel="stylesheet" href="./partner.css" />
-    <link
-      href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../../icon-css/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="../../swiper/css/swiper.min.css" />
-   
-  </head>
 
-  <body>
-    <div class="top">
-      <i class="fa fa-chevron-left fa-2x" aria-hidden="true" onclick="back()"></i>
-      <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!--手机端适配-->
+  <script src="../../js/jquery.js"></script>
+  <script src="../../js/ajax.js"></script>
+  <script src="../../js/all.js"></script>
+  <script src="../../utils/rem.js"></script>
+  <script src="../../swiper/js/swiper.min.js"></script>
+  <script src="./homecenter.js"></script>
+  <title>商家合作</title>
+  <link rel="stylesheet" href="../../css/all.css" />
+  <link rel="stylesheet" href="./partner.css" />
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="../../icon-css/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="../../swiper/css/swiper.min.css" />
+
+</head>
+
+<body>
+
+  <div class="top">
+    <i class="fa fa-chevron-left fa-2x" aria-hidden="true" onclick="back()"></i>
+    <i class="fa toptext">
+      <div class="toptexttwo">商家合作</div>
+    </i>
+    <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <img src="../../image/icon/banner.png" class="swiper-slide" onclick="swiperimg('banner')" />
+      <img src="../../image/icon/cjj.jpg" class="swiper-slide" onclick="swiperimg('cjj')" />
+      <img src="../../image/icon/look.png" class="swiper-slide" onclick="swiperimg('look')" />
     </div>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <img src="../../image/icon/banner.png" class="swiper-slide" onclick="swiperimg('banner')"/>
-          <img src="../../image/icon/cjj.jpg" class="swiper-slide" onclick="swiperimg('cjj')"/>
-          <img src="../../image/icon/look.png" class="swiper-slide" onclick="swiperimg('look')"/>
-        </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-      </div>
-    <input class="name" placeholder="请输入姓名" />
-    <input class="phone" placeholder="请输入联系方式" />
-    <div class="message">备注留言</div>
-    <textarea class="text"></textarea>
-    <button onclick="submit()" class="sub">提交</button>
-   
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <input class="name" placeholder="请输入姓名" />
+  <input class="phone" placeholder="请输入联系方式" />
+  <div class="message">备注留言</div>
+  <textarea class="text"></textarea>
+  <button onclick="submit()" class="sub">提交</button>
 
-  </body>
-  <script>
-    function submit() {
-     // window.location.href = "./page/homecenter/contactus.html";
-    }
-    var mySwiper = new Swiper(".swiper-container", {
+
+</body>
+<script>
+  function submit() {
+    // window.location.href = "./page/homecenter/contactus.html";
+  }
+  var mySwiper = new Swiper(".swiper-container", {
     // 轮播图的方向，也可以是vertical方向
     direction: "horizontal",
     loop: true,
@@ -67,18 +62,76 @@
     pagination: ".swiper-pagination",
     // 这样，即使我们滑动之后， 定时器也不会被清除
     autoplayDisableOnInteraction: false,
-  });  
-  
-  function back(){
-        window.history.back(-1);
-    }
-   
+  });
 
-  </script>
+  function back() {
+    window.history.back(-1);
+  }
+
+
+</script>
+<style>
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 7.5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    z-index: 22;
+  }
+
+  .toptext {
+    width: 4rem;
+    margin: 0 0 0 1rem;
+    text-align: center;
+  }
+
+  .toptexttwo {
+    height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.35rem;
+  }
+
+  .fa-chevron-left {
+    margin-left: 0.2rem;
+  }
+
+  .fa-times {
+    margin-left: 1.2rem;
+  }
+  .name {
+    margin: 0.6rem 0 0 1.8rem;
+  }
+
+  .phone {
+    margin: 0.6rem 0 0 1.8rem;
+  }
+
+  .message {
+    margin: 0.6rem 0 0 1.8rem;
+  }
+
+  .text {
+    margin: 0.2rem 0 0 1.8rem;
+    width: 4rem;
+    height: 3rem;
+    border: 1px solid #b8b6b6;
+  }
+
+  .sub {
+    margin: 0.6rem 0 1rem 2.8rem;
+    background-color: #0099ff;
+    border: none;
+    border-radius: 2px;
+    width: 2rem;
+    height: 0.8rem;
+    color: white;
+
+  }
+</style>
+
 </html>
-
-
-
-
-
-
