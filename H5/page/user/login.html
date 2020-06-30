@@ -157,7 +157,15 @@
             alert("登录成功!"); 
             window.location.href="../../index.html";
           } else {
-            alert("登录失败,请重新登录!");
+            //该手机号未注册
+            if (res.msg == "该手机号未注册") {
+            // alert("123");
+            var isbeauty = confirm("该手机号未注册,是否前往注册页面？");
+            if (isbeauty) {
+              window.location.href = "../../zhuce.html";
+            } 
+            return;
+          }
           }
         },
       });

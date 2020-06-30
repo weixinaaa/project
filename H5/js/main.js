@@ -386,21 +386,6 @@ function swiperimg(data){
 }
 
 
-//点击底部图片跳转
-function bottomimg(data){
-  console.log(data)
-  switch(data){
-    case 'img2': window.location.href="./son.html?id=1&title=财税服务";
-    break;
-    case 'img4': window.location.href="./son.html?id=6&title=游戏";
-    break;
-    case 'img3': window.location.href="./son.html?id=3&title=精品特产";
-    break;
-    case 'img1': window.location.href="./son.html?id=2&title=法律政务";
-    break;
-    default: return;
-  }
-}
 
 
 

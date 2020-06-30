@@ -141,6 +141,23 @@
       var accuracy = res.accuracy; // 位置精度
     },
   });
+
+  
+//点击底部图片跳转
+function bottomimg(data){
+  console.log(data)
+  switch(data){
+    case 'img2': window.location.href="./driver_home.html";
+    break;
+    case 'img4': window.location.href="./son.html?id=6&title=游戏";
+    break;
+    case 'img3': window.location.href="./son.html?id=5&title=精品小说";
+    break;
+    case 'img1': window.location.href="./son.html?id=0&title=金融保险";
+    break;
+    default: return;
+  }
+}
 </script>
 
 </html>

@@ -2,17 +2,148 @@
 <html>
 <head>
 <meta charset="utf-8">
-<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script> 
+<script src="../js/jquery.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/all.js"></script>
+<script src="../utils/rem.js"></script>
 </head>
 <body>
 
-<div ng-app="" ng-init="firstName='John'">
-
-<p>在输入框中尝试输入:</p>
-<p>姓名: <input type="text" ng-model="firstName"></p>
-<p>你输入的为: {{ firstName }}</p>
-
-</div>
+<div>11111</div>
 
 </body>
 </html>
+
+<script>
+    var getarr="";
+    var cityarr=[];
+    var areaarr =[];
+    var citylength="";
+    $.ajax({
+    type: "get",
+    url: "http://47.96.28.95/msfw/pca/selPro",
+    data: {},
+    success: (res) => {
+       // console.log(res);
+        // for(let i=0;i<res.rows.length;i++){
+        //     console.log(res.rows[i].proName)
+        // }
+        // console.log(res.rows[2].id);
+        // console.log(res.rows[2].proName);
+        proname = res.rows[2].proName;
+        var proarr = "{ name: "+'"'+proname+'",'+"\n"+"sub:[";
+        localStorage.setItem("pro",proarr);
+     //   console.log(proarr)
+        proid =res.rows[2].id;
+        $.ajax({
+            type: "get",
+            url: "http://47.96.28.95/msfw/pca/selCity",
+            data: {
+              pid: proid,
+            },
+            success: (res) => {
+               //  console.log(res);
+                // console.log(res.rows[0].id);
+                // console.log(res.rows[0].cityName);
+                // console.log(res.rows.length);
+                 citylength = res.rows.length;
+                 localStorage.getItem("citynum",citylength);
+                var cityarr2="";
+                for(let i=0;i<3;i++){
+                var cityname = res.rows[i].cityName;
+               // console.log("1111"+cityname)
+                 cityarr2 = "\n{ name: "+'"'+cityname+'",'+"\n"+"sub:[a-";
+                 cityarr.push(cityarr2);
+                cityid = res.rows[i].id;
+                $.ajax({
+                    type: "get",
+                    url: "http://47.96.28.95/msfw/pca/selArea",
+                    data: {
+                      pid: cityid,
+                    },
+                    success: (res) => {
+                      //  console.log(res)
+                      var areaarr2 ="";
+                        var arealength = res.rows.length;
+                       
+                        var areaname = "";
+                        for(let i=0;i<arealength;i++){
+                            areaname =res.rows[i].areaName;
+                            areaarr2 += "\n{ name:"+'"'+areaname+'"},';
+                            
+                        }
+                        areaarr2 +="\n  ],type: 0,}\n\n-";
+                        areaarr.push(areaarr2);
+                       // console.log(areaarr);
+                      // console.log(proarr+cityarr+areaarr);
+                       //  console.log(cityarr);
+                       //  console.log(areaarr);
+                        localStorage.setItem("city",cityarr);
+                        localStorage.setItem("area",areaarr);
+
+                    //    getarr = localStorage.getItem("arr");
+                     // getarr = areaarr;
+                      // localStorage.setItem(i,areaarr)
+                    }
+                    
+                });
+            
+            }
+
+            }
+            
+        });
+        
+        
+    }
+});
+
+
+
+
+
+
+
+var proa = localStorage.getItem("pro");
+var citya=localStorage.getItem("city");
+var areaa=localStorage.getItem("area");
+var citynum = localStorage.getItem("citynum");
+citynum = Number(citynum)
+var some = " ],type: 1,},";
+// console.log(proa);
+citya = citya.split("-");
+areaa = areaa.split("-");
+// console.log(citya);
+// console.log(areaa);
+
+ console.log(citynum);
+// console.log(some);
+var content="";
+var sumcom="";
+for(let i=0;i<3;i++){
+    // console.log(citya[i])
+    // console.log(areaa[i])
+    content = citya[i] + areaa[i];
+    sumcom +=content;
+}
+
+console.log(proa+sumcom+some)
+
+
+
+// for(let i=0;i<2;i++){
+//     var getarr = localStorage.getItem(i);
+// console.log(getarr);
+// }
+
+
+// var obj= ["1","2"];
+// var arr=[];
+// for(var i =0;i<obj.length;i++){
+//     arr.push(obj[i]);
+ 
+// };
+// console.log(arr);
+</script>
+
+

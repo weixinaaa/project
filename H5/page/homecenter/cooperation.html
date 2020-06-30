@@ -22,13 +22,13 @@
 
 <body>
 
-  <div class="top">
+  <!-- <div class="top">
     <i class="fa fa-chevron-left fa-2x" aria-hidden="true" onclick="back()"></i>
     <i class="fa toptext">
       <div class="toptexttwo">商家合作</div>
     </i>
     <i class="fa fa-times fa-2x" aria-hidden="true"></i>
-  </div>
+  </div> -->
   <div class="swiper-container">
     <div class="swiper-wrapper">
       <img src="../../image/icon/banner.png" class="swiper-slide" onclick="swiperimg('banner')" />
@@ -55,7 +55,7 @@
     console.log(getlogin);
     if(getlogin == "true"){
       console.log("123");
-      var userid = localStorage.getItem("userid")
+      var userid = localStorage.getItem("userid");
       $.ajax({
             
                 url: url + "/partner/addPartner",

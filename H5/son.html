@@ -22,6 +22,7 @@
     .content {
       overflow-x: hidden;
     }
+
     .list {
       display: flex;
       padding: 10px 0;
@@ -68,18 +69,26 @@
         <img src="./image/back.png" onclick="toUrl()" />
         <p id="title"></p>
       </div>
-      <span class="type" id="type"> </span>
+
+      <span class="type" id="type">
+        <div class="fir" id="trunk">货车</div>
+        <div class="fir" id="iscar">轿车</div>
+      </span>
       <!--列表-->
       <div id="list"></div>
     </div>
   </body>
 
   <script>
+    $("#type").hide();
+    var trunkcar = sessionStorage.getItem("trunkcar");
+    console.log(trunkcar);
+    if (trunkcar == null) {
+      trunkcar = "1";
+    }
     $(function () {
-      //   alert("654");
-
       let myphone = localStorage.getItem("myphone");
-     
+
       if (!checkPhone(myphone)) {
         // alert("123");
         var isbeauty = confirm("确认前往登录/注册页面？");
@@ -99,8 +108,8 @@
             password: "",
           },
           success: (res) => {
-             console.log(res);
-         
+            console.log(res);
+
             if (res.msg == "该手机号已被注册") {
               // console.log(res.msg);
 
@@ -111,9 +120,7 @@
                 return;
               }
               if (id == 4 || id == 7) {
-                $("#type").html(
-                  ' <div class="fir">货车</div><div class="fir">轿车</div>'
-                );
+                $("#type").show();
               }
               switch (id) {
                 case 0:
@@ -156,23 +163,34 @@
                   ];
                   break;
                 case 4:
-                  hhh = [
-                    {
-                      imgurl: "./image/icon/car.png",
-                      title: "首汽约车",
-                      url: "http://mail.01zhuanche.com/",
-                    },
-                    {
-                      imgurl: "./image/icon/car1.png",
-                      title: "神州专车",
-                      url: "https://www.10101111.com/",
-                    },
-                    {
-                      imgurl: "./image/icon/car1.png",
-                      title: "滴滴",
-                      url: "https://www.didiglobal.com/",
-                    },
-                  ];
+                  if (trunkcar == "1") {
+                    hhh = [
+                      {
+                        imgurl: "./image/icon/car.png",
+                        title: "货拉拉",
+                        url: "http://mail.01zhuanche.com/",
+                      },
+                    ];
+                  } else if (trunkcar == "2") {
+                    hhh = [
+                      {
+                        imgurl: "./image/icon/car.png",
+                        title: "首汽约车",
+                        url: "http://mail.01zhuanche.com/",
+                      },
+                      {
+                        imgurl: "./image/icon/car1.png",
+                        title: "神州专车",
+                        url: "https://www.10101111.com/",
+                      },
+                      {
+                        imgurl: "./image/icon/car1.png",
+                        title: "滴滴",
+                        url: "https://www.didiglobal.com/",
+                      },
+                    ];
+                  }
+
                   break;
                 case 5:
                   hhh = [
@@ -183,6 +201,35 @@
                         "https://wx778e232fd776c31b.youshuge.com/?channel_id=10553",
                     },
                   ];
+                  break;
+                case 7:
+                  if (trunkcar == "1") {
+                    hhh = [
+                      {
+                        imgurl: "./image/icon/car.png",
+                        title: "货拉拉",
+                        url: "http://mail.01zhuanche.com/",
+                      },
+                    ];
+                  } else if (trunkcar == "2") {
+                    hhh = [
+                      {
+                        imgurl: "./image/icon/car.png",
+                        title: "首汽约车",
+                        url: "http://mail.01zhuanche.com/",
+                      },
+                      {
+                        imgurl: "./image/icon/car1.png",
+                        title: "神州专车",
+                        url: "https://www.10101111.com/",
+                      },
+                      {
+                        imgurl: "./image/icon/car1.png",
+                        title: "滴滴",
+                        url: "https://www.didiglobal.com/",
+                      },
+                    ];
+                  }
                   break;
                 default:
                   hhh = [
@@ -220,16 +267,26 @@
               }
               $("#list").html(html);
             } else {
-              var isbeauty = confirm("信息有误,确认前往注册页面？");
+              var isbeauty = confirm("确认前往登录/注册页面？");
               if (isbeauty) {
-               // window.location.href = "zhuce.html";
+                window.location.href = "person.html";
               } else {
-              //  window.location.href = "index.html";
+                window.location.href = "index.html";
               }
             }
           },
         });
       }
+    });
+
+    $("#trunk").click(function () {
+      sessionStorage.setItem("trunkcar", "1");
+      location.reload();
+    });
+
+    $("#iscar").click(function () {
+      sessionStorage.setItem("trunkcar", "2");
+      location.reload();
     });
   </script>
 </html>

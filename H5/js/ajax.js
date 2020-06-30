@@ -332,10 +332,11 @@ function qian_list() {
 }
 // 收益
 function qian() {
+  var userid = localStorage.getItem("userid");
   $.ajax({
     url: url + "/user/getCommissionBalanceById",
     data: {
-      id: 1,
+      id: userid,
     },
     success: (res) => {
       console.log(res);
