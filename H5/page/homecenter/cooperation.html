@@ -47,8 +47,37 @@
 
 </body>
 <script>
+
   function submit() {
-    // window.location.href = "./page/homecenter/contactus.html";
+  
+   
+    var getlogin = isuserlogin();
+    console.log(getlogin);
+    if(getlogin == "true"){
+      console.log("123");
+      var userid = localStorage.getItem("userid")
+      $.ajax({
+            
+                url: url + "/partner/addPartner",
+                data: {
+                  userId: userid,
+                  name: "好好吃呀",
+                  contact: "123",
+                  note:"123"
+                },
+                success: (res) => {
+                  console.log(res)
+                  if(res.msg == "成功"){
+                    alert("提交成功");
+                  }else{
+                    alert(res.msg)
+                  }
+                }
+            });
+    }else{
+      console.log("555")
+    }
+    
   }
   var mySwiper = new Swiper(".swiper-container", {
     // 轮播图的方向，也可以是vertical方向
@@ -65,10 +94,10 @@
   });
 
   function back() {
-    window.history.back(-1);
+    window.location.href="../../index.html";
   }
 
-
+  
 </script>
 <style>
   .top {
@@ -132,6 +161,8 @@
     color: white;
 
   }
+
+  
 </style>
 
 </html>

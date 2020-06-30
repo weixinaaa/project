@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>用户注册</title>
+    <title>登录</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -10,20 +10,20 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="./icon-css/css/font-awesome.min.css"
+      href="../../icon-css/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" type="text/css" href="./css/zhuce.css" />
-    <link rel="stylesheet" type="text/css" href="./css/all.css" />
-    <script src="./js/jquery.js"></script>
-    <script src="./js/ajax.js"></script>
-    <script src="./js/all.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/zhuce.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/all.css" />
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/ajax.js"></script>
+    <script src="../../js/all.js"></script>
   </head>
 
   <body>
     <!--返回-->
     <div class="back" style="margin-bottom: 20px;">
-      <img src="./image/back.png" />
-      <p>平台注册</p>
+      <img src="../../image/back.png" />
+      <p >平台登录</p>
     </div>
     <!--顶部-->
     <!-- 	<div class="top">
@@ -67,33 +67,7 @@
           </div>
         </div>
 
-        <!-- 注册方式 -->
-        <!--<div class="one">-->
-        <!--<div class="two">-->
-        <!--<i class="fa fa-car" aria-hidden="true"></i>是否成为车主-->
-        <!--</div>-->
-        <!--<input type="checkbox" name="" id="test">-->
-        <!--<select id="car" disabled>-->
-        <!--<option value ="车主">车主</option>-->
-        <!--<option value ="当前">当前</option>-->
-        <!--<option value ="其他">其他</option>-->
-        <!--</select>-->
-        <!--</div>-->
-
-        <!-- 邀请码 -->
-        <div class="one">
-          <div class="two">
-            <i class="fa fa-barcode fa-2x" aria-hidden="true"></i>邀请码
-          </div>
-          <input
-            type="text"
-            name=""
-            placeholder="请输入好友邀请码"
-            class="write"
-            click="neirong(this,请输入好友邀请码)"
-            id="invitation"
-          />
-        </div>
+       
       </div>
 
       <!-- 司机注册 -->
@@ -127,7 +101,7 @@
         class="read"
         checked="checked"
       />阅读并同意用户协议
-      <button class="zc-button" id="mmm">注册</button>
+      <button class="zc-button" id="mmm">登录</button>
     </div>
   </body>
 
@@ -144,7 +118,6 @@
       var phone = $("#phone").val();
       var password = $("#password").val();
       var phoneverify = $("#phoneverify").val();
-      var invitation = $("#invitation").val();
       var ID = GetUrlParam("id");
       var Title = GetUrlParam("title");
       if (!checkPhone(phone)) {
@@ -158,68 +131,42 @@
         return;
       }
       // alert("ID:"+ID);
-      //下面几行行测试用的,
+      //下面三行测试用的,
       // localStorage.setItem("myphone", phone);
-      // localStorage.setItem("userid", "123");
       // alert("注册成功!");
       // window.location.href = "index.html";
-      // return;
 
       console.log(Title);
       $.ajax({
-        url: url + "/user/register",
+        url: url + "/user/login",
         data: {
           tel: phone,
-          verificationCode: phoneverify,
-          InvitationCode1: invitation,
-          password: "",
+          verificationCode: phoneverify,    
         },
         success: (res) => {
           console.log(res);
-
-          if (res.msg == "该手机号已被注册") {
-            // alert("123");
-            var isbeauty = confirm("您已注册,是否前往登录页面？");
-            if (isbeauty) {
-              window.location.href = "./page/user/login.html";
-            } else {
-              window.location.href = "index.html";
-            }
-            return;
-          }
-          console.log(res.rows[0].userId);
+         
           console.log(phone);
           console.log(res.msg);
-          var userid = res.rows[0].userId;
-          if (res.msg == "成功!") {
+          
+          if (res.msg == "成功") {
+            console.log(res.data.userId);
+            var userid = res.data.userId;
             localStorage.setItem("myphone", phone);
-            localStorage.setItem("userid", userid);
-            alert("注册成功!");
-            window.location.href = "index.html";
+            localStorage.setItem("userid", userid);       
+            alert("登录成功!"); 
+            window.location.href="../../index.html";
           } else {
-            alert("注册失败,请重新注册!");
+            alert("登录失败,请重新登录!");
           }
-
-          // toUrl("driver_home.html?id=" + ID + "&title=" + Title);
         },
       });
     });
 
     $(".back").click(function () {
-      window.location.href = "./index.html"; //点击跳转
+      window.history.go(-1); //点击跳转
     });
-    $("#driver").click(function () {
-      console.log(123);
-      $("#left").hide();
-      $("#right").show();
-      $("#driver").addClass("active").siblings().removeClass("active");
-    });
-    $("#passenger").click(function () {
-      console.log(123);
-      $("#right").hide();
-      $("#left").show();
-      $("#passenger").addClass("active").siblings().removeClass("active");
-    });
+   
 
     function getcode() {
       var phone = $("#phone").val();

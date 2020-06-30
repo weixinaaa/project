@@ -30,7 +30,7 @@
 </div>
 
 <div id="qian">
-	<p class="money">￥364.00</p>
+	<p class="money" id="getmoney"></p>
 </div>
 	<button id="tx">提现</button>
 	<button id="detail">查看详情</button>
@@ -47,6 +47,39 @@
     })
     $("#detail").click(function () {
         window.location.href="shouyi_detail.html"  //点击跳转
+	})
+	
+	// 收益
+function qian() {
+    $.ajax({
+        type:"get",
+        url: url + "/user/getCommissionBalanceById",
+        data: {
+            id: 1,
+        },
+        success: res => {
+            console.log(res) 
+            var getprice=res.data;
+            document.getElementById("getmoney").innerHTML = "￥"+hasDot(getprice);
+            
+        }
     })
+}
+function hasDot(num){
+    if(!isNaN(num)){
+        
+        if((num + '').indexOf('.') != -1){     
+             var pricelist = (String(num)).split(".");
+             var decimal = pricelist[1];
+             if(decimal.length == 1){
+                return num.toFixed(2);
+             }else if(decimal.length >= 2){
+                return num;
+             }
+        }else{
+            return num.toFixed(2);
+        }   
+    }
+}
 </script>
 </html>

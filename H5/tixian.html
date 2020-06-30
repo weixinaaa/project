@@ -84,22 +84,23 @@
   <script src="./js/jquery.js"></script>
   <script src="./layui/layui.js"></script>
   <script>
-	  $("#price").text("9.88");
+    qian();
+
     layui.use("layer", function () {
       var layer = layui.layer;
       $("#onload").click(function () {
         var banknumber = $("#banknumber").val();
         var bank = $("#bank").val();
         var name = $("#name").val();
-		var number = $("#number").val();
-		
-        if (!(regTest(banknumber))) {	
-		  //console.log(regTest('62108124700042500'));		
+        var number = $("#number").val();
+
+        if (!regTest(banknumber)) {
+          //console.log(regTest('62108124700042500'));
           layer.msg("请输入正确的银行卡卡号");
           return;
         }
 
-		//判断银行卡号，一般银行卡位数为16位，17位，19位，且第一位不为0
+        //判断银行卡号，一般银行卡位数为16位，17位，19位，且第一位不为0
         function regTest(data) {
           var regExp = /^([1-9]{1})(\d{15}|\d{16}|\d{18})$/;
           return regExp.test(data);
@@ -125,23 +126,23 @@
           layer.msg("请输入正确的提现金额");
           return;
         }
-		var userid = sessionStorage.getItem("userid");
-		    if(userid == null){
-        alert("您还未登录");
-        return;
-			}
+        var userid = localStorage.getItem("userid");
+        if (userid == null) {
+          alert("您还未登录");
+          return;
+        }
         $.ajax({
-          url: url + "/user/addCashWithdrawalBill",
+          url: "http://47.96.28.95/msfw/user/addCashWithdrawalBill",
           data: {
-            userId: userid,
-            openingBank: bank,
             nameOfAccountHolder: name,
+            openingBank: bank,
             bankCardNumber: banknumber,
             amountOfMoney: number,
+            userId: userid,
           },
           success: (res) => {
             console.log(res);
-            layer.msg("提现成功");
+            alert("提现申请已提交,请等待审核");
           },
         });
       });
@@ -150,5 +151,37 @@
     $(".back").click(function () {
       window.location.href = "shouyi.html"; //点击跳转
     });
+
+    // 收益
+    function qian() {
+      $.ajax({
+        url: url + "/user/getCommissionBalanceById",
+        data: {
+          id: 1,
+        },
+        success: (res) => {
+          console.log(res);
+          var getprice = res.data;
+          $("#price").text(hasDot(getprice));
+        },
+      });
+    }
+    function hasDot(num) {
+      if (!isNaN(num)) {
+      
+        if ((num + "").indexOf(".") != -1) {
+          var pricelist = String(num).split(".");
+          var decimal = pricelist[1];
+          if (decimal.length == 1) {
+            return num.toFixed(2);
+          } else if (decimal.length >= 2) {
+            return num;
+          }
+        } else {
+          alert("123");
+          return num.toFixed(2);
+        }
+      }
+    }
   </script>
 </html>

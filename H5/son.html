@@ -79,13 +79,12 @@
       //   alert("654");
 
       let myphone = localStorage.getItem("myphone");
-      //  alert(myphone)
-      //  alert(checkPhone(myphone))
+     
       if (!checkPhone(myphone)) {
         // alert("123");
-        var isbeauty = confirm("您还未注册,确认前往注册页面？");
+        var isbeauty = confirm("确认前往登录/注册页面？");
         if (isbeauty) {
-          window.location.href = "zhuce.html";
+          window.location.href = "person.html";
         } else {
           window.location.href = "index.html";
         }
@@ -96,13 +95,13 @@
           url: url + "/user/register",
           data: {
             tel: myphone,
-            password: "password",
+            verificationCode: "",
+            password: "",
           },
           success: (res) => {
-            // console.log(res);
-            // console.log(myphone);
-            // console.log(res.msg);
-            if (res.msg == "该手机号已被注册！") {
+             console.log(res);
+         
+            if (res.msg == "该手机号已被注册") {
               // console.log(res.msg);
 
               var hhh = [];
@@ -223,9 +222,9 @@
             } else {
               var isbeauty = confirm("信息有误,确认前往注册页面？");
               if (isbeauty) {
-                window.location.href = "zhuce.html";
+               // window.location.href = "zhuce.html";
               } else {
-                window.location.href = "index.html";
+              //  window.location.href = "index.html";
               }
             }
           },

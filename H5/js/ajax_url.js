@@ -1,7 +1,8 @@
 console.log("已经进入ajax.js");
 function getUrl() {
   //服务器运行时打开
-  var url = "http://chejiajia.365hy.com/msfw/";
+ // var url = "http://chejiajia.365hy.com/msfw/";
+ var url = "http://47.96.28.95:80/msfw/"
   //本地运行时打开
   // var url = "/api";
   //var url = "httpi、://127.0.0.1:8080/zjfxh";

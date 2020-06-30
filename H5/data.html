@@ -1,121 +1,129 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>个人资料</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
-	<link rel="stylesheet" href="./css/all.css">
-	<link rel="stylesheet" href="./layui/css/layui.css">
+  <head>
+    <title>个人资料</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <link rel="stylesheet" href="./css/all.css" />
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+  </head>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: rgb(242, 245, 254);
+    }
+    span {
+      width: 40%;
+    }
+    .input {
+      border: 0;
+      /*color: #ccc;*/
+      text-align: right;
+      width: 60%;
+      font-size: 15px;
+    }
+    .list {
+      width: 90%;
+      margin: 0 auto;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+    .sex {
+      width: 60%;
+      text-align: center;
+	 
+    }
+    #boy {
+      margin-left: 80px;
+    }
+    .sex input {
+      margin-left: 20px;
+      margin-right: 5px;
+    }
+    .button {
+      width: 70%;
+      border-radius: 50px;
+      font-size: 18px;
+      border: 0;
+      margin: 10px 0;
+      color: white;
+      padding: 10px 0;
+    }
+    .upload {
+      background-color: rgb(62, 157, 254);
+    }
+    .kong {
+      background-color: rgb(153, 153, 153);
+    }
+    .anniu {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .top {
+      margin-top: 10px;
+      background-color: white;
+      margin-bottom: 50px;
+      padding: 20px 0;
+    }
+  </style>
+  <body>
+    <!--返回-->
+    <div class="back">
+      <img src="./image/back.png" />
+      <p>个人资料</p>
+    </div>
 
-</head>
-<style type="text/css">
-body{
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	background-color: rgb(242,245,254);
-}
-span{
-	width: 40%;
-}
-.input{
-	border: 0;
-	/*color: #ccc;*/
-	text-align: right;
-	width: 60%;
-	font-size: 15px;
-}
-	.list{
-		width: 90%;
-		margin: 0 auto;
-		border-bottom:1px solid #ccc;
-		padding: 10px 0;
-		display: flex;
-		align-items: center;
-		text-align: left;
-	}
-	.sex{
-		width: 60%;text-align: center;
-	}
-	.sex input{
-		margin-left: 30px;
-		margin-right: 5px;
-	}
-	.button{
-		width: 70%;
-		border-radius: 50px;
-		font-size: 18px;
-		border:0;
-		margin: 10px 0;
-		color: white;
-		padding: 10px 0;
-	}
-	.upload{
-		background-color: rgb(62,157,254);
-	}
-	.kong{
-		background-color: rgb(153,153,153);
-	}
-	.anniu{
-		text-align: center;
-		margin-top: 30px;
-	}
-	.top{
-		margin-top: 10px;
-		background-color: white;margin-bottom: 50px;padding:20px 0;
-	}
-</style>
-<body>
-
-<!--返回-->
-<div class="back">
-	<img src="./image/back.png">
-	<p >个人资料</p>
-</div>
-
-	<div class="top" id="ziliao">
-		<!--<img src="./image/jr.jpg" style="width: 30%;border-radius: 100%">-->
-		<!--<div class="list">-->
-			<!--<span>姓名</span>-->
-			<!--<input type="text" name="" placeholder="请输入姓名" class="input">-->
-		<!--</div>-->
-		<!--<div class="list">-->
-			<!--<span>联系电话</span>-->
-			<!--<input type="text" name="" placeholder="请输入电话" class="input">-->
-		<!--</div>-->
-		<!--<div class="list">-->
-			<!--<span>性别</span>-->
-			<!--<div class="sex">-->
-				<!--<input name="sex" type="radio" value="">男-->
-				<!--<input name="sex" type="radio" value="">女-->
-			<!--</div>-->
-		<!--</div>-->
-		<!--<div class="list">-->
-			<!--<span>邮箱</span>-->
-			<!--<input type="text" name="" placeholder="XXXXXXXXXXXXX@163.com" class="input">-->
-		<!--</div>-->
-	</div>
-	<button class="button upload" id="tijiao">提交</button>
-	<button class="button kong">重填</button>
-</body>
-<script src="./js/ajax.js"></script>
-<script src="./js/jquery.js"></script>
-<script src="./layui/layui.js"></script>
-<script type="text/javascript">
+    <div class="top" id="ziliao">
+      <!--<img src="./image/jr.jpg" style="width: 30%;border-radius: 100%">-->
+      <!--<div class="list">-->
+      <!--<span>姓名</span>-->
+      <!--<input type="text" name="" placeholder="请输入姓名" class="input">-->
+      <!--</div>-->
+      <!--<div class="list">-->
+      <!--<span>联系电话</span>-->
+      <!--<input type="text" name="" placeholder="请输入电话" class="input">-->
+      <!--</div>-->
+      <!--<div class="list">-->
+      <!--<span>性别</span>-->
+      <!--<div class="sex">-->
+      <!--<input name="sex" type="radio" value="">男-->
+      <!--<input name="sex" type="radio" value="">女-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--<div class="list">-->
+      <!--<span>邮箱</span>-->
+      <!--<input type="text" name="" placeholder="XXXXXXXXXXXXX@163.com" class="input">-->
+      <!--</div>-->
+    </div>
+    <button class="button upload" id="tijiao">提交</button>
+    <button class="button kong">重填</button>
+  </body>
+  <script src="./js/ajax.js"></script>
+  <script src="./js/jquery.js"></script>
+  <script src="./layui/layui.js"></script>
+  <script type="text/javascript">
     $("#tijiao").click(function () {
-        ziliao_onload()
-	})
+      ziliao_onload();
+    });
     $(".back").click(function () {
-        window.location.href="person.html"  //点击跳转
-    })
-        let yaoqing=$("#yaoqing").val()
-layui.use('layer', function(){
-  var layer = layui.layer;
-    ziliao()
-  
-});  
+      window.location.href = "person.html"; //点击跳转
+    });
+    let yaoqing = $("#yaoqing").val();
+    layui.use("layer", function () {
+      var layer = layui.layer;
+      ziliao();
+    });
     // if (yaoqing =='') {
     //         $("#yaoqing").attr("readonly")
     //     }
-</script>
+  </script>
 </html>

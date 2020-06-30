@@ -24,22 +24,27 @@ body{
 	width: 80%;margin:0 auto;display: flex;align-items: center;
 }
 .list-tx{
-	width: 20%;border-radius: 100%;margin: 0 10px;
+	border-radius: 100%;;
 }
 .list-teamname{
-	width: 55%;
+	width: 400px;
+	margin:0px 0 0 10px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical
+	-webkit-box-orient: vertical;
+	/* background-color: aqua; */
 }
 .list-name{
+	width: 400px;
+	margin:0px 0 0 80px;
 	text-overflow: ellipsis;
 	display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
 	-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
 	-webkit-line-clamp: 1; /** 显示的行数 **/
 	overflow: hidden;  /** 隐藏超出的内容 **/
+	/* background-color: violet; */
 }
 </style>
 <body>
@@ -76,7 +81,7 @@ body{
 			pageSize:10,
 		},
 		success:res=>{
-		    console.log(res)
+		    console.log(res);
 			let html='';
 		    let top='';
 		    for (i=0;i<res.data.length;i++){
@@ -88,7 +93,7 @@ body{
                     '\t\t</div>\n' +
                     '\t</div>'
 				}
-            top+='<p style="width: 85%">团队成员</p>\n' +
+            top+='<p style="width: 75%;margin-left:10px;">团队成员</p>\n' +
                 '\t\t<p style="text-align: center;">'+ res.data.length+'人</p>'
 
             document.getElementById("team").innerHTML=html
