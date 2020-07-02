@@ -131,6 +131,8 @@
           alert("您还未登录");
           return;
         }
+        var userid = localStorage.setItem("userid");
+        console.log(userid);
         $.ajax({
           url: "http://47.96.28.95/msfw/user/addCashWithdrawalBill",
           data: {

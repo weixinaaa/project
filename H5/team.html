@@ -56,7 +56,7 @@ body{
 
 	<div class="top" id="top">
 		<p style="width: 85%">团队成员</p>
-		<p style="text-align: center;">30人</p>
+		<p style="text-align: center;">0人</p>
 	</div>
 <div id="team">
 
@@ -73,16 +73,20 @@ body{
 <script src="./js/ajax.js"></script>
 <script src="./js/jquery.js"></script>
 <script>
+	var userid = localStorage.getItem("userid");
+	console.log(userid);
 	$.ajax({
 		url:url+"/user/queryTeamByUserId",
 		data:{
-		    userId:1,
+		    userId:12,
 			pageNo:1,
 			pageSize:10,
 		},
 		success:res=>{
-		    console.log(res);
-			let html='';
+			console.log(res);
+			if(res.code == "0"){
+				
+				let html='';
 		    let top='';
 		    for (i=0;i<res.data.length;i++){
 		        html+='<div class="list">\n' +
@@ -98,6 +102,8 @@ body{
 
             document.getElementById("team").innerHTML=html
             document.getElementById("top").innerHTML=top
+			}
+			
 		}
 	})
 

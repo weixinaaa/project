@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="../js/jquery.js"></script>
+<script src="../js/ajax.js"></script>
+<script src="../js/all.js"></script>
+<script src="../utils/rem.js"></script>
+</head>
+<body>
+
+<div>11111</div>
+
+</body>
+</html>
+
+<script>
+    var getarr="";
+    var cityarr=[];
+    var areaarr =[];
+    var citylength="";
+    $.ajax({
+    type: "get",
+    url: "http://47.96.28.95/msfw/pca/selPro",
+    data: {},
+    success: (res) => {
+        console.log(res);
+        
+        proid = "44";
+        $.ajax({
+            type: "get",
+            url: "http://47.96.28.95/msfw/pca/selCity",
+            data: {
+              pid: proid,
+            },
+            success: (res) => {
+                 console.log(res);
+                 cityid="4420";
+                $.ajax({
+                    type: "get",
+                    url: "http://47.96.28.95/msfw/pca/selArea",
+                    data: {
+                      pid: cityid,
+                    },
+                    success: (res) => {
+                        console.log(res)
+                      
+                    }
+                    
+                });
+            
+            
+
+            }
+            
+        });
+        
+        
+    }
+});
+
+
+
+
+
+
+
+//console.log(proa+sumcom+some)
+
+
+
+// for(let i=0;i<2;i++){
+//     var getarr = localStorage.getItem(i);
+// console.log(getarr);
+// }
+
+
+// var obj= ["1","2"];
+// var arr=[];
+// for(var i =0;i<obj.length;i++){
+//     arr.push(obj[i]);
+ 
+// };
+// console.log(arr);
+</script>
+
+

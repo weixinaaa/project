@@ -1,13 +1,13 @@
 var url = "http://47.96.28.95:80/msfw/";
 
-
 //var url="http://chejiajia.365hy.com/msfw/"
 // 个人资料
+var userid = localStorage.getItem("userid");
 function ziliao() {
   $.ajax({
     url: url + "/user/PersonalInformation",
     data: {
-      userId: 1,
+      userId: 5,
     },
     success: (res) => {
       console.log(res);
@@ -423,44 +423,41 @@ function checkPhone(phone) {
   }
 }
 
-
-
-
 //判断是否登录
 
 function isuserlogin() {
-    var myphone = localStorage.getItem("myphone");
-    var userid = localStorage.getItem("userid");
-    let getlogin="";
-    if (myphone != undefined && userid != null) {
-      $.ajax({
-        url: url + "/user/register",
-        data: {
-          tel: myphone,
-          verificationCode: "",
-          password: "",
-        },
-        success: (res) => {
-          console.log(res);
-          if (res.msg == "该手机号已被注册") {            
-            sessionStorage.setItem("delogin","true");
-          } else {
-              var isbeauty = confirm("确认前往登录/注册页面？");
-              if (isbeauty) {
-                window.location.href = "../person.html";
-              } 
-             
-              sessionStorage.setItem("delogin","false");
+  var myphone = localStorage.getItem("myphone");
+  var userid = localStorage.getItem("userid");
+  let getlogin = "";
+  if (myphone != undefined && userid != null) {
+    $.ajax({
+      url: url + "/user/register",
+      data: {
+        tel: myphone,
+        verificationCode: "",
+        password: "",
+      },
+      success: (res) => {
+        console.log(res);
+        if (res.msg == "该手机号已被注册") {
+          sessionStorage.setItem("delogin", "true");
+        } else {
+          var isbeauty = confirm("确认前往登录/注册页面？");
+          if (isbeauty) {
+            window.location.href = "../../person.html";
           }
-        },
-      });
-    } else {
-      var isbeauty = confirm("确认前往登录/注册页面？");
-              if (isbeauty) {
-                window.location.href = "../person.html";
-              } 
-              sessionStorage.setItem("delogin","false");
+
+          sessionStorage.setItem("delogin", "false");
+        }
+      },
+    });
+  } else {
+    var isbeauty = confirm("确认前往登录/注册页面？");
+    if (isbeauty) {
+      window.location.href = "../../person.html";
     }
-    getlogin = sessionStorage.getItem("delogin");
-    return getlogin;
+    sessionStorage.setItem("delogin", "false");
   }
+  getlogin = sessionStorage.getItem("delogin");
+  return getlogin;
+}

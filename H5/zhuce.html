@@ -187,15 +187,17 @@
             }
             return;
           }
-          console.log(res.rows[0].userId);
-          console.log(phone);
           console.log(res.msg);
-          var userid = res.rows[0].userId;
           if (res.msg == "成功!") {
+            console.log(res.rows[0].userId);
+            console.log(phone);
+            var userid = res.rows[0].userId;
             localStorage.setItem("myphone", phone);
             localStorage.setItem("userid", userid);
             alert("注册成功!");
             window.location.href = "index.html";
+          } else if (res.msg == "验证码错误！") {
+            alert("验证码错误!");
           } else {
             alert("注册失败,请重新注册!");
           }

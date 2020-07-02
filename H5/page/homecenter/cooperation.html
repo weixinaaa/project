@@ -49,13 +49,28 @@
 <script>
 
   function submit() {
-  
    
+   var myname =  $(".name").val();
+   var myphone =  $(".phone").val();
+   var mymessage =  $(".text").val();
+   if(myname == ""){
+      alert("请输入姓名a");
+      return;
+   }else if(myphone == ""){
+    alert("请输入联系方式");
+      return;
+   }
+   console.log(myname);
+   console.log(myphone);
+   console.log(mymessage);
+
+    localStorage.setItem("userid","57");
     var getlogin = isuserlogin();
     console.log(getlogin);
     if(getlogin == "true"){
-      console.log("123");
+     
       var userid = localStorage.getItem("userid");
+      console.log(userid);
       $.ajax({
             
                 url: url + "/partner/addPartner",
@@ -75,7 +90,7 @@
                 }
             });
     }else{
-      console.log("555")
+      alert("提交失败!");
     }
     
   }

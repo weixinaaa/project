@@ -1,102 +1,64 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<script src="../js/jquery.js"></script>
-<script src="../js/ajax.js"></script>
-<script src="../js/all.js"></script>
-<script src="../utils/rem.js"></script>
-</head>
-<body>
 
-<div>11111</div>
-
-</body>
+<!DOCTYPE HTML> 
+<html> 
+    <head>  
+        <meta charset="GBK" />
+        <title>简单封装$.ajax()方法</title> 
+        
+        <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+        <script language="javascript" type="text/javascript">
+ 
+            function myfunc(data) {  //自己的函数   可以对data 这个数据对象进行操作或遍历数据
+                console.log(data.name);
+            }
+ 
+            //下面的./newjson.json指同目录下的newjson,json文件
+            ajax_all_Filed("true", "false", "GET", "./newjson.json", "json", "", myfunc);//调用函数
+ 
+            /*
+             * AJAX针对所有的数据类型的函数
+             * 
+             * @param {type} sync 是否异步传输 默认是true是异步。 false就是同步传输 
+             * @param {type} cache 是否开启缓存
+             * @param {type} type ajax的传输类型 POST 或 GET
+             * @param {type} url  是传输的目标url （注意：这个url要非常注意，如果路径不对就会导致错误  !--所以是重点--）
+             * @param {type} datatype 传输数据的类型可以是 text:纯文本 | html:HTML信息包括script标签会在插入DOM时执行 | script:返回纯文本JavaScript代码 | json:json数据 | jsonp:jsonp数据格式 | xml:返回XML文档 
+             * @param {type} data 是要传输的数据（注意:数据是什么格式datatype就要是对应的格式，否则传输失败）
+             * @param {type} func 当ajax执行成功之后跳转到自己的函数  注意:这里只需要写上自己函数的名称即可
+             * @returns {undefined}
+             */
+            function ajax_all_Filed(sync, cache, type, url, datatype, data, func) { //封装ajax的一些常用参数  //data数据可以为空
+                $.ajax({
+                    async: sync,
+                    cache: cache,
+                    type: type,
+                    url: url,
+                    dataType: datatype,
+                    data: data,
+                    beforSend: function () {
+                        // 禁用按钮防止重复提交
+                        $("#submit").attr({disabled: "disabled"});
+                    },
+                    error: function (data) {
+                        //请求失败时被调用的函数 
+                        alert("传输失败:" + data);
+                    },
+                    success: function (data) {
+                        func(data);
+                    }
+                });
+            }
+ 
+ 
+ 
+ 
+        </script> 
+    </head> 
+    <body > 
+        <div>111</div> 
+    </body> 
 </html>
 
-<script>
-    var getarr="";
-    var cityarr=[];
-    var areaarr =[];
-    var citylength="";
-    $.ajax({
-    type: "get",
-    url: "http://47.96.28.95/msfw/pca/selPro",
-    data: {},
-    success: (res) => {
-       // console.log(res);
-        // for(let i=0;i<res.rows.length;i++){
-        //     console.log(res.rows[i].proName)
-        // }
-        // console.log(res.rows[2].id);
-        // console.log(res.rows[2].proName);
-        proname = res.rows[2].proName;
-        var proarr = "{ name: "+'"'+proname+'",'+"\n"+"sub:[";
-        localStorage.setItem("pro",proarr);
-     //   console.log(proarr)
-        proid =res.rows[2].id;
-        $.ajax({
-            type: "get",
-            url: "http://47.96.28.95/msfw/pca/selCity",
-            data: {
-              pid: proid,
-            },
-            success: (res) => {
-               //  console.log(res);
-                // console.log(res.rows[0].id);
-                // console.log(res.rows[0].cityName);
-                // console.log(res.rows.length);
-                 citylength = res.rows.length;
-                 localStorage.getItem("citynum",citylength);
-                var cityarr2="";
-                for(let i=0;i<3;i++){
-                var cityname = res.rows[i].cityName;
-               // console.log("1111"+cityname)
-                 cityarr2 = "\n{ name: "+'"'+cityname+'",'+"\n"+"sub:[a-";
-                 cityarr.push(cityarr2);
-                cityid = res.rows[i].id;
-                $.ajax({
-                    type: "get",
-                    url: "http://47.96.28.95/msfw/pca/selArea",
-                    data: {
-                      pid: cityid,
-                    },
-                    success: (res) => {
-                      //  console.log(res)
-                      var areaarr2 ="";
-                        var arealength = res.rows.length;
-                       
-                        var areaname = "";
-                        for(let i=0;i<arealength;i++){
-                            areaname =res.rows[i].areaName;
-                            areaarr2 += "\n{ name:"+'"'+areaname+'"},';
-                            
-                        }
-                        areaarr2 +="\n  ],type: 0,}\n\n-";
-                        areaarr.push(areaarr2);
-                       // console.log(areaarr);
-                      // console.log(proarr+cityarr+areaarr);
-                       //  console.log(cityarr);
-                       //  console.log(areaarr);
-                        localStorage.setItem("city",cityarr);
-                        localStorage.setItem("area",areaarr);
-
-                    //    getarr = localStorage.getItem("arr");
-                     // getarr = areaarr;
-                      // localStorage.setItem(i,areaarr)
-                    }
-                    
-                });
-            
-            }
-
-            }
-            
-        });
-        
-        
-    }
-});
 
 
 
@@ -104,46 +66,5 @@
 
 
 
-var proa = localStorage.getItem("pro");
-var citya=localStorage.getItem("city");
-var areaa=localStorage.getItem("area");
-var citynum = localStorage.getItem("citynum");
-citynum = Number(citynum)
-var some = " ],type: 1,},";
-// console.log(proa);
-citya = citya.split("-");
-areaa = areaa.split("-");
-// console.log(citya);
-// console.log(areaa);
-
- console.log(citynum);
-// console.log(some);
-var content="";
-var sumcom="";
-for(let i=0;i<3;i++){
-    // console.log(citya[i])
-    // console.log(areaa[i])
-    content = citya[i] + areaa[i];
-    sumcom +=content;
-}
-
-console.log(proa+sumcom+some)
-
-
-
-// for(let i=0;i<2;i++){
-//     var getarr = localStorage.getItem(i);
-// console.log(getarr);
-// }
-
-
-// var obj= ["1","2"];
-// var arr=[];
-// for(var i =0;i<obj.length;i++){
-//     arr.push(obj[i]);
- 
-// };
-// console.log(arr);
-</script>
 
 
