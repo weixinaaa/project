@@ -10,6 +10,14 @@
     <!--手机端适配-->
     <link rel="stylesheet" href="./css/all.css" />
     <link rel="stylesheet" href="./layui/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="./swiper/css/swiper.min.css" />
+    <script src="./js/ajax.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./layui/layui.js"></script>
+    <script src="./swiper/js/swiper.min.js"></script>
+    <script src="./js/hSdrop.js"></script>
+    <script src="./js/bank.js"></script>
   </head>
   <style type="text/css">
     body {
@@ -62,7 +70,25 @@
         id="banknumber"
       />
       <p>开户行</p>
-      <input type="" placeholder="请输入开户银行" name="" id="bank" />
+
+      <div class="container">
+        <div class="x12">
+          <div class="x12 m-form-gp">
+            <div class="sele-bp">
+              <input
+                type=""
+                name=""
+                id="bank"
+                value=""
+                placeholder="请选择开户银行"
+                disabled="disabled"
+              />
+            </div>
+            <!-- 下拉数据 -->
+            <div class="display-none"></div>
+          </div>
+        </div>
+      </div>
       <p>开户姓名</p>
       <input type="" placeholder="请输入开户姓名" name="" id="name" />
       <p>提现金额</p>
@@ -80,15 +106,57 @@
       <button id="onload">提现</button>
     </div>
   </body>
-  <script src="./js/ajax.js"></script>
-  <script src="./js/jquery.js"></script>
-  <script src="./layui/layui.js"></script>
+
   <script>
     qian();
-
+    // $('#bank').blur(function () {
+    //         console.log("12222");
+    //     });
     layui.use("layer", function () {
       var layer = layui.layer;
       $("#onload").click(function () {
+        console.log("156");
+
+      //   $.ajax({
+      //     //type: "get",
+      //     url: "http://www.aazx.store:8089/mavendemo/role/selRole",
+      //     // dataType: "jsonp",
+      //     // jsonp: "successCallback",
+      //     // Callback: 'successCallback',
+      //     data: {},
+      //     success: (res) => {
+      //       console.log(res);
+      //       console.log(res.data[0].roleName);
+      //     },
+      //   });
+      //  return;
+
+        $.ajax({
+          url: url + "/bank/selBank",
+          data: {},
+          success: (res) => {
+            // console.log(res);
+            // console.log(res.rows[0].bankName);
+            var listlength = res.rows.length;
+            var banknumber = "";
+            var bankname = "";
+            var bankid = "";
+            var banklist = "";
+
+            // for(let i=0;i<listlength;i++){
+            //   banknumber = res.rows[i].bankNumber;
+            //   bankname = res.rows[i].bankName;
+            //   bankid= res.rows[i].id;
+            //   banklist +="{ bankNumber:"+'"'+banknumber+'",'+
+            //   " bankName:"+'"'+bankname+'",'+
+            //   " id:"+'"'+bankid+'"},\n'
+            // }
+            // console.log(banklist);
+          },
+        });
+        //    console.log("1555");
+        // return;
+
         var banknumber = $("#banknumber").val();
         var bank = $("#bank").val();
         var name = $("#name").val();
@@ -105,11 +173,22 @@
           var regExp = /^([1-9]{1})(\d{15}|\d{16}|\d{18})$/;
           return regExp.test(data);
         }
+        //判断开户行
 
         if (bank == "") {
-          layer.msg("请输入开户银行");
+          layer.msg("请选择开户银行");
           return;
         }
+        openacc = $("#bank").val();
+        //   console.log(openacc);
+        //  console.log(bankinfo);
+        for (let i = 0; i < bankinfo.length; i++) {
+          if (bankinfo[i].bankName == openacc) {
+            console.log(bankinfo[i].bankNumber);
+            console.log(bankinfo[i].bankName);
+          }
+        }
+
         if (name == "") {
           layer.msg("请输入开户姓名");
           return;
@@ -131,7 +210,7 @@
           alert("您还未登录");
           return;
         }
-        var userid = localStorage.setItem("userid");
+        var userid = localStorage.getItem("userid");
         console.log(userid);
         $.ajax({
           url: "http://47.96.28.95/msfw/user/addCashWithdrawalBill",
@@ -163,7 +242,7 @@
           id: userid,
         },
         success: (res) => {
-          console.log(res);
+          // console.log(res);
           var getprice = res.data;
           $("#price").text(hasDot(getprice));
         },
@@ -171,7 +250,6 @@
     }
     function hasDot(num) {
       if (!isNaN(num)) {
-      
         if ((num + "").indexOf(".") != -1) {
           var pricelist = String(num).split(".");
           var decimal = pricelist[1];
@@ -181,10 +259,29 @@
             return num;
           }
         } else {
-          alert("123");
           return num.toFixed(2);
         }
       }
     }
+
+    new hSdrop({
+      els: ".sele-bp",
+    });
+
+    //	 console.log(bankinfo);
+    //     console.log(res.rows.length);
+    //     console.log(res.rows[0].bankName);
+    var html = "";
+    var bankname = "";
+    var banklength = bankinfo.length;
+    // console.log(banklength)
+    for (i = 0; i < banklength; i++) {
+      //console.log(i);1
+      // html += "<div>" + "123" + "</div>\n";
+      bankname = bankinfo[i].bankName;
+      html += "<div>" + bankname + "</div>";
+    }
+    // console.log(html);
+    $(".display-none").html(html);
   </script>
 </html>

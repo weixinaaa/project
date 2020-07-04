@@ -21,10 +21,18 @@ body{
 	margin: 10px 0
 }
 .list-in{
-	width: 80%;margin:0 auto;display: flex;align-items: center;
+	width: 98%;margin:0 auto;display: flex;align-items: center;
+	
 }
 .list-tx{
 	border-radius: 100%;;
+	width:30px;
+	margin:0px 0 0 30px;
+}
+.list-tximg{
+	border-radius: 100%;
+	width:30px;
+	margin:0px 0 0 70px;
 }
 .list-teamname{
 	width: 400px;
@@ -38,7 +46,7 @@ body{
 }
 .list-name{
 	width: 400px;
-	margin:0px 0 0 80px;
+	margin:0px 0 0 10px;
 	text-overflow: ellipsis;
 	display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
 	-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
@@ -78,7 +86,7 @@ body{
 	$.ajax({
 		url:url+"/user/queryTeamByUserId",
 		data:{
-		    userId:12,
+		    userId:userid,
 			pageNo:1,
 			pageSize:10,
 		},
@@ -92,7 +100,8 @@ body{
 		        html+='<div class="list">\n' +
                     '\t\t<div class="list-in">\n' +
                     '\t\t\t<img src="'+ res.data[i].img+'" class="list-tx">\n' +
-                    '\t\t\t<span class="list-teamname">'+ res.data[i].teamNickname+'</span>\n' +
+					'\t\t\t<span class="list-teamname">'+ res.data[i].teamNickname+'</span>\n' +
+					'\t\t\t<img src="'+ res.data[i].img+'" class="list-tximg">\n' +
                     '\t\t\t<span class="list-name">'+ res.data[i].name+'</span>\n' +
                     '\t\t</div>\n' +
                     '\t</div>'

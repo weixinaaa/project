@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Swiper遮罩弹出菜单</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.mobile.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <script src="../../js/ajax.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="x12">
+        <div class="x12 m-form-gp">
+       
+          <div class="sele-bp">
+            <input
+              type="text"
+              name=""
+              id=""
+              value=""
+              placeholder="请选择"
+			  disabled="disabled"
+			  
+            />
+            
+          </div>
+          <!-- 下拉数据 -->
+          <div class="display-none">
+    
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/hSdrop.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      new hSdrop({
+        els: ".sele-bp",
+      });
+      $.ajax({
+        url: url + "/bank/selBank",
+        data: {},
+        success: (res) => {
+			console.log(res);
+          console.log(res.rows.length);
+          console.log(res.rows[0].bankName);
+		  var html = "";
+		  var bankname ="";
+		  var banklength = res.rows.length
+          for (i = 0; i < banklength; i++) {
+            //console.log(i);1
+			// html += "<div>" + "123" + "</div>\n";
+			bankname = res.rows[i].bankName
+			html += "<div>" + bankname + "</div>"
+		  }
+		 // console.log(html);
+          $(".display-none").html(html);
+        },
+      });
+      function list() {}
+    </script>
+  </body>
+</html>

@@ -3,11 +3,12 @@ var url = "http://47.96.28.95:80/msfw/";
 //var url="http://chejiajia.365hy.com/msfw/"
 // 个人资料
 var userid = localStorage.getItem("userid");
+
 function ziliao() {
   $.ajax({
     url: url + "/user/PersonalInformation",
     data: {
-      userId: 5,
+      userId: userid,
     },
     success: (res) => {
       console.log(res);
@@ -34,6 +35,7 @@ function ziliao() {
         '<div class="sex">' +
         '<input name="sex" type="radio" value="" id="boy">男' +
         '<input name="sex" type="radio" value="" id="girl">女' +
+       
         "</div>" +
         "</div>" +
         '<div class="list">' +
@@ -58,12 +60,13 @@ function ziliao() {
       if (res.data.invitationcode != "") {
         $("#yaoqing").attr("readonly", "readonly");
       }
-      if (xb == 1) {
+      if (xb == 0) {
         $("#boy").prop("checked", true);
       }
-      if (xb == 2) {
+      if (xb == 1) {
         $("#girl").prop("checked", true);
       }
+      
     },
   });
 }
@@ -78,9 +81,9 @@ function ziliao_onload() {
   var girl = $("#girl").prop("checked");
   console.log(boy);
   if (boy == true) {
+    sex = 0;
+  } else if (girl == true) {
     sex = 1;
-  } else {
-    sex = 2;
   }
   if (name == "") {
     name = $("#name").attr("placeholder");

@@ -63,7 +63,7 @@ button{
 	background-color: white;
 }
 #left{
-	margin: 0 auto;padding: 10px 0;
+	margin: 0 auto;padding: 0px 0;
 }
 #right{
 	margin: 0 auto;
@@ -72,3 +72,18 @@ button{
 .active{
 	/*border-bottom: 5px solid black;*/
 }
+
+.one /deep/ .layui-input-block{
+	margin-left: 10px;
+  min-height: 36px;
+  }
+
+
+
+
+
+
+
+
+
+

@@ -17,6 +17,8 @@
     <script src="./js/jquery.js"></script>
     <script src="./js/ajax.js"></script>
     <script src="./js/all.js"></script>
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+    <script src="./layui/layui.js"></script>
   </head>
 
   <body>
@@ -47,6 +49,22 @@
             id="phone"
           />
         </div>
+
+        <!-- 性别 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>性别
+          </div>
+          <div class="layui-form">
+            <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+            <div class="layui-input-block">
+              <input type="radio" name="sex" value="0" title="男" checked="checked" />
+              <input type="radio" name="sex" value="1" title="女" />
+              
+            </div>
+          </div>
+        </div>
+
         <!-- 验证码 -->
         <div class="one">
           <div class="two">
@@ -132,6 +150,10 @@
   </body>
 
   <script>
+    layui.use("form", function () {
+      var form = layui.form;
+      //各种基于事件的操作，
+    });
     // $('#test').click(function () {
     // 	if($("#test").prop("checked") === true){
     // 		$("#car").removeAttr('disabled')
@@ -139,14 +161,17 @@
     // 		$("#car").attr('disabled',true  )
     // 	}
     // })
+   
     $("#mmm").click(function () {
-      // console.log($("input[type='checkbox']").is(':checked'));
+     
+
       var phone = $("#phone").val();
       var password = $("#password").val();
       var phoneverify = $("#phoneverify").val();
       var invitation = $("#invitation").val();
       var ID = GetUrlParam("id");
       var Title = GetUrlParam("title");
+      var gender = $("input[name='sex']:checked").val();
       if (!checkPhone(phone)) {
         alert("手机号有误，请重新输入!");
         return;
@@ -173,6 +198,7 @@
           verificationCode: phoneverify,
           InvitationCode1: invitation,
           password: "",
+          gender: gender,
         },
         success: (res) => {
           console.log(res);
@@ -245,4 +271,5 @@
       });
     }
   </script>
+ 
 </html>
