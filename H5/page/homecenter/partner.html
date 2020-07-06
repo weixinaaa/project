@@ -48,6 +48,22 @@
 <script>
   function submit() {
     isuserlogin();
+
+    var myname =  $(".name").val();
+   var myphone =  $(".phone").val();
+   var mymessage =  $(".text").val();
+   if(myname == ""){
+      alert("请输入姓名");
+      return;
+   }else if(myphone == ""){
+    alert("请输入联系方式");
+      return;
+   }
+
+   if(!checkPhone(myphone)){
+    alert("请输入正确的手机号码");
+     return;
+   }
     
   }
   var mySwiper = new Swiper(".swiper-container", {

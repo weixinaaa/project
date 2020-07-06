@@ -360,7 +360,7 @@ function hasDot(num) {
         return num;
       }
     } else {
-      alert("123");
+      
       return num.toFixed(2);
     }
   }
@@ -441,7 +441,7 @@ function isuserlogin() {
         password: "",
       },
       success: (res) => {
-        console.log(res);
+       // console.log(res);
         if (res.msg == "该手机号已被注册") {
           sessionStorage.setItem("delogin", "true");
         } else {

@@ -109,13 +109,14 @@
 
   <script>
     qian();
+    var mymoney="";
     // $('#bank').blur(function () {
     //         console.log("12222");
     //     });
     layui.use("layer", function () {
       var layer = layui.layer;
       $("#onload").click(function () {
-        console.log("156");
+     
 
       //   $.ajax({
       //     //type: "get",
@@ -135,8 +136,7 @@
           url: url + "/bank/selBank",
           data: {},
           success: (res) => {
-            // console.log(res);
-            // console.log(res.rows[0].bankName);
+        
             var listlength = res.rows.length;
             var banknumber = "";
             var bankname = "";
@@ -182,12 +182,12 @@
         openacc = $("#bank").val();
         //   console.log(openacc);
         //  console.log(bankinfo);
-        for (let i = 0; i < bankinfo.length; i++) {
-          if (bankinfo[i].bankName == openacc) {
-            console.log(bankinfo[i].bankNumber);
-            console.log(bankinfo[i].bankName);
-          }
-        }
+        // for (let i = 0; i < bankinfo.length; i++) {
+        //   if (bankinfo[i].bankName == openacc) {
+        //     console.log(bankinfo[i].bankNumber);
+        //     console.log(bankinfo[i].bankName);
+        //   }
+        // }
 
         if (name == "") {
           layer.msg("请输入开户姓名");
@@ -202,9 +202,13 @@
         // 	return;
         // }
         if ((number > 999) | (number < 0)) {
-          layer.msg("请输入正确的提现金额");
+          alert("请输入正确的提现金额大于0小于999");
           return;
+        } 
+        if(number > mymoney){
+          layer.msg("提现金额不足");
         }
+      
         var userid = localStorage.getItem("userid");
         if (userid == null) {
           alert("您还未登录");
@@ -222,7 +226,7 @@
             userId: userid,
           },
           success: (res) => {
-            console.log(res);
+          //  console.log(res);
             alert("提现申请已提交,请等待审核");
           },
         });
@@ -230,7 +234,8 @@
     });
 
     $(".back").click(function () {
-      window.location.href = "shouyi.html"; //点击跳转
+     // window.location.href = "shouyi.html"; //点击跳转
+     window.history.go(-1);
     });
 
     // 收益
@@ -244,7 +249,9 @@
         success: (res) => {
           // console.log(res);
           var getprice = res.data;
-          $("#price").text(hasDot(getprice));
+          $("#price").text(hasDot(getprice));   
+          mymoney = parseFloat(hasDot(getprice));
+              
         },
       });
     }

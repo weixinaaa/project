@@ -1,87 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>我的收益</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
-	<link rel="stylesheet" href="./css/all.css">
-</head>
-<style type="text/css">
-	button{
-		background-color: rgb(62,157,254);
-		color: white;
-		height: 40px;
-		border-radius: 20px;
-		border: 0;
-		text-align: center;
-		display: block;
-		width: 60%;
-		margin: 20px auto;
-	}
-	.money{
-		text-align: center;
-	}
-</style>
-<body>
-<!--返回-->
-<div class="back">
-	<img src="./image/back.png">
-	<p >我的收益</p>
-</div>
+  <head>
+    <title>我的收益</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <link rel="stylesheet" href="./css/all.css" />
+  </head>
+  <style type="text/css">
+    button {
+      background-color: rgb(62, 157, 254);
+      color: white;
+      height: 40px;
+      border-radius: 20px;
+      border: 0;
+      text-align: center;
+      display: block;
+      width: 60%;
+      margin: 20px auto;
+    }
+    .money {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <!--返回-->
+    <div class="back">
+      <img src="./image/back.png" />
+      <p>我的收益</p>
+    </div>
 
-<div id="qian">
-	<p class="money" id="getmoney"></p>
-</div>
-	<button id="tx">提现</button>
-	<button id="detail">查看详情</button>
-</body>
-<script src="./js/jquery.js"></script>
-<script src="./js/ajax.js"></script>
-<script>
-	qian()
+    <div id="qian">
+      <p class="money" id="getmoney">11</p>
+    </div>
+    <button id="tx">提现</button>
+    <button id="detail">查看详情</button>
+  </body>
+  <script src="./js/jquery.js"></script>
+  <script src="./js/ajax.js"></script>
+  <script>
+    qian();
+    var mymoney="";
     $(".back").click(function () {
-        window.location.href="person.html"  //点击跳转
-    })
+      //  window.location.href="person.html"  //点击跳转
+      window.history.go(-1);
+    });
     $("#tx").click(function () {
-        window.location.href="tixian.html"  //点击跳转
-    })
+       
+        console.log(mymoney);
+        console.log(parseFloat(mymoney));
+        if(parseFloat(mymoney) <= 0){
+            alert("可提现金额不足!")
+            return;
+        }
+        
+      window.location.href = "tixian.html"; //点击跳转
+    });
     $("#detail").click(function () {
-        window.location.href="shouyi_detail.html"  //点击跳转
-	})
-	
-	// 收益
-function qian() {
+      window.location.href = "shouyi_detail.html"; //点击跳转
+    });
 
-    var userid = localStorage.getItem("userid");
-    $.ajax({
-        type:"get",
+    // 收益
+    function qian() {
+      var userid = localStorage.getItem("userid");
+      $.ajax({
+        type: "get",
         url: url + "/user/getCommissionBalanceById",
         data: {
-            id: userid,
+          id: userid,
         },
-        success: res => {
-            console.log(res) 
-            var getprice=res.data;
-            document.getElementById("getmoney").innerHTML = "￥"+hasDot(getprice);
-            
-        }
-    })
-}
-function hasDot(num){
-    if(!isNaN(num)){
-        
-        if((num + '').indexOf('.') != -1){     
-             var pricelist = (String(num)).split(".");
-             var decimal = pricelist[1];
-             if(decimal.length == 1){
-                return num.toFixed(2);
-             }else if(decimal.length >= 2){
-                return num;
-             }
-        }else{
-            return num.toFixed(2);
-        }   
+        success: (res) => {
+          console.log(res);
+          var getprice = res.data;
+          document.getElementById("getmoney").innerHTML =
+            "￥" + hasDot(getprice);
+            mymoney = hasDot(getprice);
+        },
+      });
     }
-}
-</script>
+    function hasDot(num) {
+      if (!isNaN(num)) {
+        if ((num + "").indexOf(".") != -1) {
+          var pricelist = String(num).split(".");
+          var decimal = pricelist[1];
+          if (decimal.length == 1) {
+            return num.toFixed(2);
+          } else if (decimal.length >= 2) {
+            return num;
+          }
+        } else {
+          return num.toFixed(2);
+        }
+      }
+    }
+  </script>
 </html>

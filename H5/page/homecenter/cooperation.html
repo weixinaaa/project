@@ -54,17 +54,19 @@
    var myphone =  $(".phone").val();
    var mymessage =  $(".text").val();
    if(myname == ""){
-      alert("请输入姓名a");
+      alert("请输入姓名");
       return;
    }else if(myphone == ""){
     alert("请输入联系方式");
       return;
    }
-   console.log(myname);
-   console.log(myphone);
-   console.log(mymessage);
 
-    localStorage.setItem("userid","57");
+   if(!checkPhone(myphone)){
+    alert("请输入正确的手机号码");
+     return;
+   }
+  
+
     var getlogin = isuserlogin();
     console.log(getlogin);
     if(getlogin == "true"){
