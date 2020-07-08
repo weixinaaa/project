@@ -207,6 +207,7 @@
         } 
         if(number > mymoney){
           layer.msg("提现金额不足");
+          return;
         }
       
         var userid = localStorage.getItem("userid");
@@ -215,7 +216,7 @@
           return;
         }
         var userid = localStorage.getItem("userid");
-        console.log(userid);
+       // console.log(userid);
         $.ajax({
           url: "http://47.96.28.95/msfw/user/addCashWithdrawalBill",
           data: {

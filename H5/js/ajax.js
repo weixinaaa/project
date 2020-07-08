@@ -2,8 +2,9 @@ var url = "http://47.96.28.95:80/msfw/";
 
 //var url="http://chejiajia.365hy.com/msfw/"
 // 个人资料
-var userid = localStorage.getItem("userid");
 
+var userid = localStorage.getItem("userid");
+var invitation= "";
 function ziliao() {
   $.ajax({
     url: url + "/user/PersonalInformation",
@@ -11,9 +12,16 @@ function ziliao() {
       userId: userid,
     },
     success: (res) => {
-      console.log(res);
+      // console.log(res);
       let xb = res.data.gender;
       let html = "";
+      let name = "";
+      invitation =res.data.invitationcode;
+      if (res.data.name) {
+        name = res.data.name;
+      } else {
+        name = res.data.tel;
+      }
       html +=
         '<img src="' +
         res.data.img +
@@ -21,7 +29,7 @@ function ziliao() {
         '<div class="list">' +
         "<span>姓名</span>" +
         '<input type="text" name="" class="input" placeholder="' +
-        res.data.name +
+        name +
         '" id="name">' +
         "</div>" +
         '<div class="list">' +
@@ -35,14 +43,7 @@ function ziliao() {
         '<div class="sex">' +
         '<input name="sex" type="radio" value="" id="boy">男' +
         '<input name="sex" type="radio" value="" id="girl">女' +
-       
         "</div>" +
-        "</div>" +
-        '<div class="list">' +
-        "<span>邮箱</span>" +
-        '<input type="text" name="" placeholder="' +
-        res.data.mailbox +
-        '" class="input" id="email">' +
         "</div>" +
         '<div class="list">' +
         "<span>我的邀请码</span>" +
@@ -66,20 +67,23 @@ function ziliao() {
       if (xb == 1) {
         $("#girl").prop("checked", true);
       }
-      
     },
   });
 }
 
+
+
 function ziliao_onload() {
+
   let name = $("#name").val();
-  let mail = $("#email").val();
+  // let mail = $("#email").val();
   let phone = $("#tel").val();
   let yaoqing = $("#yaoqing").val();
+ 
   let sex;
   var boy = $("#boy").prop("checked");
   var girl = $("#girl").prop("checked");
-  console.log(boy);
+  //console.log(boy);
   if (boy == true) {
     sex = 0;
   } else if (girl == true) {
@@ -88,37 +92,38 @@ function ziliao_onload() {
   if (name == "") {
     name = $("#name").attr("placeholder");
   }
-  if (mail == "") {
-    mail = $("#email").attr("placeholder");
-  }
+  // if (mail == "") {
+  //   mail = $("#email").attr("placeholder");
+  // }
   if (phone == "") {
     phone = $("#tel").attr("placeholder");
   }
 
-  console.log(name, mail, phone, sex);
+  // console.log(name, mail, phone, sex);
+ 
   $.ajax({
-    url: "http://47.96.28.95:80/msfw//user/updateUser",
+    url: "http://47.96.28.95:80/msfw/user/updateUser",
     data: {
-      Id: 1,
-      name: name,
-      img: "./image/jr.jpg",
-      mailbox: mail,
-      gender: sex,
-      tel: phone,
+      id: userid,
+      // name: "ceshi25",
+      // img: "./image/jr.jpg",
+      // mailbox: "",
+      // gender: "1",
+      // tel: "15354588884",
       code: yaoqing,
     },
     success: (res) => {
-      console.log(res);
       if (res.code == "-1") {
         layer.msg(res.msg);
-        if (res.msg != "成功") {
+      } else {
+        if (invitation) {
+          layer.msg("您已经填写过邀请码了");
+        } else {
+          layer.msg("提交成功");
           setTimeout(function () {
             location.reload();
           }, 1500);
         }
-        return;
-      } else {
-        layer.msg(res.msg);
       }
     },
   });
@@ -360,7 +365,6 @@ function hasDot(num) {
         return num;
       }
     } else {
-      
       return num.toFixed(2);
     }
   }
@@ -441,7 +445,7 @@ function isuserlogin() {
         password: "",
       },
       success: (res) => {
-       // console.log(res);
+        // console.log(res);
         if (res.msg == "该手机号已被注册") {
           sessionStorage.setItem("delogin", "true");
         } else {
