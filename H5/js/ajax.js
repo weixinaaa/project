@@ -4,7 +4,7 @@ var url = "http://47.96.28.95:80/msfw/";
 // 个人资料
 
 var userid = localStorage.getItem("userid");
-var invitation= "";
+var invitation = "";
 function ziliao() {
   $.ajax({
     url: url + "/user/PersonalInformation",
@@ -15,13 +15,14 @@ function ziliao() {
       // console.log(res);
       let xb = res.data.gender;
       let html = "";
-      let name = "";
-      invitation =res.data.invitationcode;
+      let pname = "";
+      invitation = res.data.invitationcode;
       if (res.data.name) {
-        name = res.data.name;
+        pname = res.data.name;
       } else {
-        name = res.data.tel;
+        pname = res.data.tel;
       }
+     // console.log(res.data.name);
       html +=
         '<img src="' +
         res.data.img +
@@ -29,12 +30,12 @@ function ziliao() {
         '<div class="list">' +
         "<span>姓名</span>" +
         '<input type="text" name="" class="input" placeholder="' +
-        name +
+        pname +
         '" id="name">' +
         "</div>" +
-        '<div class="list">' +
+        '<div class="list" onclick="gettel()">' +
         "<span>联系电话</span>" +
-        '<input type="text" name=""  class="input" placeholder="' +
+        '<input type="text" name=""  class="input" readonly placeholder="' +
         res.data.tel +
         '" id="tel">' +
         "</div>" +
@@ -71,15 +72,13 @@ function ziliao() {
   });
 }
 
-
-
 function ziliao_onload() {
-
   let name = $("#name").val();
   // let mail = $("#email").val();
+  console.log(name);
   let phone = $("#tel").val();
   let yaoqing = $("#yaoqing").val();
- 
+
   let sex;
   var boy = $("#boy").prop("checked");
   var girl = $("#girl").prop("checked");
@@ -99,47 +98,55 @@ function ziliao_onload() {
     phone = $("#tel").attr("placeholder");
   }
 
-  // console.log(name, mail, phone, sex);
- 
+  console.log(name, phone, sex);
+
   $.ajax({
     url: "http://47.96.28.95:80/msfw/user/updateUser",
     data: {
       id: userid,
-      // name: "ceshi25",
-      // img: "./image/jr.jpg",
-      // mailbox: "",
-      // gender: "1",
-      // tel: "15354588884",
+      username: name,
+      img: "./image/jr.jpg",
+      mailbox: "",
+      gender: sex,
+      tel: phone,
       code: yaoqing,
     },
     success: (res) => {
       if (res.code == "-1") {
         layer.msg(res.msg);
       } else {
-        if (invitation) {
-          layer.msg("您已经填写过邀请码了");
-        } else {
-          layer.msg("提交成功");
-          setTimeout(function () {
-            location.reload();
-          }, 1500);
-        }
+        layer.msg("提交成功");
+        setTimeout(function () {
+          location.reload();
+        }, 1500);
+        // if (invitation) {
+        //   layer.msg("您已经填写过邀请码了");
+        // } else {
+        //   layer.msg("提交成功");
+        //   setTimeout(function () {
+        //    // location.reload();
+        //   }, 1500);
+        // }
       }
     },
   });
 }
 
 // 我的提现
-function tixina() {
+function tixian() {
   $.ajax({
     url: url + "/user/getCashWithdrawalBill",
     data: {
-      userId: 1,
-      pagesize: 10,
+      userId: userid,
+      pagesize: 1,
       pageNo: 1,
     },
     success: (res) => {
       console.log(res);
+      if(res.code != "0"){
+        alert("未查询到提现状态记录");
+        return;
+      }
       let html = "";
       let sh = "";
       let imgurl = "";
@@ -296,13 +303,17 @@ function qian_list() {
   $.ajax({
     url: url + "/user/getUserProfit",
     data: {
-      userId: 1,
-      pageSize: 10,
+      userId: userid,
+      pageSize: 999999,
       pageNo: 1,
     },
     success: (res) => {
       console.log(res);
       console.log(res.data);
+      if(res.data == null){
+        alert("未查询到详情记录");
+        return;
+      }
       for (i = 0; i < res.data.length; i++) {
         var date = new Date(res.data[i].createTime); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
         var Y = date.getFullYear() + "-";

@@ -8,37 +8,165 @@
       content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <!--手机端适配-->
-    <link rel="stylesheet" href="./css/all.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./icon-css/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/zhuce.css" />
+    <link rel="stylesheet" type="text/css" href="./css/all.css" />
+    <script src="./js/jquery.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/all.js"></script>
     <link rel="stylesheet" href="./layui/css/layui.css" />
+    <script src="./layui/layui.js"></script>
   </head>
- 
+
   <body>
     <!--返回-->
     <div class="back">
       <img src="./image/back.png" />
-      <p>个人资料</p>
+      <p id="people">个人资料</p>
     </div>
 
-    <div class="top" id="ziliao">
-     
-    </div>
+    <div class="top" id="ziliao"></div>
     <button class="button upload" id="tijiao">提交</button>
-    <button class="button kong">重填</button>
+    <button class="button kong">重置</button>
+
+    <div class="body" style="display: none;">
+      <!-- 乘客注册 -->
+      <div id="left">
+        <!-- 手机号码 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>手机号码
+          </div>
+          <input
+            type="text"
+            name=""
+            placeholder="请输入要修改的手机号"
+            class="write"
+            id="myphone"
+          />
+        </div>
+
+        <!-- 验证码 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-barcode fa-2x" aria-hidden="true" id="yzm"></i
+            >验证码
+          </div>
+          <div style="display: flex;">
+            <input
+              type="text"
+              name=""
+              id="myphoneverify"
+              placeholder="填写验证码"
+              class="yzm-input write"
+            />
+            <button class="yzm-button" id="verifycode" onclick="updatecode()">
+              获取验证码
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <button class="zc-button" id="sub">修改</button>
+    </div>
   </body>
   <script src="./js/ajax.js"></script>
   <script src="./js/jquery.js"></script>
   <script src="./layui/layui.js"></script>
   <script type="text/javascript">
+    layui.use("form", function () {
+      var form = layui.form;
+      //各种基于事件的操作，
+    });
     $("#tijiao").click(function () {
-     
       ziliao_onload();
     });
-    $(".kong").click(function(){
+    $(".kong").click(function () {
       location.reload();
+    });
+    function gettel() {
+      // console.log("11111111");
+      var isbeauty = confirm("确认修改手机号？");
+      if (isbeauty) {
+        $(".kong").hide();
+        $("#tijiao").hide();
+        $("#ziliao").hide();
+        $(".body").show();
+        $("#people").text("修改手机号");
+      }
+    }
+    layui.use("layer", function () {
+      var layer = layui.layer;
+      $("#sub").click(function () {
+        var userid = localStorage.getItem("userid");
+        var myphone = $("#myphone").val();
+        var myphoneverify = $("#myphoneverify").val();
+        console.log(userid);
+        console.log(myphone);
+        console.log(myphoneverify);
+        if (myphone == "") {
+          layer.msg("请输入手机号");
+          return;
+        } else if (!checkPhone(myphone)) {
+          alert("手机号有误，请重新输入!");
+          return;
+        } else if (myphoneverify == "") {
+          layer.msg("请输入验证码");
+          return;
+        }
+        let name = $("#name").attr("placeholder");
+        let sex;
+        var boy = $("#boy").prop("checked");
+        var girl = $("#girl").prop("checked");
+       
+        if (boy == true) {
+          sex = 0;
+        } else if (girl == true) {
+          sex = 1;
+        }
+        let yaoqing = $("#yaoqing").val();
+        console.log(name,sex,yaoqing);
+        
+        $.ajax({
+          url: "http://47.96.28.95:80/msfw/user/updateUser",
+          data: {
+            id: userid,
+            username: name,
+            img: "./image/jr.jpg",
+            mailbox: "",
+            gender: sex,
+            tel: myphone,
+            code: yaoqing,
+            message: myphoneverify,
+          },
+          success: (res) => {
+            console.log(res);
+            if(res.msg == "成功"){
+              localStorage.setItem("myphone",myphone);
+              layer.msg("修改成功");
+              setTimeout(function(){
+                location.reload();
+              },1500);
+            }
+          },
+        });
+
+        //location.reload();
+      });
     });
     $(".back").click(function () {
       //window.location.href = "person.html"; //点击跳转
-      window.history.go(-1);
+      console.log($("#people").text());
+      if ($("#people").text() == "修改手机号") {
+        location.reload();
+      } else {
+        window.history.go(-1);
+      }
     });
     let yaoqing = $("#yaoqing").val();
     layui.use("layer", function () {
@@ -48,67 +176,94 @@
     // if (yaoqing =='') {
     //         $("#yaoqing").attr("readonly")
     //     }
+
+    function updatecode() {
+      console.log($("#myphone").val());
+
+      var phone = $("#myphone").val();
+      if (!checkPhone(phone)) {
+        alert("手机号有误，请重新输入!");
+        return;
+      }
+      setTime();
+      $.ajax({
+        url: url + "/user/send",
+        // crossDomain: true,
+        data: {
+          tel: phone,
+        },
+        success: (res) => {
+          // console.log(res);
+          console.log(res);
+          alert("发送验证码成功");
+        },
+        //dataType: jsonp,
+      });
+    }
   </script>
 
-<style type="text/css">
-  body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: rgb(242, 245, 254);
-  }
-  span {
-    width: 40%;
-  }
-  .input {
-    border: 0;
-    /*color: #ccc;*/
-    text-align: right;
-    width: 60%;
-    font-size: 15px;
-  }
-  .list {
-    width: 90%;
-    margin: 0 auto;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    text-align: left;
-  }
-  .sex {
-    width: 80%;
-    text-align: right;
-  }
- 
-  .sex input {
-    margin-left: 10px;
-    margin-right: 5px;
-  }
-  .button {
-    width: 70%;
-    border-radius: 50px;
-    font-size: 18px;
-    border: 0;
-    margin: 10px 0;
-    color: white;
-    padding: 10px 0;
-  }
-  .upload {
-    background-color: rgb(62, 157, 254);
-  }
-  .kong {
-    background-color: rgb(153, 153, 153);
-  }
-  .anniu {
-    text-align: center;
-    margin-top: 30px;
-  }
-  .top {
-    margin-top: 10px;
-    background-color: white;
-    margin-bottom: 50px;
-    padding: 20px 0;
-  }
-</style>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: rgb(242, 245, 254);
+    }
+    span {
+      width: 40%;
+    }
+    .input {
+      border: 0;
+      /*color: #ccc;*/
+      text-align: right;
+      width: 60%;
+      font-size: 15px;
+    }
+    .list {
+      width: 90%;
+      margin: 0 auto;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      text-align: left;
+    }
+    .sex {
+      width: 80%;
+      text-align: right;
+    }
+
+    .sex input {
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+    .button {
+      width: 70%;
+      border-radius: 50px;
+      font-size: 18px;
+      border: 0;
+      margin: 10px 0;
+      color: white;
+      padding: 10px 0;
+    }
+    .upload {
+      background-color: rgb(62, 157, 254);
+    }
+    .kong {
+      background-color: rgb(153, 153, 153);
+    }
+    .anniu {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .top {
+      margin-top: 10px;
+      background-color: white;
+      margin-bottom: 50px;
+      padding: 20px 0;
+    }
+    .layui-form {
+      text-align: left;
+    }
+  </style>
 </html>

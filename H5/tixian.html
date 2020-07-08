@@ -45,6 +45,10 @@
       border: 0;
       margin: 30px auto;
     }
+    .little{
+      color: red;
+      font-size: 12px;
+    }
   </style>
   <body>
     <!--返回-->
@@ -102,6 +106,7 @@
       <div style="margin-left: 20px; margin-top: 20px; text-align: left;">
         <span>可提现金额</span>
         <span style="color: rgb(95, 173, 254);">￥<b id="price"></b></span>
+        <span class="little">(最小提现金额为5元)</span>
       </div>
       <button id="onload">提现</button>
     </div>
@@ -117,21 +122,6 @@
       var layer = layui.layer;
       $("#onload").click(function () {
      
-
-      //   $.ajax({
-      //     //type: "get",
-      //     url: "http://www.aazx.store:8089/mavendemo/role/selRole",
-      //     // dataType: "jsonp",
-      //     // jsonp: "successCallback",
-      //     // Callback: 'successCallback',
-      //     data: {},
-      //     success: (res) => {
-      //       console.log(res);
-      //       console.log(res.data[0].roleName);
-      //     },
-      //   });
-      //  return;
-
         $.ajax({
           url: url + "/bank/selBank",
           data: {},
@@ -209,14 +199,17 @@
           layer.msg("提现金额不足");
           return;
         }
-      
+        if(number < 5){
+          layer.msg("最小提现金额为5元");
+          return;
+        }
         var userid = localStorage.getItem("userid");
         if (userid == null) {
           alert("您还未登录");
           return;
         }
-        var userid = localStorage.getItem("userid");
-       // console.log(userid);
+       
+     
         $.ajax({
           url: "http://47.96.28.95/msfw/user/addCashWithdrawalBill",
           data: {

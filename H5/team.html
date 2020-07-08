@@ -13,7 +13,22 @@ body{
 	padding: 0;
 }
 .top{
-	width: 80%; margin: 0 auto;display: flex;
+	width: 100%; margin: 97px auto 0 auto;display: flex;
+	background-color: rgb(242,245,254);
+	position: fixed;
+	top:0px;
+	left:0px;
+	padding:0 0 0 23px;
+}
+
+.back{
+	position: fixed;
+	top:0;
+	left:0;
+	width:100%;
+}
+#team{
+	margin-top:160px;
 }
 .list{
 	background-color:white;
@@ -32,7 +47,7 @@ body{
 .list-tximg{
 	border-radius: 100%;
 	width:30px;
-	margin:0px 0 0 70px;
+	margin:0px 0 0 50px;
 }
 .list-teamname{
 	width: 400px;
@@ -63,8 +78,8 @@ body{
 </div>
 
 	<div class="top" id="top">
-		<p style="width: 85%">团队成员</p>
-		<p style="text-align: center;">0人</p>
+		<p >团队成员</p>
+		<p >0人</p>
 	</div>
 <div id="team">
 
@@ -86,9 +101,9 @@ body{
 	$.ajax({
 		url:url+"/user/queryTeamByUserId",
 		data:{
-		    userId:userid,
+		    userId:2,
 			pageNo:1,
-			pageSize:10,
+			pageSize:999999,
 		},
 		success:res=>{
 			console.log(res);

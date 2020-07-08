@@ -64,7 +64,33 @@
     alert("请输入正确的手机号码");
      return;
    }
-    
+   var getlogin = isuserlogin();
+    console.log(getlogin);
+    if(getlogin == "true"){
+     
+      var userid = localStorage.getItem("userid");
+      console.log(userid);
+      $.ajax({
+            
+                url: url + "/partner/addPartner",
+                data: {
+                  userId: userid,
+                  name: myname,
+                  contact: myphone,
+                  note:mymessage,
+                },
+                success: (res) => {
+                  console.log(res)
+                  if(res.msg == "成功"){
+                    alert("提交成功");
+                  }else{
+                    alert(res.msg)
+                  }
+                }
+            });
+    }else{
+      alert("提交失败!");
+    }
   }
   var mySwiper = new Swiper(".swiper-container", {
     // 轮播图的方向，也可以是vertical方向
