@@ -1,6 +1,9 @@
 /*顶部轮播图*/
 .banner{
-	background-color: #fff
+	background-color: #fff;
+	margin-top:100px;
+	position: relative;
+	z-index: 1;
 }
 .list_icon{
 	/*width: calc(100% - 120px);*/

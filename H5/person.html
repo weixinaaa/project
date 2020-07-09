@@ -54,22 +54,22 @@
     </div>
 
     <!-- 我的团队 -->
-    <a href="team.html" class="list">
+    <a class="list" onclick="personinfo('team')">
       <img src="./image/icon/user.jpg" />
       <span>我的团队</span>
     </a>
     <!-- 个人资料 -->
-    <a href="data.html" class="list">
+    <a class="list" onclick="personinfo('data')">
       <img src="./image/icon/jinbi.jpg" />
       <span>个人资料</span>
     </a>
     <!-- 我的收益 -->
-    <a href="shouyi.html" class="list">
+    <a class="list" onclick="personinfo('shouyi')">
       <img src="./image/icon/money.jpg" />
       <span>我的收益</span>
     </a>
     <!-- 我的提现 -->
-    <a class="list" href="history.html">
+    <a class="list" onclick="personinfo('history')">
       <img src="./image/icon/qianbao.jpg" />
       <span>我的提现</span>
     </a>
@@ -77,6 +77,7 @@
   <script src="./js/jquery.js"></script>
   <script src="./layui/layui.js"></script>
   <script>
+    var islogin = "0";
     $(".back").click(function () {
       window.location.href = "./index.html"; //点击跳转
     });
@@ -106,18 +107,42 @@
         success: (res) => {
           console.log(res);
           if (res.msg == "该手机号已被注册") {
-			$("#username").text(myphone);
-			$("#zclogin").hide();
-			$("#toplogin").show();
+            islogin = "1";
+            $("#username").text(myphone);
+            $("#zclogin").hide();
+            $("#toplogin").show();
           } else {
-			$("#toplogin").hide();
-			$("#zclogin").show();
+            $("#toplogin").hide();
+            $("#zclogin").show();
           }
         },
       });
     } else {
       $("#toplogin").hide();
-			$("#zclogin").show();
+      $("#zclogin").show();
+    }
+    function personinfo(val) {
+      if (islogin != "1") {
+        alert("您还未登录");
+        return;
+      }
+      console.log(val);
+      switch (val) {
+        case "team":
+          window.location.href = "./team.html";
+          break;
+        case "data":
+          window.location.href = "./data.html";
+          break;
+        case "shouyi":
+          window.location.href = "./shouyi.html";
+          break;
+        case "history":
+          window.location.href = "./history.html";
+          break;
+        default:
+          return;
+      }
     }
   </script>
 </html>

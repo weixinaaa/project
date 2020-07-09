@@ -6,70 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
 	<link rel="stylesheet" href="./css/all.css">
 </head>
-<style type="text/css">
-body{
-	background-color: rgb(242,245,254);
-	margin: 0;
-	padding: 0;
-}
-.top{
-	width: 100%; margin: 97px auto 0 auto;display: flex;
-	background-color: rgb(242,245,254);
-	position: fixed;
-	top:0px;
-	left:0px;
-	padding:0 0 0 23px;
-}
 
-.back{
-	position: fixed;
-	top:0;
-	left:0;
-	width:100%;
-}
-#team{
-	margin-top:160px;
-}
-.list{
-	background-color:white;
-	padding: 15px 0;
-	margin: 10px 0
-}
-.list-in{
-	width: 98%;margin:0 auto;display: flex;align-items: center;
-	
-}
-.list-tx{
-	border-radius: 100%;;
-	width:30px;
-	margin:0px 0 0 30px;
-}
-.list-tximg{
-	border-radius: 100%;
-	width:30px;
-	margin:0px 0 0 50px;
-}
-.list-teamname{
-	width: 400px;
-	margin:0px 0 0 10px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 1;
-	-webkit-box-orient: vertical;
-	/* background-color: aqua; */
-}
-.list-name{
-	width: 400px;
-	margin:0px 0 0 10px;
-	text-overflow: ellipsis;
-	display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
-	-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
-	-webkit-line-clamp: 1; /** 显示的行数 **/
-	overflow: hidden;  /** 隐藏超出的内容 **/
-	/* background-color: violet; */
-}
-</style>
 <body>
 <!--返回-->
 <div class="back">
@@ -95,13 +32,14 @@ body{
 </body>
 <script src="./js/ajax.js"></script>
 <script src="./js/jquery.js"></script>
+
 <script>
 	var userid = localStorage.getItem("userid");
 	console.log(userid);
 	$.ajax({
 		url:url+"/user/queryTeamByUserId",
 		data:{
-		    userId:2,
+		    userId:userid,
 			pageNo:1,
 			pageSize:999999,
 		},
@@ -134,6 +72,73 @@ body{
     $(".back").click(function () {
        // window.location.href="person.html"  //点击跳转
 	   window.history.go(-1);
-    })
+    });
+	
+  
 </script>
+<style type="text/css">
+	body{
+		background-color: rgb(242,245,254);
+		margin: 0;
+		padding: 0;
+	}
+	.top{
+		width: 100%; margin: 97px auto 0 auto;display: flex;
+		background-color: rgb(242,245,254);
+		position: fixed;
+		top:0px;
+		left:0px;
+		padding:0 0 0 23px;
+	}
+	
+	.back{
+		position: fixed;
+		top:0;
+		left:0;
+		width:100%;
+	}
+	#team{
+		margin-top:160px;
+	}
+	.list{
+		background-color:white;
+		padding: 15px 0;
+		margin: 10px 0
+	}
+	.list-in{
+		width: 98%;margin:0 auto;display: flex;align-items: center;
+		
+	}
+	.list-tx{
+		border-radius: 100%;;
+		width:30px;
+		margin:0px 0 0 30px;
+	}
+	.list-tximg{
+		border-radius: 100%;
+		width:30px;
+		margin:0px 0 0 50px;
+	}
+	.list-teamname{
+		width: 400px;
+		margin:0px 0 0 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		/* background-color: aqua; */
+	}
+	.list-name{
+		width: 400px;
+		margin:0px 0 0 10px;
+		text-overflow: ellipsis;
+		display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+		-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+		-webkit-line-clamp: 1; /** 显示的行数 **/
+		overflow: hidden;  /** 隐藏超出的内容 **/
+		/* background-color: violet; */
+	}
+	
+	</style>
 </html>
