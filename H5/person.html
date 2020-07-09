@@ -106,6 +106,7 @@
         },
         success: (res) => {
           console.log(res);
+          console.dir(res);
           if (res.msg == "该手机号已被注册") {
             islogin = "1";
             $("#username").text(myphone);
@@ -145,4 +146,18 @@
       }
     }
   </script>
+  <style>
+    .back{
+      width:100%;
+      position: fixed;
+      top:0;
+      left:0;
+    }
+    .zc{
+      margin-top: 110px;
+    }
+    .top{
+      margin-top: 110px;
+    }
+  </style>
 </html>

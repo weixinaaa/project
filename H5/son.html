@@ -53,13 +53,25 @@
       flex-flow: row;
       width: 100%;
       align-items: center;
-      padding: 10px;
+      padding: 10px 10px 0px 10px;
     }
 
     .type .fir {
       text-align: center;
       flex: 1;
     }
+    .fir p {
+      width: 70px;
+
+      padding-bottom: 10px;
+      margin-left: 60px;
+    }
+    .trunkp {
+      border-bottom: 1px solid red;
+    }
+    /* .iscarp{ 
+       border-bottom: 1px solid red;  
+    } */
   </style>
 
   <body>
@@ -71,8 +83,8 @@
       </div>
 
       <span class="type" id="type">
-        <div class="fir" id="trunk">货车</div>
-        <div class="fir" id="iscar">轿车</div>
+        <div class="fir" id="trunk"><p class="trunkp">货车</p></div>
+        <div class="fir" id="iscar"><p class="iscarp">轿车</p></div>
       </span>
       <!--列表-->
       <div id="list"></div>
@@ -168,7 +180,7 @@
                       {
                         imgurl: "./image/icon/car.png",
                         title: "货拉拉",
-                        url: "http://mail.01zhuanche.com/",
+                        url: "http://mail.01zhuanche.com",
                       },
                     ];
                   } else if (trunkcar == "2") {
@@ -176,17 +188,17 @@
                       {
                         imgurl: "./image/icon/car.png",
                         title: "首汽约车",
-                        url: "http://mail.01zhuanche.com/",
+                        url: "http://mail.01zhuanche.com",
                       },
                       {
                         imgurl: "./image/icon/car1.png",
                         title: "神州专车",
-                        url: "https://www.10101111.com/",
+                        url: "https://www.10101111.com",
                       },
                       {
                         imgurl: "./image/icon/car1.png",
                         title: "滴滴",
-                        url: "https://www.didiglobal.com/",
+                        url: "https://www.didiglobal.com",
                       },
                     ];
                   }
@@ -216,17 +228,17 @@
                       {
                         imgurl: "./image/icon/car.png",
                         title: "首汽约车",
-                        url: "http://mail.01zhuanche.com/",
+                        url: "http://mail.01zhuanche.com",
                       },
                       {
                         imgurl: "./image/icon/car1.png",
                         title: "神州专车",
-                        url: "https://www.10101111.com/",
+                        url: "https://www.10101111.com",
                       },
                       {
                         imgurl: "./image/icon/car1.png",
                         title: "滴滴",
-                        url: "https://www.didiglobal.com/",
+                        url: "https://www.didiglobal.com",
                       },
                     ];
                   }
@@ -281,12 +293,25 @@
 
     $("#trunk").click(function () {
       sessionStorage.setItem("trunkcar", "1");
+
       location.reload();
     });
 
     $("#iscar").click(function () {
       sessionStorage.setItem("trunkcar", "2");
+
       location.reload();
     });
+    $(function () {
+      var getcarval = sessionStorage.getItem("trunkcar");
+      if (getcarval == "1") {
+        $(".trunkp").css("border-bottom", "1px solid red");
+        $(".iscarp").css("border-bottom", "none");
+      } else if (getcarval == "2") {
+        $(".iscarp").css("border-bottom", "1px solid red");
+        $(".trunkp").css("border-bottom", "none");
+      }
+    });
+    
   </script>
 </html>

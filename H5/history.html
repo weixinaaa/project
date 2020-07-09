@@ -20,6 +20,7 @@
 		<span class="tixian zhuangtai" id="zhuangtai">提现状态</span>
 		<span class="tixian" id="history">历史提现</span>
 	</div>
+	<div class="topshow"></div>
 	<!-- 提现状态 -->
 	<div id="zt">
 		<!--<div class="list-left">-->
@@ -70,4 +71,31 @@
 		window.history.go(-1);
     })
 </script>
+<style>
+	.back{
+		width: 100%;
+		position: fixed;
+		top:0;
+		left:0;
+	}
+	.top{
+		position: fixed;
+		top:100px;
+		left:19px;
+		z-index: 10;
+	}
+	.topshow{
+		position: fixed;
+		top:97px;
+		left:0px;
+		z-index: 1;
+		/* background-color: aqua; */
+		background-color: rgb(242,245,254);
+		width:100%;
+		height:80px;
+	}
+	#zt{
+		margin-top: 180px;
+	}
+</style>
 </html>
