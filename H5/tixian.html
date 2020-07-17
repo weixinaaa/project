@@ -121,7 +121,19 @@
     layui.use("layer", function () {
       var layer = layui.layer;
       $("#onload").click(function () {
-     
+        console.log("111111111");
+        $.ajax({
+          url:"http://localhost:8080/mavenfive/role/editRole",
+          data:{
+            id:"34",
+            roleName:"555999",
+
+          },
+          success:(res) =>{
+            console.log(res)
+          }
+        })
+        return;
         $.ajax({
           url: url + "/bank/selBank",
           data: {},

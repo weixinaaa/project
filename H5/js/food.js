@@ -1,7 +1,5 @@
 
 
-
-
 specialty = [
     {
       imgurl: "../image/food/food123.png",

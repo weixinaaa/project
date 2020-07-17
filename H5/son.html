@@ -15,64 +15,11 @@
     <script src="./js/ajax.js"></script>
     <script src="./js/ajax_url.js"></script>
     <script src="./js/all.js"></script>
+    <script src="./js/food.js"></script>
+    <script src="./utils/rem.js"></script>
     <title>Title</title>
     <link rel="stylesheet" href="./css/all.css" />
   </head>
-  <style>
-    .content {
-      overflow-x: hidden;
-    }
-
-    .list {
-      display: flex;
-      padding: 10px 0;
-      background: white;
-      align-items: center;
-    }
-
-    .list-title {
-      width: 80%;
-    }
-
-    .list-left {
-      width: 10%;
-      margin: 0 20px;
-    }
-
-    .list-right {
-      /*width: 10%;*/
-      margin-right: 20px;
-    }
-
-    img {
-      width: 100%;
-    }
-
-    .type {
-      display: flex;
-      flex-flow: row;
-      width: 100%;
-      align-items: center;
-      padding: 10px 10px 0px 10px;
-    }
-
-    .type .fir {
-      text-align: center;
-      flex: 1;
-    }
-    .fir p {
-      width: 70px;
-
-      padding-bottom: 10px;
-      margin-left: 60px;
-    }
-    .trunkp {
-      border-bottom: 1px solid red;
-    }
-    /* .iscarp{ 
-       border-bottom: 1px solid red;  
-    } */
-  </style>
 
   <body>
     <div class="content">
@@ -82,17 +29,50 @@
         <p id="title"></p>
       </div>
 
-      <span class="type" id="type">
+      <div class="type clearfix">
         <div class="fir" id="trunk"><p class="trunkp">货车</p></div>
         <div class="fir" id="iscar"><p class="iscarp">轿车</p></div>
-      </span>
+      </div>
       <!--列表-->
       <div id="list"></div>
+
+      <div id="foodlist" style="display: none;">
+        <div class="getgoods">
+          <div class="allgoods">
+            <div class="leftgoods">
+              <div class="somegoods">
+                <img src="../image/food/food123.png" />
+                <div class="info">
+                  休闲肉类特产5休休闲肉类特产55闲肉类闲肉类
+                </div>
+                <div class="moreinfo">
+                  库存有限 卖完即止 超好吃 椒香麻爽 美味嗨翻整场
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="allgoodstwo">
+            <div class="rightgoods">
+              <div class="somegoods">
+                <img src="../image/food/egg123.png" style="height: 180px;" />
+                <div class="info">休闲蛋类特产5</div>
+                <div class="moreinfo">
+                  库存有限 卖完即止 超好吃 特制皮蛋 美味嗨翻整场库存有限
+                  卖完即止 超好吃 椒香麻爽 美味嗨翻整场库存有限 卖完即止 超好吃
+                  特制皮蛋 美味嗨翻整场库存有限 卖完即止 超好吃 椒香麻爽
+                  美味嗨翻整场
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 
   <script>
-    $("#type").hide();
+    $(".type").hide();
     var trunkcar = sessionStorage.getItem("trunkcar");
     console.log(trunkcar);
     if (trunkcar == null) {
@@ -132,10 +112,13 @@
                 return;
               }
               if (id == 4 || id == 7) {
-                $("#type").show();
+                $(".type").show();
               }
+              $("#list").hide();
+              $("#foodlist").hide();
               switch (id) {
                 case 0:
+                  $("#list").show();
                   hhh = [
                     {
                       imgurl: "./image/icon/gg.png",
@@ -151,6 +134,7 @@
                   ];
                   break;
                 case 1:
+                  $("#list").show();
                   hhh = [
                     {
                       imgurl: "./image/icon/gg.png",
@@ -165,6 +149,8 @@
                   ];
                   break;
                 case 2:
+                  $("#list").show();
+                  $("#foodlist").hide();
                   hhh = [
                     {
                       imgurl: "./image/icon/gg.png",
@@ -174,7 +160,11 @@
                     },
                   ];
                   break;
+                case 3:
+                  $("#foodlist").show();
+                  break;
                 case 4:
+                  $("#list").show();
                   if (trunkcar == "1") {
                     hhh = [
                       {
@@ -205,6 +195,7 @@
 
                   break;
                 case 5:
+                  $("#list").show();
                   hhh = [
                     {
                       imgurl: "./image/icon/gg.png",
@@ -215,6 +206,8 @@
                   ];
                   break;
                 case 7:
+                  $("#list").show();
+                  $("#list").css("margin-top", "0rem");
                   if (trunkcar == "1") {
                     hhh = [
                       {
@@ -244,6 +237,7 @@
                   }
                   break;
                 default:
+                  $("#list").show();
                   hhh = [
                     {
                       imgurl: "./image/icon/gg.png",
@@ -259,9 +253,10 @@
 
               for (i = 0; i < hhh.length; i++) {
                 html +=
+                '<div class="lista">'+
                   "<a href=" +
                   hhh[i].url +
-                  ">" +
+                  '">' +
                   '<div class="list">' +
                   '<div class="list-left">' +
                   '<img src="' +
@@ -275,9 +270,55 @@
                   '<img  src="./image/open.png" alt="">' +
                   "</div>" +
                   "</div>" +
-                  "</a>";
+                  "</a></div>";
               }
               $("#list").html(html);
+
+              var spehtmlone = "";
+              var spehtmltwo = "";
+
+              var leftheight = 0;
+              var rightheight = 0;
+
+              for (i = 0; i < specialty.length; i++) {
+                // console.log(leftheight);
+                // console.log(rightheight);
+                if (leftheight <= rightheight) {
+                  spehtmlone +=
+                    '<a href="https://www.baidu.com/">' +
+                    '<div class="somegoods">' +
+                    '<img src="' +
+                    specialty[i].imgurl +
+                    '" style="height:' +
+                    specialty[i].imgheight +
+                    'rem;margin:0 0 0 0;" />' +
+                    '<div class="info">' +
+                    specialty[i].info +
+                    "</div>" +
+                    '<div class="moreinfo">' +
+                    specialty[i].moreinfo +
+                    "</div></div></a>";
+                  leftheight += Number(specialty[i].imgheight);
+                } else {
+                  spehtmltwo +=
+                    '<a href="https://www.baidu.com/">' +
+                    '<div class="somegoods">' +
+                    '<img src="' +
+                    specialty[i].imgurl +
+                    '" style="height:' +
+                    specialty[i].imgheight +
+                    'rem;" />' +
+                    '<div class="info">' +
+                    specialty[i].info +
+                    "</div>" +
+                    '<div class="moreinfo">' +
+                    specialty[i].moreinfo +
+                    "</div></div></a>";
+                  rightheight += Number(specialty[i].imgheight);
+                }
+              }
+              $(".leftgoods").html(spehtmlone);
+              $(".rightgoods").html(spehtmltwo);
             } else {
               var isbeauty = confirm("确认前往登录/注册页面？");
               if (isbeauty) {
@@ -312,6 +353,150 @@
         $(".trunkp").css("border-bottom", "none");
       }
     });
- 
   </script>
+
+  <style>
+    .content {
+      overflow-x: hidden;
+    }
+
+    .back {
+      position: fixed;
+      width: 100%;
+      height:0.76rem;
+    }
+
+    .lista{
+      margin-top:0.2rem;
+    }
+    #list {
+      margin-top: 2.16rem;
+    }
+
+    .list {
+      display: flex;
+      padding: 10px 0;
+      background: white;
+      align-items: center;
+    }
+
+    #title {
+      font-size: 0.32rem;
+    }
+
+    .list-title {
+      width: 80%;
+      font-size: 0.32rem;
+    }
+
+    .list-left {
+      width: 10%;
+      margin: 0 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .list-right {
+      /* width: 10%; */
+      margin-right: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+    }
+    /* #trunk {
+      margin-top: 2rem;
+    } */
+
+    .type {
+      font-size: 0.35rem;
+      margin-top: 2rem;
+      
+    }
+
+    .fir {
+      float: left;
+      text-align: center;
+    }
+    
+    .fir p {
+      width: 70px;
+      padding-bottom: 10px;
+      margin-left: 81px;
+    }
+ 
+
+    .getgoods {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(240, 239, 239);
+      width: 7.5rem;
+    }
+    .allgoods {
+      width: 3.58rem;
+      margin: 2rem 0 0 0.38rem;
+      /* background-color: rgb(243, 177, 243); */
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      padding-bottom: 0.5rem;
+    }
+    .allgoodstwo {
+      width: 3.58rem;
+      margin-top: 2rem;
+      /* background-color: rgb(243, 177, 243); */
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      padding-bottom: 0.5rem;
+    }
+    .somegoods {
+      width: 3.18rem;
+      background-color: rgb(254, 255, 255);
+      margin: 0.27rem 0 0 0;
+      border-radius: 0.2rem;
+      padding-bottom: 0.22rem;
+    }
+    .somegoods img {
+      width: 3.17rem;
+      height: 2.8rem;
+      border-radius: 0.2rem 0.2rem 0 0;
+    }
+    .info {
+      margin: -0.1rem 0 0 0.12rem;
+      width: 3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* （行数） */
+      -webkit-box-orient: vertical;
+      font-size: 0.33rem;
+    }
+
+    .moreinfo {
+      margin: 0.12rem 0 0 0.12rem;
+      width: 3rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* （行数） */
+      -webkit-box-orient: vertical;
+      color: rgb(179, 180, 180);
+      font-size: 0.24rem;
+    }
+
+    .clearfix:after {
+      /*伪元素是行内元素 正常浏览器清除浮动方法*/
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+    .clearfix {
+      zoom: 1; /*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
+    }
+  </style>
 </html>

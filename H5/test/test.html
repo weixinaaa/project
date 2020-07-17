@@ -1,68 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/ajax_url.js"></script>
+    <script src="../js/all.js"></script>
+    <script src="./test.js"></script>
+    <script src="../utils/rem.js"></script>
+    <link rel="stylesheet" href="../css/all.css" />
+  </head>
+  <body>
+    <div id="list">
+      <div class="getgoods">
+        <div class="allgoods">
+          <div class="leftgoods">
+            <div class="somegoods">
+              <img src="../image/food/food123.png" />
+              <div class="info">休闲肉类特产5休休闲肉类特产55闲肉类闲肉类</div>
+              <div class="moreinfo">
+                库存有限 卖完即止 超好吃 椒香麻爽 美味嗨翻整场
+              </div>
+            </div>
+            <div class="somegoods">
+              <img src="../image/food/food123.png" />11<br />1111
+            </div>
+            <div class="somegoods">11111<br />1111<br />1111<br /></div>
+            <div class="somegoods">
+              11111<br />1111<br />1111<br />1111<br />1111<br />1111<br />
+            </div>
+            <div class="somegoods">
+              11<br />111111<br />1111<br />1111<br />1111<br />1111<br />1111
+            </div>
+            <div class="somegoods"></div>
+            <div class="somegoods"></div>
+          </div>
+        </div>
 
-<!DOCTYPE HTML> 
-<html> 
-    <head>  
-        <meta charset="GBK" />
-        <title>简单封装$.ajax()方法</title> 
-        
-        <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
-        <script language="javascript" type="text/javascript">
- 
-            function myfunc(data) {  //自己的函数   可以对data 这个数据对象进行操作或遍历数据
-                console.log(data.name);
-            }
- 
-            //下面的./newjson.json指同目录下的newjson,json文件
-            ajax_all_Filed("true", "false", "GET", "./newjson.json", "json", "", myfunc);//调用函数
- 
-            /*
-             * AJAX针对所有的数据类型的函数
-             * 
-             * @param {type} sync 是否异步传输 默认是true是异步。 false就是同步传输 
-             * @param {type} cache 是否开启缓存
-             * @param {type} type ajax的传输类型 POST 或 GET
-             * @param {type} url  是传输的目标url （注意：这个url要非常注意，如果路径不对就会导致错误  !--所以是重点--）
-             * @param {type} datatype 传输数据的类型可以是 text:纯文本 | html:HTML信息包括script标签会在插入DOM时执行 | script:返回纯文本JavaScript代码 | json:json数据 | jsonp:jsonp数据格式 | xml:返回XML文档 
-             * @param {type} data 是要传输的数据（注意:数据是什么格式datatype就要是对应的格式，否则传输失败）
-             * @param {type} func 当ajax执行成功之后跳转到自己的函数  注意:这里只需要写上自己函数的名称即可
-             * @returns {undefined}
-             */
-            function ajax_all_Filed(sync, cache, type, url, datatype, data, func) { //封装ajax的一些常用参数  //data数据可以为空
-                $.ajax({
-                    async: sync,
-                    cache: cache,
-                    type: type,
-                    url: url,
-                    dataType: datatype,
-                    data: data,
-                    beforSend: function () {
-                        // 禁用按钮防止重复提交
-                        $("#submit").attr({disabled: "disabled"});
-                    },
-                    error: function (data) {
-                        //请求失败时被调用的函数 
-                        alert("传输失败:" + data);
-                    },
-                    success: function (data) {
-                        func(data);
-                    }
-                });
-            }
- 
- 
- 
- 
-        </script> 
-    </head> 
-    <body > 
-        <div>111</div> 
-    </body> 
+        <div class="allgoodstwo">
+          <div class="rightgoods">
+            <div class="somegoods">
+              <img src="../image/food/egg123.png" style="height: 180px;" />
+              <div class="info">休闲蛋类特产5</div>
+              <div class="moreinfo">
+                库存有限 卖完即止 超好吃 特制皮蛋 美味嗨翻整场库存有限 卖完即止
+                超好吃 椒香麻爽 美味嗨翻整场库存有限 卖完即止 超好吃 特制皮蛋
+                美味嗨翻整场库存有限 卖完即止 超好吃 椒香麻爽 美味嗨翻整场
+              </div>
+            </div>
+            <div class="somegoods">
+              11<br />11111111<br />1111<br />1111<br />
+            </div>
+            <div class="somegoods">1<br />1111<br />1111<br /></div>
+            <div class="somegoods">11111<br />1111<br />1111<br /></div>
+            <div class="somegoods">
+              11<br />111111<br />1111<br />1111<br />1111<br />1111<br />1111
+            </div>
+            <div class="somegoods"><br />111111<br />1111<br />1111</div>
+            <div class="somegoods"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </body>
 </html>
 
+<script>
+  var spehtmlone = "";
+  var spehtmltwo = "";
 
+  var leftheight = 0;
+  var rightheight = 0;
 
+  for (i = 0; i < specialty.length; i++) {
+    // console.log(leftheight);
+    // console.log(rightheight);
+    if (leftheight <= rightheight) {
+      spehtmlone +=
+        '<a href="https://www.baidu.com/">' +
+        '<div class="somegoods">' +
+        '<img src="' +
+        specialty[i].imgurl +
+        '" style="height:' +
+        specialty[i].imgheight +
+        'rem;margin:0 0 0 0;" />' +
+        '<div class="info">' +
+        specialty[i].info +
+        "</div>" +
+        '<div class="moreinfo">' +
+        specialty[i].moreinfo +
+        "</div></div></a>";
+      leftheight += Number(specialty[i].imgheight);
+    } else {
+      spehtmltwo +=
+        '<a href="https://www.baidu.com/">' +
+        '<div class="somegoods">' +
+        '<img src="' +
+        specialty[i].imgurl +
+        '" style="height:' +
+        specialty[i].imgheight +
+        'rem;" />' +
+        '<div class="info">' +
+        specialty[i].info +
+        "</div>" +
+        '<div class="moreinfo">' +
+        specialty[i].moreinfo +
+        "</div></div></a>";
+      rightheight += Number(specialty[i].imgheight);
+    }
+  }
+  $(".leftgoods").html(spehtmlone);
+  $(".rightgoods").html(spehtmltwo);
+  //   console.log(parseInt($(".allgoods").get(0).offsetHeight));
+  //   console.log(parseInt($(".allgoodstwo").get(0).offsetHeight));
+</script>
 
+<style>
+  
+  .getgoods {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(243, 177, 243);
+    width:7.5rem;
+  }
+  .allgoods {
+    width: 3.58rem;
+    margin: 2rem 0 0 0.38rem;
+    /* background-color: rgb(243, 177, 243); */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+  .allgoodstwo {
+    width: 3.58rem;
+    margin-top: 2rem;
+    /* background-color: rgb(243, 177, 243); */
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+  .somegoods {
+    width: 3.18rem;
+    background-color: rgb(155, 211, 236);
+    margin:0.27rem 0 0 0;
+    border-radius: 0.2rem;
+    padding-bottom: 0.22rem;
+  }
+  .somegoods img{
+    
+    width: 3.17rem;
+    height: 2.8rem;
+    border-radius: 0.2rem 0.2rem 0 0;
+  }
+  .info {
+    margin: -0.1rem 0 0 0.12rem;
+    width: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* （行数） */
+    -webkit-box-orient: vertical;
+    font-size: 0.33rem;
+  }
 
+  .moreinfo {
+    margin: 0.12rem 0 0 0.12rem;
+    width: 3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* （行数） */
+    -webkit-box-orient: vertical;
+    color: rgb(65, 145, 236);
+    font-size: 0.24rem;
+  }
+  
+</style>
 
 
 
