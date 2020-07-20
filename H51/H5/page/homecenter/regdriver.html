@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <script src="../../js/jquery.js"></script>
+    <script src="../../js/ajax.js"></script>
+    <script src="../../js/all.js"></script>
+    <script src="../../utils/rem.js"></script>
+    <script
+      type="text/javascript"
+      src="https://webapi.amap.com/maps?v=1.4.15&key=329e6c3e474acfac7591e493212ac047&plugin=AMap.CitySearch"
+    ></script>
+    <title>司机注册</title>
+    <link rel="stylesheet" href="../../css/all.css" />
+    <script src="../../js/cityAndPro.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <link
+      href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../icon-css/css/font-awesome.min.css"
+    />
+
+    
+  </head>
+
+  <body>
+    <div class="top">
+      <i class="fa fa-chevron-left fa-2x" aria-hidden="true" onclick="area()"></i>
+      <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+    </div>
+
+    <div id="allmap"></div>
+
+    <!-- <div class="getcar">注册地址</div> -->
+    <input type="text" id="picker" class="getinput" placeholder="请选择地址" />
+    <div class="choosecar" onclick="tochoose()">去注册</div>
+  </body>
+  <script>
+    function contactus() {
+      window.location.href = "./page/homecenter/contactus.html";
+    }
+
+    function tochoose() {
+    
+      if ($("#picker").val() == "") {
+        alert("请选择地址");
+        return;
+      }
+      window.location.href = "./registerpart.html";
+    }
+    function area(){
+        window.history.back(-1);
+    }
+  </script>
+
+<script src="../../scripts/picker.min.js"></script>
+<script type="text/javascript" src="../../scripts/city.js"></script>
+<script type="text/javascript" src="../../scripts/index.js"></script>
+</html>
+
+<script type="text/javascript">
+  var map = new AMap.Map("allmap", {
+    resizeEnable: true,
+    center: [116.397428, 39.90923],
+    zoom: 13,
+  });
+  //获取用户所在城市信息
+  function showCityInfo() {
+    //实例化城市查询类
+    var citysearch = new AMap.CitySearch();
+    //自动获取用户IP，返回当前城市
+    citysearch.getLocalCity(function (status, result) {
+      if (status === "complete" && result.info === "OK") {
+        if (result && result.city && result.bounds) {
+          console.log(result);
+          var proinfo = result.province;
+          var cityinfo = result.city;
+          var cityinfo = result.city;
+          var citybounds = result.bounds;
+          console.log("您当前所在城市为：" + proinfo + cityinfo);
+            
+          //地图显示当前城市
+          map.setBounds(citybounds);
+        }
+      }
+    });
+  }
+  showCityInfo();
+</script>
+
+<style>
+  body {
+    background-color: white;
+  }
+
+  .title {
+    text-align: center;
+    width: 100%;
+  }
+
+  .top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 7.5rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .fa-chevron-left {
+    margin-left: 0.2rem;
+  }
+
+  .fa-times {
+    margin-left: 6.2rem;
+  }
+
+  #allmap {
+    width: 100%;
+    height: 3.5rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    font-family: "微软雅黑";
+  }
+  .getcar {
+    font-size: 0.35rem;
+    margin: 1rem 0 0 0.5rem;
+  }
+  .getinput {
+    border: 1px solid #4d5ef0;
+    margin: 1.5rem 0 0 0.5rem;
+    width: 6.5rem;
+    height: 0.7rem;
+    border-radius: 6px;
+    padding:0 0 0 0.2rem;
+  }
+  .choosecar {
+    margin: 3rem 0 0 1.7rem;
+    background-color: #ff0101;
+    width: 4rem;
+    height: 1rem;
+    color: white;
+    font-size: 0.4rem;
+    text-align: center;
+    line-height: 1rem;
+  }
+</style>

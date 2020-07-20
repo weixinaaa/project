@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>用户注册</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./icon-css/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/zhuce.css" />
+    <link rel="stylesheet" type="text/css" href="./css/all.css" />
+    <script src="./js/jquery.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/all.js"></script>
+    <link rel="stylesheet" href="./layui/css/layui.css" />
+    <script src="./layui/layui.js"></script>
+  </head>
+
+  <body>
+    <!--返回-->
+    <div class="back" style="margin-bottom: 20px;">
+      <img src="./image/back.png" />
+      <p>平台注册</p>
+    </div>
+    <!--顶部-->
+    <!-- 	<div class="top">
+		<p id="passenger" class="active">乘客</p>
+		<p id="driver">司机</p>
+	</div> -->
+
+    <div class="body">
+      <!-- 乘客注册 -->
+      <div id="left">
+        <!-- 手机号码 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>手机号码
+          </div>
+          <input
+            type="text"
+            name=""
+            placeholder="输入手机号码作为登录方式"
+            class="write"
+            id="phone"
+          />
+        </div>
+
+        <!-- 性别 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>性别
+          </div>
+          <div class="layui-form">
+            <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+            <div class="layui-input-block">
+              <input type="radio" name="sex" value="0" title="男" checked="checked" />
+              <input type="radio" name="sex" value="1" title="女" />
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- 验证码 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-barcode fa-2x" aria-hidden="true" id="yzm"></i
+            >验证码
+          </div>
+          <div style="display: flex;">
+            <input
+              type="text"
+              name=""
+              id="phoneverify"
+              placeholder="填写验证码"
+              class="yzm-input write"
+            />
+            <button class="yzm-button" id="verifycode" onclick="getcode()">
+              获取验证码
+            </button>
+          </div>
+        </div>
+
+        <!-- 注册方式 -->
+        <!--<div class="one">-->
+        <!--<div class="two">-->
+        <!--<i class="fa fa-car" aria-hidden="true"></i>是否成为车主-->
+        <!--</div>-->
+        <!--<input type="checkbox" name="" id="test">-->
+        <!--<select id="car" disabled>-->
+        <!--<option value ="车主">车主</option>-->
+        <!--<option value ="当前">当前</option>-->
+        <!--<option value ="其他">其他</option>-->
+        <!--</select>-->
+        <!--</div>-->
+
+        <!-- 邀请码 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-barcode fa-2x" aria-hidden="true"></i>邀请码
+          </div>
+          <input
+            type="text"
+            name=""
+            placeholder="请输入好友邀请码"
+            class="write"
+            click="neirong(this,请输入好友邀请码)"
+            id="invitation"
+          />
+        </div>
+      </div>
+
+      <!-- 司机注册 -->
+      <div id="right">
+        <!-- 姓名 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-address-book fa-2x" aria-hidden="true"></i>姓名
+          </div>
+          <input type="" name="" placeholder="姓名" class="write" />
+        </div>
+        <!-- 车牌号 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-id-card fa-2x" aria-hidden="true"></i>车牌号
+          </div>
+          <input type="" name="" placeholder="车牌号" class="write" />
+        </div>
+        <!-- 联系方式 -->
+        <div class="one">
+          <div class="two">
+            <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>联系方式
+          </div>
+          <input type="" name="" placeholder="联系方式" class="write" />
+        </div>
+      </div>
+
+      <input
+        type="checkbox"
+        name=""
+        class="read"
+        checked="checked"
+      />阅读并同意用户协议
+      <button class="zc-button" id="mmm">注册</button>
+    </div>
+  </body>
+
+  <script>
+    layui.use("form", function () {
+      var form = layui.form;
+      //各种基于事件的操作，
+    });
+    // $('#test').click(function () {
+    // 	if($("#test").prop("checked") === true){
+    // 		$("#car").removeAttr('disabled')
+    // 	}else if($("#test").prop("checked") !== true){
+    // 		$("#car").attr('disabled',true  )
+    // 	}
+    // })
+   
+    $("#mmm").click(function () {
+     
+
+      var phone = $("#phone").val();
+      var password = $("#password").val();
+      var phoneverify = $("#phoneverify").val();
+      var invitation = $("#invitation").val();
+      var ID = GetUrlParam("id");
+      var Title = GetUrlParam("title");
+      var gender = $("input[name='sex']:checked").val();
+      if (!checkPhone(phone)) {
+        alert("手机号有误，请重新输入!");
+        return;
+      } else if (phoneverify == "") {
+        alert("请填写验证码!");
+        return;
+      } else if (!$(".read").is(":checked")) {
+        alert("请勾选阅读并同意用户协议!");
+        return;
+      }
+      // alert("ID:"+ID);
+      //下面几行行测试用的,
+      // localStorage.setItem("myphone", phone);
+      // localStorage.setItem("userid", "123");
+      // alert("注册成功!");
+      // window.location.href = "index.html";
+      // return;
+
+      console.log(Title);
+      $.ajax({
+        url: url + "/user/register",
+        data: {
+          tel: phone,
+          verificationCode: phoneverify,
+          InvitationCode1: invitation,
+          password: "",
+          gender: gender,
+        },
+        success: (res) => {
+          console.log(res);
+
+          if (res.msg == "该手机号已被注册") {
+            // alert("123");
+            var isbeauty = confirm("您已注册,是否前往登录页面？");
+            if (isbeauty) {
+              window.location.href = "./page/user/login.html";
+            } else {
+              window.location.href = "index.html";
+            }
+            return;
+          }
+          console.log(res.msg);
+          if (res.msg == "成功!") {
+            console.log(res.rows[0].userId);
+            console.log(phone);
+            var userid = res.rows[0].userId;
+            localStorage.setItem("myphone", phone);
+            localStorage.setItem("userid", userid);
+            alert("注册成功!");
+            window.location.href = "index.html";
+          } else if (res.msg == "验证码错误！") {
+            alert("验证码错误!");
+          } else {
+            alert("注册失败,请重新注册!");
+          }
+
+          // toUrl("driver_home.html?id=" + ID + "&title=" + Title);
+        },
+      });
+    });
+
+    $(".back").click(function () {
+    //  window.location.href = "./index.html"; //点击跳转
+    window.history.go(-1);
+    });
+    $("#driver").click(function () {
+      console.log(123);
+      $("#left").hide();
+      $("#right").show();
+      $("#driver").addClass("active").siblings().removeClass("active");
+    });
+    $("#passenger").click(function () {
+      console.log(123);
+      $("#right").hide();
+      $("#left").show();
+      $("#passenger").addClass("active").siblings().removeClass("active");
+    });
+
+    function getcode() {
+      var phone = $("#phone").val();
+      if (!checkPhone(phone)) {
+        alert("手机号有误，请重新输入!");
+        return;
+      }
+      setTime();
+      $.ajax({
+        url: url + "/user/send",
+        // crossDomain: true,
+        data: {
+          tel: phone,
+        },
+        success: (res) => {
+          // console.log(res);
+          console.log(res);
+          alert("发送验证码成功");
+        },
+        //dataType: jsonp,
+      });
+    }
+  </script>
+ 
+</html>

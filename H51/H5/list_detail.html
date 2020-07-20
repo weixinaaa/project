@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>广告详情</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<!-- <link rel="stylesheet" type="text/css" href="./css/more_detail.css"> -->
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<style type="text/css">
+	body{
+		background-color: white;
+	}
+	.title{
+		text-align: center;
+	}
+	.number{
+		color: rgb(68,159,254);
+	}
+	.top{
+		display: flex;flex-direction: row;justify-content: space-around;
+	}
+</style>
+<body>
+<!--返回-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >广告详情</p>
+</div>
+
+
+<p class="zj"></p>
+<!--广告内容-->
+<div id="neirong">
+	<p class="title">广告标题广告标题</p>
+	<div class="top">
+		<span class="time">2020-3-20</span>
+		<b class="number">点击量：999</b>
+	</div>
+	<div>
+
+	</div>
+</div>
+
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/ajax.js"></script>
+<script>
+    $(".back").click(function () {
+        window.history.go(-1);  //点击跳转
+    })
+    guanggao()
+</script>
+</html>

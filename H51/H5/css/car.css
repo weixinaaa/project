@@ -1,0 +1,110 @@
+
+	.top{
+		padding: 10px 0;
+		background-color: white;
+		display: flex;
+		text-align: center;
+		font-size: 16px;
+	}
+	.top p{
+		width: 50%;
+	}
+	.active{
+		color: rgb(70,155,244);
+	}
+	/*选车*/
+	.right{
+		width: 70%;display: flex;flex-direction: row;justify-content: space-around;text-align: center;align-items: center;
+	}
+	.right div{
+		padding: 0 10px;
+	}
+	.right-center{
+		height: 35%;
+		border: 1px solid rgb(184,184,184);
+	}
+	.car{
+		background-color: white;
+		padding: 10px 0;
+		margin-top: 10px;
+		display: flex;
+	}
+	.car img{
+		width: 75px;
+		margin: 0 10px;
+		height: 75px;
+	}
+
+	/*位置*/
+	.place{
+		background-color: white;
+		padding: 10px 0;
+		margin-top: 10px;
+	}
+	.hide{
+		display: none;
+	}
+	.place .title{
+		border-bottom: 1px solid #ccc;padding-left: 20px;padding-bottom: 10px
+	}
+	select{
+		width: 100%;
+		font-size: 18px;
+		border: 0;
+		padding: 10px 0;
+		-webkit-appearance:none;
+	}
+	/*底部*/
+
+	.bottom{
+		width: 100%;
+		text-align: center;
+		display: flex;
+		position:fixed;
+		bottom: 0;
+		color: white;
+
+	}
+	.bottom-right{
+		background-color: rgb(63,157,255);
+		width: 50%;
+		padding: 15px 0;
+		margin:0;
+	}
+	.bottom-left{
+		background-color: rgb(13,218,188);
+		width: 50%;
+		padding: 15px 0;
+		margin:0;
+	}
+
+
+	/*预约*/
+	.yy{
+		background-color: rgb(63,157,255);
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		border: 0;
+		color: white;
+		padding: 10px 0
+	}
+	#tommrow-car{
+		display: none;
+		background-color: white;
+	}
+	.xiaoxi{
+		margin-top: 10px;
+		resize: none;
+		width: calc(100% - 20px);
+		padding:10px;
+		height: 100px;
+		font-size: 15px
+	}
+	.time{
+		font-size: 15px;margin-left: 5px;padding: 5px 0;padding-left: 5px;
+	}
+
+	#bao-car{
+		display: none;
+	}

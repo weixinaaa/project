@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, user-scalable=no, width=device-width"
+    />
+    <title>根据ip定位</title>
+    <script src="../../utils/rem.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"
+    />
+    <style type="text/css">
+      html,
+      body {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+      }
+      #allmap {
+        position: relative;
+        top: 20px;
+        width: 100%;
+        height: 200px;
+        z-index: 10;
+        margin: 1rem 0 0 0;
+        font-family: "微软雅黑";
+      }
+      
+    
+    </style>
+  </head>
+  <body>
+    <div id="allmap"></div>
+   
+
+    <script
+      type="text/javascript"
+      src="https://webapi.amap.com/maps?v=1.4.15&key=329e6c3e474acfac7591e493212ac047&plugin=AMap.CitySearch"
+    ></script>
+    <script type="text/javascript">
+      var map = new AMap.Map("allmap", {
+        resizeEnable: true,
+        center: [116.397428, 39.90923],
+        zoom: 13,
+      });
+      //获取用户所在城市信息
+      function showCityInfo() {
+        //实例化城市查询类
+        var citysearch = new AMap.CitySearch();
+        //自动获取用户IP，返回当前城市
+        citysearch.getLocalCity(function (status, result) {
+          if (status === "complete" && result.info === "OK") {
+            if (result && result.city && result.bounds) {
+              console.log(result);
+              var proinfo = result.province;
+              var cityinfo = result.city;
+              var cityinfo = result.city;
+              var citybounds = result.bounds;
+              console.log("您当前所在城市为：" + proinfo + cityinfo);
+                
+              //地图显示当前城市
+              map.setBounds(citybounds);
+            }
+          }
+        });
+      }
+      showCityInfo();
+    </script>
+  </body>
+</html>

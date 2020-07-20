@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的推广码</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./css/all.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+  </head>
+  <style type="text/css">
+    .body {
+      width: 90%;
+      margin: 30px auto;
+      text-align: center;
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px 0;
+    }
+    .happy {
+      background-color: rgb(62, 157, 254);
+      color: white;
+      height: 40px;
+      width: 70%;
+      margin: 30px 0;
+      border: 0;
+      border-radius: 15px;
+    }
+  </style>
+  <body>
+    <!--返回-->
+    <div class="back">
+      <img src="./image/back.png" />
+      <p>我的推广码</p>
+    </div>
+    <div class="body">
+      <p>推广码</p>
+      <p id="invi"></p>
+      <img src="" style="width: 70%;" id="images" />
+      <!-- <button class="happy">分享</button>
+	  <img src="./image/icon/wechat.png">
+	  <img src="./image/icon/tencent.png"> -->
+    </div>
+  </body>
+  <script src="./js/jquery.js"></script>
+  <script>
+    $(".back").click(function () {
+      //  window.location.href="person.html"  //点击跳转 ./image/erweima.jpg
+      window.history.go(-1);
+    });
+    var userid = localStorage.getItem("userid");
+    $.ajax({
+      url: "http://47.96.28.95:80/msfw/user/qrCode",
+      data: {
+        userId: userid,
+      },
+      success: (res) => {
+        // console.log(res);
+        var imgval = "http://47.96.28.95/msfw/user/qrCode?userId=" + userid;
+        $("#images").attr("src", imgval);
+      },
+    });
+    $.ajax({
+      url: "http://47.96.28.95:80/msfw/user/PersonalInformation",
+      data: {
+        userId: userid,
+      },
+      success: (res) => {
+        const myInvi = res.data.myInvitationCode;
+        $("#invi").text(myInvi);
+      },
+    });
+    // $(".happy").click(function(){
+    // 	console.log("分享");
+    // })
+
+    $.ajax({
+            url: 'http://47.96.28.95/msfw/user/qrCode?userId=1',
+            success: function (response, status, xhr) {
+                console.log(response);
+                console.log(xhr);
+                console.log(xhr.status);
+                console.log(xhr.getAllResponseHeaders());
+            },
+            complete:function(xhr){
+              console.log(xhr.getResponseHeader('invitationCode'));
+            },
+            error: function () {
+                console.log("请求失败");
+            }
+        });
+  </script>
+</html>

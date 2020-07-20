@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>民生出行</title>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">	<!--若页面需默认用极速核，增加标签：-->
+	<meta name="renderer" content="ie-comp">	<!--若页面需默认用ie兼容内核，增加标签-->
+	<meta name="renderer" content="ie-stand"><!--若页面需默认用ie标准内核，增加标签：-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配1-->
+	<link rel="stylesheet" type="text/css" href="./css/car.css">
+	<link rel="stylesheet" href="./layui/css/layui.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<style>
+	.active{
+		color: #40AFFE;
+	}
+	.xuanze{
+		padding: 10px;
+	}
+	.xuanze.on{
+		border-bottom: 5px solid #40AFFE;
+	}
+	.all-top{
+		display: flex;justify-content: space-around;
+	}
+	.q{
+		display: none;
+	}
+	.q.on{
+		display: flex;
+	}
+</style>
+<body>
+<!--返回back-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >民生出行</p>
+</div>
+<!--选择-->
+	<div class="top">
+		<p class="active" id="taxi"><b >出租车</b></p>
+		<p id="all"><b >包车</b></p>
+	</div>
+<div id="car-left">
+<!-- 位置 -->
+<div class="place">
+		<p class="title">这里上车</p>
+		<div style="width: 90%;margin: 0 auto">
+			<select style="border-bottom: 1px solid #ccc" id="start">
+			  <option value="机场">机场</option>
+			  <option value="火车东站">火车东站</option>
+			  <option value="乌镇">乌镇</option>
+			</select>
+			<select id="end">
+			  <option value="机场">机场</option>
+			  <option value="火车东站">火车东站</option>
+			  <option value="乌镇">乌镇</option>
+				<option value="台州">台州</option>
+				<option value="义乌">义乌</option>
+
+			</select>
+		</div>
+	</div>
+<!-- 选车 -->
+<div id="now-car">
+	<div class="car" onclick="spase()">
+		<img src="./image/icon/car.jpg">
+		<div class="right">
+			<div>
+				<p>0:00</p>
+				<p>发车时间</p>
+			</div>
+			<span class="right-center"></span>
+			<div >
+				<p>0小时</p>
+				<p>用时</p>
+			</div>
+			<span class="right-center"></span>
+			<div>
+				<p>0</p>
+				<p>费用(元)</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 底部 -->
+	<div class="bottom">
+		<p class="bottom-left" id="now">现在用车</p>
+		<p class="bottom-right" id="will">预约</p>
+	</div>
+
+<!--预约-->
+<div id="tommrow-car">
+	<p class="zj"></p>
+	<div class="car" id="pc">
+		<img src="./image/icon/car.jpg">
+		<div class="right">
+			<div >
+				<p>2小时</p>
+				<p>用时时长</p>
+			</div>
+			<span class="right-center"></span>
+			<div>
+				<p>0</p>
+				<p>费用(元)</p>
+			</div>
+		</div>
+	</div>
+	<div style="width: 90%;border-top: 1px solid #ccc;margin: 20px auto;font-size: 18px">
+		<div style="padding: 15px 0;display: flex;">
+			<lable>预约时间</lable>
+				<input type="text" class="time" id="test1" placeholder="请输入预约时间" readonly="readonly">
+		</div>
+		<p>备注：</p>
+		<textarea type="text"  class="xiaoxi" placeholder="输入您要预留的信息" id="message1"></textarea>
+	</div>
+	<button id="yy" class="yy">预约</button>
+</div>
+
+</div>
+<!--包车-->
+<div id="bao-car">
+	<p class="zj"></p>
+	<div class="all-top">
+		<span class="xuanze on"  onclick="cl(1)">中巴</span>
+		<span class="xuanze" onclick="cl(2)">商务</span>
+		<span class="xuanze" onclick="cl(3)">轿车</span>
+	</div>
+	<!--中巴-->
+	<div class="car q on" id="car1">
+		<img src="./image/icon/car.jpg">
+		<div class="right">
+			<div>
+				<p>100</p>
+				<p>费用(元)/天</p>
+			</div>
+		</div>
+	</div>
+	<!--轿车-->
+	<div class="car q" id="car2">
+		<img src="./image/icon/car.jpg">
+		<div class="right">
+			<div>
+				<p>200</p>
+				<p>费用(元)/天</p>
+			</div>
+		</div>
+	</div>
+	<!--中巴-->
+	<div class="car q" id="car3">
+		<img src="./image/icon/car.jpg">
+		<div class="right">
+			<div>
+				<p>150</p>
+				<p>费用(元)/天</p>
+			</div>
+		</div>
+	</div>
+	<div style="width: 90%;border-top: 1px solid #ccc;margin: 20px auto;font-size: 18px">
+		<div style="padding: 15px 0;display: flex;">
+			<lable>预约时间</lable>
+			<input type="text" class="time" id="time1" placeholder="请输入预约时间" readonly="readonly">
+		</div>
+		<div style="padding: 15px 0;display: flex;">
+			<lable>结束时间</lable>
+			<input type="text" class="time" id="time2" placeholder="请输入结束时间" readonly="readonly">
+		</div>
+		<p>备注：</p>
+		<textarea type="text"  class="xiaoxi" placeholder="输入您要预留的信息" id="message2"></textarea>
+	</div>
+	<button id="baoyy" class="yy">预约</button>
+</div>
+
+
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/ajax.js"></script>
+<script src="./layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use('layer', function(){
+        var layer = layui.layer;
+        // 日期
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+            //执行一个laydate实例
+
+            laydate.render({
+                elem: '#test1'
+                ,type: 'datetime'
+            });
+            laydate.render({
+                elem: '#time1' //指定元素
+            });
+
+            laydate.render({
+                elem: '#time2' //指定元素
+            });
+        });
+        $("#will").click(function () {
+            console.log(mmm)
+            if (myid == ''){
+                layer.msg("请选择车次")
+                return
+			}
+			let html=''
+			html='<div class="car">\n' +
+                '\t\t<img src="./image/icon/car.jpg">\n' +
+                '\t\t<div class="right">\n' +
+                '\t\t\t<div>\n' +
+                '\t\t\t\t<p>'+ mmm + '小时</p>\n' +
+                '\t\t\t\t<p>用时时长</p>\n' +
+                '\t\t\t</div>\n' +
+                '\t\t\t<span class="right-center"></span>\n' +
+                '\t\t\t<div>\n' +
+                '\t\t\t\t<p>'+ fy +'</p>\n' +
+                '\t\t\t\t<p>费用(元)</p>\n' +
+                '\t\t\t</div>\n' +
+                '\t\t</div>\n' +
+                '\t</div>'
+            document.getElementById('pc').innerHTML=html
+
+            $(".bottom").hide();
+            $("#now-car").hide()
+            $(".back").click(function () {
+                window.location.href="car.html"  //点击跳转
+            })
+            $("#tommrow-car").show()
+        })
+
+        $(".back").click(function () {
+            window.location.href="index.html"  //点击跳转
+        })
+        $("#all").click(function(){
+            $("#car-left").hide()
+			$("#bao-car").show()
+            allcar()
+            $(this).addClass("active").siblings().removeClass("active")
+        })
+        $("#taxi").click(function(){
+            $("#car-left").show()
+            $("#bao-car").hide()
+			$("#now-car").show()
+			$("#tommrow-car").hide()
+            $(".bottom").show()
+            $(this).addClass("active").siblings().removeClass("active")
+        })
+        $("#start").change(function(){
+            //要触发的事件
+			che()
+            myid=''
+        });
+        $("#end").change(function(){
+            //要触发的事件
+            che()
+            myid=''
+
+        });
+        var mmm='';
+        function che(){
+            var start=$("#start").val()
+            var end=$("#end").val()
+            var number='';
+            // 机场起点
+            if( start=="机场" && end=="机场"){
+                layer.msg("起点终点不能同一个");
+                return
+            }
+            if( start=="机场" && end=="火车东站"){
+                number=1
+            }
+            if( start=="机场" && end=="乌镇"){
+                number=2
+            }
+            if( start=="机场" && end=="义乌"){
+                number=3
+            }
+            if( start=="机场" && end=="台州"){
+                number=4
+            }
+            // 火车东站起点
+            if( start=="火车东站" && end=="火车东站"){
+                layer.msg("起点终点不能同一个");
+                return
+            }
+            if( start=="火车东站" && end=="机场"){
+                layer.msg("暂时没有开通");
+                return;
+            }
+            if( start=="火车东站" && end=="乌镇"){
+                number=5
+            }
+            if( start=="火车东站" && end=="义乌"){
+                layer.msg("暂时没有开通");
+                return
+            }
+            if( start=="火车东站" && end=="台州"){
+                layer.msg("暂时没有开通");
+                return
+            }
+            // 乌镇起点
+            if( start=="乌镇" && end=="乌镇"){
+                layer.msg("起点终点不能同一个");
+                return
+            }
+            if( start=="乌镇" && end=="火车东站"){
+                number=6
+            }
+            if( start=="乌镇" && end=="机场"){
+                number=7
+            }
+            if( start=="乌镇" && end=="义乌"){
+                layer.msg("暂时没有开通");
+                return
+            }
+            if( start=="乌镇" && end=="台州"){
+                layer.msg("暂时没有开通");
+                return
+            }
+            $.ajax({
+                url:url+'/carCallValet/getByType',
+                data:{type:number},
+                success:res=>{
+                    mmm=res.data[0].useTime;
+                    fy=res.data[0].amountofmoney
+                    console.log(res,"成功")
+                    let html='';
+                    for (i=0;i<res.data.length;i++){
+                        html+='<div class="car" id="'+ res.data[i].id +'"  data-id="'+ res.data[i].id +'" onclick="xz(this.id)">' +
+                            '<img src="./image/icon/car.jpg">\n' +
+                            '<div class="right">\n' +
+                            '<div>' +
+                            '<p>'+ res.data[i].departureTime+'</p>\n' +
+                            '<p>发车时间</p>\n' +
+                            '</div>\n' +
+                            '<span class="right-center"></span>\n' +
+                            '<div >\n' +
+                            '<p>'+ res.data[i].useTime+'小时</p>\n' +
+                            '<p>用时</p>\n' +
+                            '</div>\n' +
+                            '<span class="right-center"></span>\n' +
+                            '<div>\n' +
+                            '<p>'+ res.data[i].amountofmoney+'</p>\n' +
+                            '<p>费用(元)</p>\n' +
+                            '</div>\n' +
+                            '</div>\n' +
+                            '</div>\n'
+                    }
+                    document.getElementById('now-car').innerHTML=html
+
+                }
+            })
+            console.log(number)
+            console.log(start,end)
+		}
+    });
+    var myid=''
+	function xz(id) {
+        myid=id;
+        $("#"+ myid ).addClass("active").siblings().removeClass("active")
+		layer.msg("已选中")
+        console.log(myid)
+    }
+    // 现在用车
+    $("#now").click(function () {
+        console.log(myid)
+		if(myid !='') {
+            layer.msg("预约成功")
+        }else{
+            layer.msg("请选择车辆")
+        }
+    })
+    $("#yy").click(function () {
+         if (numer=''){
+             layer.msg("请选择车辆");
+             return
+		 }
+		let time=''
+		let remarks=''
+        remarks=$("#message1").val()
+        time=$("#test1").val()
+		console.log(time)
+		console.log(myid)
+// 预约车辆
+        $.ajax({
+            url:url+"/bookACar/addBookingVehicle",
+            data:{
+                vehicleTypeId:myid,
+                time:time,
+                remarks:remarks,
+            },
+            success:res=>{
+                console.log(res)
+                layer.msg("预约成功")
+
+            }
+        })
+    })
+    $("#baoyy").click(function () {
+        layer.msg("预约成功")
+        allche()
+    })
+	function spase() {
+		layer.msg("请选择出发的地点")
+    }
+    $(".all-top span").click(function(){
+        $(".xuanze").eq($(this).index()).addClass("on").siblings().removeClass("on")
+        $(".q").eq($(this).index()).addClass("on").siblings().removeClass("on")
+
+    })
+	var carclass='1'
+	// 车辆选择（中巴、商务、轿车）
+	function cl(index) {
+		carclass=index
+		console.log(carclass)
+    }
+
+    //包车
+    function allche() {
+        let time=''
+		let endTime2=''
+		let remarks=''
+		time=$("#time1").val()
+        endTime2=$("#time2").val()
+        remarks=$("#message2").val()
+		console.log(time)
+        $.ajax({
+            url:"http://47.96.28.95/msfw/bookACar/addCharteredCar",
+            data:{vehicleTypeId:carclass,
+                time:time,
+                endTime2:endTime2,
+                remarks:remarks,
+                days:1
+            },
+			success:res=>{
+                console.log(res)
+			}
+        })
+    }
+</script>
+</html>

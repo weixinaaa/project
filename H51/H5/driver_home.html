@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>司机之家</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <!--手机端适配-->
+    <link rel="stylesheet" type="text/css" href="./css/all.css" />
+    <script src="./js/jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="content">
+      <a href="index.html">
+        <div class="back">
+          <img src="./image/back.png" />
+          <p>司机之家</p>
+        </div>
+      </a>
+
+      <div style="margin-top: 10px;">
+        <!--列表-->
+        <div id="list"></div>
+      </div>
+    </div>
+
+    <!-- <div class="del" onclick="deluser()">注销</div> -->
+  </body>
+</html>
+
+<script>
+  $(function () {
+    if (window.history && window.history.pushState) {
+      $(window).on("popstate", function () {
+        var hashLocation = location.hash;
+        var hashSplit = hashLocation.split("#!/");
+        var hashName = hashSplit[1];
+        if (hashName !== "") {
+          var hash = window.location.hash;
+          if (hash === "") {
+            //alert("你点击了返回键");
+            window.location.href = "index.html";
+          }
+        }
+      });
+    }
+  });
+
+  function deluser() {
+    var driverid = localStorage.getItem("driverid");
+    console.log(driverid);
+    if (driverid == null) {
+      alert("您还未注册!");
+    } else {
+      $.ajax({
+        type: "get",
+        url: "http://47.96.28.95:80/msfw/driverRegistered/delDriver",
+        data: {
+          id: driverid,
+        },
+        success: (res) => {
+          console.log(res);
+          if (res.msg == "成功") {
+            localStorage.setItem("driverid", "");
+            localStorage.removeItem("driverid");
+            alert("注销成功!");
+          }else{
+			alert("您还未注册!");
+		  }
+        },
+      });
+    }
+  }
+
+  hhh = [
+    {
+      imgurl: "./image/icon/gg.png",
+      title: "广告形式",
+      url: "./more.html",
+    },
+    {
+      imgurl: "./image/icon/司机之家@2x.png",
+      title: "司机之家（合伙人）",
+      url: "son.html?id=4&title=司机之家",
+    },
+    {
+      imgurl: "./image/icon/租车买车@2x.png",
+      title: "司机服务",
+      url: "./driverhome/driver_service.html",
+    },
+    {
+      imgurl: "./image/icon/租车买车@2x.png",
+      title: "租/买车",
+      url: "./SelectCity.html",
+    },
+    {
+      imgurl: "./image/icon/司机注册@2x.png",
+      title: "司机注册",
+      url: "./page/homecenter/regdriver.html",
+    },
+    {
+      imgurl: "./image/icon/招聘@2x.png",
+      title: "招聘",
+      url: "",
+    },
+  ];
+
+  var html = "";
+  for (i = 0; i < hhh.length; i++) {
+    html +=
+      "<a href=" +
+      hhh[i].url +
+      ">" +
+      '<div class="list">' +
+      '<div class="list-left">' +
+      '<img src="' +
+      hhh[i].imgurl +
+      '" >' +
+      "</div>" +
+      '<p class="list-title">' +
+      hhh[i].title +
+      "</p>" +
+      '<div class="list-right">' +
+      '<img  src="./image/open.png" alt="">' +
+      "</div>" +
+      "</div>" +
+      "</a>";
+  }
+  $("#list").html(html);
+</script>
+
+<style type="text/css">
+  .list {
+    display: flex;
+    margin: 10px 0;
+    padding: 10px 0;
+    background: white;
+    align-items: center;
+  }
+
+  .list-title {
+    width: 80%;
+  }
+
+  .list-left {
+    width: 10%;
+    margin: 0 20px;
+  }
+
+  .list-right {
+    /*width: 10%;*/
+    margin-right: 20px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .del {
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    margin: 10px auto 10px auto;
+  }
+</style>

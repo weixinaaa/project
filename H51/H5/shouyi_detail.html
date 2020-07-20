@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>收益详情</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><!--手机端适配-->
+	<link rel="stylesheet" type="text/css" href="./css/shouye_detail.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body >
+<!--返回-->
+<div class="back">
+	<img src="./image/back.png">
+	<p >收益详情</p>
+</div>
+
+<div id="rmb">
+	<!-- <div class="list">
+		<img src="./image/icon/money.jpg" style="width: 20%;">
+		<div>
+			<p>点击广告-广告标题</p>
+			<p>2020-3-20 14:46</p>
+		</div>
+		<span class="money">+3.56元</span>
+	</div> -->
+</div>
+
+</body>
+<script src="./js/jquery.js"></script>
+<script src="./js/ajax.js"></script>
+<script>
+	qian_list()
+    $(".back").click(function () {
+       // window.location.href="shouyi.html"  //点击跳转
+	   window.history.go(-1);
+    })
+</script>
+</html>

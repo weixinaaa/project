@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(242,245,254);
+}
+p{
+    margin:0;
+}
+.top{
+    display: flex;width: 90%;margin: 20px auto;background-color: white;
+}
+.tixian{
+    width: 50%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 5px;
+}
+.zhuangtai{
+    background-color: rgb(62,157,254);
+    border-bottom-right-radius: 50px !important;
+    color: white;
+}
+.history{
+    background-color: rgb(62,157,254);
+    border-top-left-radius: 50px !important;
+    color: white;
+}
+.icon{
+    width: 15%;
+    margin: 0 10px;
+}
+.time{
+    font-size: 10px;
+    color: #ccc
+}
+.list-right{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 0;
+}
+.list-left{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.list-left .money{
+    text-align: center;
+    width: 20%;
+}
+.list-left .center{
+    width: 40%
+}
+.list-left .right{
+    background-color: rgb(247,182,35);
+    color: white;
+    width: 20%;
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 10px 0;
+}
+.list-left .right img{
+    width: 50%;
+}
