@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="msfw:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="40306606-bbf7-4c30-8ee9-8aade4f72fd7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="jsf" />
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="alwaysUpdateSnapshots" value="true" />
+        <option name="localRepository" value="D:\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1d43pHpZTkmhhc9YQ1J1xPLxnOb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="aed334ec-d818-4ab5-a421-965848f1154f&#10;8b59ff24-5762-4caf-a1e3-f733da6698bd&#10;java.sql.Driver&#10;mysql" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="273" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth5" value="222" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="244" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth5" value="244" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowDebug.ShowToolbar" value="false" />
+    <property name="ToolWindowServices.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JSP" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../trunk/backstage/storey" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.huiyou.msfw.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea\Backstage\src\main\webapp\WEB-INF\views\console" />
+      <recent name="D:\idea\Backstage" />
+      <recent name="D:\idea\Backstage\src\main\java\com\huiyou\msfw" />
+      <recent name="D:\idea\Backstage\src\main\java\com\huiyou\msfw\mapper" />
+      <recent name="D:\idea\Backstage\src\main\resources\mybatis-mappers" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.huiyou.msfw.controller" />
+      <recent name="com.huiyou.msfw.controller.console" />
+      <recent name="com.huiyou.msfw.mapper" />
+      <recent name="com.huiyou.msfw.service.impl" />
+      <recent name="com.huiyou.msfw.service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea\Backstage" />
+      <recent name="D:\idea\Backstage\src\main\java\com\huiyou\msfw" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.99">
+    <configuration name="msfw [mybatis-generator:generate]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="phoneapp [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 7.0.99" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.99" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="msfw:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/msfw" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_msfw_5" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60624" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="msfw:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Maven.phoneapp [tomcat7:run]" />
+      <item itemvalue="Maven.msfw [mybatis-generator:generate]" />
+      <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
+    </list>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\26924\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\idea\Backstage" />
+          <option name="myCopyRoot" value="D:\idea\Backstage" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\idea\Backstage" />
+          <option name="myCopyRoot" value="D:\idea\Backstage" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="40306606-bbf7-4c30-8ee9-8aade4f72fd7" name="Default Changelist" comment="" />
+      <created>1584598511184</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584598511184</updated>
+      <workItem from="1584598516016" duration="233000" />
+      <workItem from="1584598786359" duration="116000" />
+      <workItem from="1584599009445" duration="1399000" />
+      <workItem from="1584604952771" duration="4617000" />
+      <workItem from="1584694809556" duration="3298000" />
+      <workItem from="1584925543595" duration="18358000" />
+      <workItem from="1585012510121" duration="14205000" />
+      <workItem from="1585098348096" duration="20820000" />
+      <workItem from="1585184707269" duration="15012000" />
+      <workItem from="1585209854589" duration="1704000" />
+      <workItem from="1585214555092" duration="1840000" />
+      <workItem from="1585271519275" duration="26092000" />
+      <workItem from="1585358002178" duration="20109000" />
+      <workItem from="1585530450913" duration="18149000" />
+      <workItem from="1585616651342" duration="27659000" />
+      <workItem from="1585702439425" duration="27023000" />
+      <workItem from="1585789401447" duration="25297000" />
+      <workItem from="1585876050629" duration="6346000" />
+      <workItem from="1585885361174" duration="3153000" />
+      <workItem from="1585895570024" duration="222000" />
+      <workItem from="1585897682388" duration="16273000" />
+      <workItem from="1586221799568" duration="7210000" />
+      <workItem from="1586230230681" duration="12598000" />
+      <workItem from="1586312365300" duration="913000" />
+      <workItem from="1586330494650" duration="5492000" />
+      <workItem from="1586487076197" duration="502000" />
+      <workItem from="1586499776222" duration="2564000" />
+      <workItem from="1586504728263" duration="482000" />
+      <workItem from="1586507909672" duration="688000" />
+      <workItem from="1586568825112" duration="604000" />
+      <workItem from="1586574354800" duration="658000" />
+      <workItem from="1586834667377" duration="166000" />
+      <workItem from="1586834860323" duration="68000" />
+      <workItem from="1586835579579" duration="12000" />
+      <workItem from="1586835607361" duration="1000" />
+      <workItem from="1586836234464" duration="112000" />
+      <workItem from="1587603695058" duration="3551000" />
+      <workItem from="1588040687145" duration="10917000" />
+      <workItem from="1588219183455" duration="2844000" />
+      <workItem from="1588226834559" duration="521000" />
+      <workItem from="1588919460346" duration="659000" />
+      <workItem from="1589158816387" duration="2009000" />
+      <workItem from="1589176646436" duration="8888000" />
+      <workItem from="1589187706785" duration="2458000" />
+      <workItem from="1589246347637" duration="18322000" />
+      <workItem from="1591670720769" duration="2801000" />
+      <workItem from="1591682004618" duration="3321000" />
+      <workItem from="1591686055509" duration="781000" />
+      <workItem from="1591688219054" duration="592000" />
+      <workItem from="1591691448379" duration="765000" />
+      <workItem from="1591692259673" duration="590000" />
+      <workItem from="1591750904610" duration="111000" />
+      <workItem from="1591751695917" duration="34000" />
+      <workItem from="1591751782432" duration="32322000" />
+      <workItem from="1591950259134" duration="64347000" />
+      <workItem from="1592381809596" duration="2697000" />
+      <workItem from="1592467413887" duration="67503000" />
+      <workItem from="1592638032805" duration="12553000" />
+      <workItem from="1592664643518" duration="26000" />
+      <workItem from="1592787423395" duration="20348000" />
+      <workItem from="1592880348527" duration="19036000" />
+      <workItem from="1592996267984" duration="1612000" />
+      <workItem from="1593312194822" duration="80457000" />
+      <workItem from="1593833040177" duration="2955000" />
+      <workItem from="1593996244024" duration="599000" />
+      <workItem from="1594014004271" duration="4282000" />
+      <workItem from="1594104785982" duration="1662000" />
+      <workItem from="1594111847852" duration="1836000" />
+      <workItem from="1594170961301" duration="12757000" />
+      <workItem from="1594267019827" duration="321000" />
+      <workItem from="1594267372354" duration="23357000" />
+      <workItem from="1594862576529" duration="2815000" />
+      <workItem from="1594947505578" duration="1582000" />
+    </task>
+    <task id="LOCAL-00001" summary="暂无任何修改">
+      <created>1591752029516</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591752029516</updated>
+    </task>
+    <task id="LOCAL-00002" summary="收益明细加入所对应的用户">
+      <created>1591767057328</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591767057328</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加邀请码，根据邀请码set邀请人id&#10;将添加佣金的CommissionController改成RegionAgentController">
+      <created>1591953961765</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591953961765</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加邀请码，根据邀请码set邀请人id&#10;将添加佣金的CommissionController改成RegionAgentController">
+      <created>1592182276374</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1592182276374</updated>
+    </task>
+    <task id="LOCAL-00005">
+      <created>1592182762977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1592182762977</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Default Changelist">
+      <created>1592190717353</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1592190717353</updated>
+    </task>
+    <task id="LOCAL-00007" summary="增添：租车，司机注册&#10;实体类CarRental(租车),PCA(省市区),CarType(车型),DriverRegistered(司机注册)&#10;以及它们的mapper,mapper.xml,service,serviceImpl。&#10;添加接口CarRentalController,车辆查询&#10;      CarTypeController,车型查询&#10;      DriverRegisteredController,注册,查询">
+      <created>1592385729634</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1592385729634</updated>
+    </task>
+    <task id="LOCAL-00008" summary="增添：租车，司机注册&#10;实体类CarRental(租车),PCA(省市区),CarType(车型),DriverRegistered(司机注册)&#10;以及它们的mapper,mapper.xml,service,serviceImpl。&#10;添加接口CarRentalController,车辆查询&#10;      CarTypeController,车型查询&#10;      DriverRegisteredController,注册,查询">
+      <created>1592469861374</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1592469861374</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修改查询省市区的参数，将参数pca改成pid">
+      <created>1592473631597</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1592473631598</updated>
+    </task>
+    <task id="LOCAL-00010" summary="增添，租车增添、查询、修改、删除，司机查询的后端管理jsp">
+      <created>1592787666666</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1592787666666</updated>
+    </task>
+    <task id="LOCAL-00011" summary="增添关于司机的修改，逻辑删除接口">
+      <created>1592798798186</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1592798798186</updated>
+    </task>
+    <task id="LOCAL-00012" summary="删除了司机修改的接口，并将逻辑删除改为真删&#10;，对用户注册里的部分逻辑做了一点点修改，&#10;给前端增加了司机注册成功后的返回值（集合）">
+      <created>1592901953321</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1592901953321</updated>
+    </task>
+    <task id="LOCAL-00013" summary="在用户注册的返回值上加了个userId，目的为了注册完成后在点击金额提现的时候前端可以向后端传用户id，以便创建提现订单">
+      <created>1592983704991</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1592983704991</updated>
+    </task>
+    <task id="LOCAL-00014" summary="在后端输出接口处将电话号码做了一层保护，130****3245">
+      <created>1593335953249</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1593335953250</updated>
+    </task>
+    <task id="LOCAL-00015" summary="增添了合伙人partner的增删改查，后端页面（查和删）&#10;增添银行提现接口（未完）增添表bank开户行以便查询寻开户行编号">
+      <created>1593566427084</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1593566427086</updated>
+    </task>
+    <task id="LOCAL-00016">
+      <created>1593566583022</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1593566583022</updated>
+    </task>
+    <task id="LOCAL-00017">
+      <created>1593685688147</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1593685688147</updated>
+    </task>
+    <task id="LOCAL-00018">
+      <created>1594106444951</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1594106444951</updated>
+    </task>
+    <task id="LOCAL-00019">
+      <created>1594175728733</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1594175728733</updated>
+    </task>
+    <task id="LOCAL-00020">
+      <created>1594256700214</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1594256700214</updated>
+    </task>
+    <task id="LOCAL-00021">
+      <created>1594285567729</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1594285567729</updated>
+    </task>
+    <task id="LOCAL-00022">
+      <created>1594688495493</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1594688495493</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="暂无任何修改" />
+    <MESSAGE value="收益明细加入所对应的用户" />
+    <MESSAGE value="添加邀请码，根据邀请码set邀请人id&#10;将添加佣金的CommissionController改成RegionAgentController" />
+    <MESSAGE value="Default Changelist" />
+    <MESSAGE value="增添：租车，司机注册&#10;实体类CarRental(租车),PCA(省市区),CarType(车型),DriverRegistered(司机注册)&#10;以及它们的mapper,mapper.xml,service,serviceImpl。&#10;添加接口CarRentalController,车辆查询&#10;      CarTypeController,车型查询&#10;      DriverRegisteredController,注册,查询" />
+    <MESSAGE value="修改查询省市区的参数，将参数pca改成pid" />
+    <MESSAGE value="增添，租车增添、查询、修改、删除，司机查询的后端管理jsp" />
+    <MESSAGE value="增添关于司机的修改，逻辑删除接口" />
+    <MESSAGE value="删除了司机修改的接口，并将逻辑删除改为真删&#10;，对用户注册里的部分逻辑做了一点点修改，&#10;给前端增加了司机注册成功后的返回值（集合）" />
+    <MESSAGE value="在用户注册的返回值上加了个userId，目的为了注册完成后在点击金额提现的时候前端可以向后端传用户id，以便创建提现订单" />
+    <MESSAGE value="在后端输出接口处将电话号码做了一层保护，130****3245" />
+    <MESSAGE value="增添了合伙人partner的增删改查，后端页面（查和删）&#10;增添银行提现接口（未完）增添表bank开户行以便查询寻开户行编号" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="516" y="145" key="#BuildArtifactsBeforeRunChooser" timestamp="1592638987393">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="516" y="145" key="#BuildArtifactsBeforeRunChooser/0.0.1280.680@0.0.1280.680" timestamp="1592638987393" />
+    <state x="153" y="0" key="#Project_Structure" timestamp="1592468684198">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="153" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1592468684198" />
+    <state x="184" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1591670782824" />
+    <state x="147" y="174" key="#Template_Data_Languages" timestamp="1593499399125">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="147" y="174" key="#Template_Data_Languages/0.0.1280.680@0.0.1280.680" timestamp="1593499399125" />
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594105179230">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="191" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1594105179230" />
+    <state x="471" y="122" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1591772448471" />
+    <state x="374" y="141" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593683835423">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="374" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1593683835423" />
+    <state x="478" y="91" key="#com.intellij.ide.util.MemberChooser" timestamp="1593510727219">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="478" y="91" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1593510727219" />
+    <state x="574" y="113" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1591783201508" />
+    <state x="349" y="127" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1592218499433">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="349" y="127" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1592218499433" />
+    <state x="460" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1592902864371">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="460" y="0" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1280.680@0.0.1280.680" timestamp="1592902864371" />
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591781973119">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591781973119" />
+    <state x="404" y="128" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1592993124594">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="404" y="128" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.680@0.0.1280.680" timestamp="1592993124594" />
+    <state x="395" y="90" key="#检查" timestamp="1591756175361">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="395" y="90" key="#检查/0.0.1536.824@0.0.1536.824" timestamp="1591756175361" />
+    <state x="208" y="0" key="#项目结构" timestamp="1592362653818">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="208" y="0" key="#项目结构/0.0.1280.680@0.0.1280.680" timestamp="1592362653818" />
+    <state x="249" y="0" key="#项目结构/0.0.1536.824@0.0.1536.824" timestamp="1591774077797" />
+    <state x="395" y="0" key="CommitChangelistDialog2" timestamp="1594688493214">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="395" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1594688493214" />
+    <state x="302" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591767055691" />
+    <state x="458" y="137" key="FileChooserDialogImpl" timestamp="1594947573884">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="137" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1594947573884" />
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1591775702168" />
+    <state width="1016" height="121" key="GridCell.Tab.0.bottom" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1493" height="94" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591791985080" />
+    <state width="1016" height="121" key="GridCell.Tab.0.center" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1493" height="94" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591791985079" />
+    <state width="1016" height="121" key="GridCell.Tab.0.left" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1493" height="94" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591791985079" />
+    <state width="1016" height="121" key="GridCell.Tab.0.right" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1493" height="94" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591791985079" />
+    <state width="1016" height="121" key="GridCell.Tab.1.bottom" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.1.center" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.1.left" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.1.right" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.2.bottom" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.2.center" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.2.left" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1016" height="121" key="GridCell.Tab.2.right" timestamp="1594688514934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1016" height="121" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1594688514934" />
+    <state width="1078" height="388" key="GridCell.Tab.3.bottom" timestamp="1592993538288">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.3.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592993538288" />
+    <state width="1078" height="388" key="GridCell.Tab.3.center" timestamp="1592993538288">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.3.center/0.0.1280.680@0.0.1280.680" timestamp="1592993538288" />
+    <state width="1078" height="388" key="GridCell.Tab.3.left" timestamp="1592993538288">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.3.left/0.0.1280.680@0.0.1280.680" timestamp="1592993538288" />
+    <state width="1078" height="388" key="GridCell.Tab.3.right" timestamp="1592993538288">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.3.right/0.0.1280.680@0.0.1280.680" timestamp="1592993538288" />
+    <state width="1078" height="388" key="GridCell.Tab.4.bottom" timestamp="1592993540191">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.4.bottom/0.0.1280.680@0.0.1280.680" timestamp="1592993540191" />
+    <state width="1078" height="388" key="GridCell.Tab.4.center" timestamp="1592993540190">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.4.center/0.0.1280.680@0.0.1280.680" timestamp="1592993540190" />
+    <state width="1078" height="388" key="GridCell.Tab.4.left" timestamp="1592993540190">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.4.left/0.0.1280.680@0.0.1280.680" timestamp="1592993540190" />
+    <state width="1078" height="388" key="GridCell.Tab.4.right" timestamp="1592993540190">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1078" height="388" key="GridCell.Tab.4.right/0.0.1280.680@0.0.1280.680" timestamp="1592993540190" />
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog" timestamp="1593489650913">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="171" y="0" key="Maven.ArtifactSearchDialog/0.0.1280.680@0.0.1280.680" timestamp="1593489650913" />
+    <state x="422" y="69" key="RollbackChangesDialog" timestamp="1594285334949">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="422" y="69" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1594285334949" />
+    <state x="225" y="0" key="SettingsEditor" timestamp="1592895108489">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="225" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1592895108489" />
+    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591756245855" />
+    <state x="668" y="280" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1591772354218">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="668" y="280" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1536.824@0.0.1536.824" timestamp="1591772354218" />
+    <state x="183" y="76" width="1095" height="495" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1592805263256">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="183" y="76" width="1095" height="495" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1280.680@0.0.1280.680" timestamp="1592805263256" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591767012873">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1591767012873" />
+    <state x="251" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592789949098">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="251" y="19" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1592789949098" />
+    <state x="455" y="180" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594862798217">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="455" y="180" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1594862798217" />
+    <state x="499" y="168" key="extract.method.dialog" timestamp="1591783266882">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="168" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1591783266882" />
+    <state x="466" y="10" width="847" height="804" key="find.popup" timestamp="1591756412185">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="466" y="10" width="847" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1591756412185" />
+    <state x="334" y="94" key="refactoring.ChangeSignatureDialog" timestamp="1593511168540">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="334" y="94" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1593511168540" />
+    <state x="297" y="151" key="run.anything.popup" timestamp="1594277086641">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1594277086641" />
+    <state x="359" y="119" width="672" height="560" key="search.everywhere.popup" timestamp="1593683832821">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="359" y="119" width="672" height="560" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1593683832821" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591781527459" />
+    <state x="471" y="131" key="svn.repositoryBrowser" timestamp="1594862888149">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="471" y="131" key="svn.repositoryBrowser/0.0.1280.680@0.0.1280.680" timestamp="1594862888149" />
+    <state x="575" y="313" key="svn.upgradeDialog" timestamp="1591756568360">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="575" y="313" key="svn.upgradeDialog/0.0.1536.824@0.0.1536.824" timestamp="1591756568360" />
+    <state x="533" y="275" key="svn4idea.checkout.options" timestamp="1591756566042">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="275" key="svn4idea.checkout.options/0.0.1536.824@0.0.1536.824" timestamp="1591756566042" />
+  </component>
+</project>

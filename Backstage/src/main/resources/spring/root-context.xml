@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+	
+	<task:annotation-driven/>
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<context:component-scan base-package="com.huiyou.${project.packageName}.service.impl" />
+		<context:component-scan base-package="com.huiyou.${project.packageName}.job" />
+
+	
+	<!-- dataSource -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close"> 
+      <!-- 基本属性 url、user、password -->
+      <property name="url" value="${jdbc.url}" />
+      <property name="username" value="${jdbc.username}" />
+      <property name="password" value="${jdbc.password}" />
+      <!-- 配置初始化大小、最小、最大 -->
+      <property name="initialSize" value="${jdbc.initialSize}" />
+      <property name="minIdle" value="${jdbc.minIdle}" /> 
+      <property name="maxActive" value="${jdbc.maxActive}" />
+      <!-- 配置获取连接等待超时的时间 -->
+      <property name="maxWait" value="60000" />
+      <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+      <property name="timeBetweenEvictionRunsMillis" value="60000" />
+      <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+      <property name="minEvictableIdleTimeMillis" value="300000" />
+      <property name="validationQuery" value="SELECT 'x'" />
+      <property name="testWhileIdle" value="true" />
+      <property name="testOnBorrow" value="false" />
+      <property name="testOnReturn" value="false" />
+      <property name="connectionInitSqls" value="set names utf8mb4;"/>
+    </bean>
+	
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
+		<property name="mapperLocations" value="classpath:mybatis-mappers/*.xml" />
+		<!-- 实体类别名 -->
+		<property name="typeAliasesPackage">
+			<value>
+				name = com.huiyou.msfw.model
+			</value>
+		</property>
+		<!-- 驼峰命名 -->
+		<property name="configuration">
+			<bean class="org.apache.ibatis.session.Configuration">
+				<!--可以加入驼峰命名法其他mybatis的配置也就是mybatis.cfg.xml的相关配置都会转移到这里-->
+				<property name="mapUnderscoreToCamelCase" value="true"/>
+			</bean>
+		</property>
+		<!-- 注意其他配置 -->
+		<property name="plugins">
+			<array>
+				<bean class="com.github.pagehelper.PageInterceptor">
+					<property name="properties">
+						<!--使用下面的方式配置参数，一行配置一个 -->
+						<value>
+							helperDialect=mysql
+						</value>
+					</property>
+				</bean>
+			</array>
+		</property>
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.huiyou.${project.packageName}.mapper" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- 拦截器方式配置事物 -->
+	<tx:advice id="transactionAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="modify*" propagation="REQUIRED" />
+			<tx:method name="edit*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="remove*" propagation="REQUIRED" />
+			<tx:method name="evaluate*" propagation="REQUIRED" />
+
+			<tx:method name="get*" propagation="SUPPORTS" />
+			<tx:method name="query*" propagation="SUPPORTS" />
+			<tx:method name="find*" propagation="SUPPORTS" />
+
+			<tx:method name="*" propagation="SUPPORTS" />
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<aop:pointcut id="transactionPointcut" expression="execution(* com.huiyou.${project.packageName}.service.impl.*Impl.*(..))" />
+		<aop:advisor pointcut-ref="transactionPointcut" advice-ref="transactionAdvice" />
+	</aop:config>
+	
+</beans>

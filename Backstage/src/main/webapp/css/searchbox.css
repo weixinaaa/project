@@ -1,0 +1,164 @@
+/* screening */
+
+div.screening {
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	position: fixed;
+	z-index: 4;
+}
+
+div.screening>ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	/*border-bottom: solid 1px #d3d3d3;*/
+	overflow: hidden;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+div.screening>ul:before {
+	content: " ";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 1px;
+	border-top: 1px solid #a7a7a7;
+	color: #a7a7a7;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+	left: 0px;
+}
+
+div.screening>ul>li {
+	padding: 13px;
+	text-align: center;
+	flex: 1;
+}
+
+div.screening>ul>li:after {
+	content: " ";
+	display: inline-block;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	height: 6px;
+	width: 6px;
+	border-width: 1px 1px 0 0;
+	border-color: #c8c8cd;
+	border-style: solid;
+	position: relative;
+	top: -4px;
+	margin-left: .3em;
+}
+
+
+/* grade */
+
+.Cate-eject,
+.grade-eject,
+.Category-eject,
+.Sort-eject {
+	position: fixed;
+	top: -65%;
+	width: 100%;
+	height: 65%;
+	z-index: 1;
+	-webkit-transition-duration: 0.4s;
+}
+
+.Cate-eject>ul,
+.grade-eject>ul,
+.Category-eject>ul,
+.Sort-eject>ul {
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	height: 100%;
+	width: 100%;
+	-webkit-transition-duration: 0.4s;
+}
+
+.Cate-eject>ul>li,
+.grade-eject>ul>li,
+.Category-eject>ul>li,
+.Sort-eject>ul>li {
+	line-height: 3rem;
+	padding-left: 1rem;
+}
+
+.grade-eject>ul.grade-w,
+.Category-eject>ul.Category-w {
+	background: #FFFFFF;
+	position: absolute;
+	z-index: 1;
+}
+
+.grade-eject>ul.grade-t,
+.Category-eject>ul.Category-t {
+	background: #f6f6f6;
+	position: absolute;
+	z-index: 2;
+	left: 100%;
+}
+
+.grade-eject>ul.grade-s,
+.Category-eject>ul.Category-s {
+	background: #efefef;
+	position: absolute;
+	z-index: 3;
+	left: 100%;
+	list-style-type: none;
+}
+
+.grade-eject>ul.grade-s>li,
+.Category-eject>ul.Category-s>li {
+	border-bottom: solid 1px #eee;
+}
+
+.grade-w-roll {
+	top: 2.2rem;
+}
+
+.grade-w-roll::after {
+	position: fixed;
+	content: "";
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: rgba(0, 0, 0, 0.2);
+	top: 0;
+}
+
+
+/*Sort-eject*/
+
+.Sort-Sort {
+	width: 100%;
+	height: 100%;
+	background: #efefef;
+	position: absolute;
+	z-index: 3;
+	left: 0;
+	list-style-type: none;
+}
+
+.Sort-Sort>li {
+	border-bottom: solid 1px #eee;
+	padding: 0;
+}
+
+.Sort-height {
+	height: 220px;
+}
+
+
+/* demo-content */
+
+.demo-content {
+	padding-top: 2rem;
+}

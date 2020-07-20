@@ -1,0 +1,739 @@
+body {
+	background-color: #E8E8E8;
+	margin: 0;
+	padding: 0;
+}
+
+.new{
+	display: block;
+	float: left;
+	width: 10px;
+	height: 10px;
+	background-color: #E60000;
+	border-radius: 10px;
+	margin: 0;
+	margin-top: 7px !important;
+	margin-right: 5px;
+}
+ul {
+	padding-left: 0;
+}
+
+li {
+	list-style: none;
+}
+
+.clear {
+	clear: both;
+}
+
+textarea {
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+	-webkit-appearance: none;
+}
+
+.yzm {
+	background-color: #FFFFFF;
+	border: 1px solid #04BE02;
+	display: block;
+	height: 34px;
+	width: 28%;
+	text-align: center;
+	border-radius: 7px;
+	float: right;
+	color: #04BE02 !important;
+	margin-top: 8px;
+	line-height: 34px;
+	font-size: 14px;
+}
+
+a:link {
+	color: inherit;
+}
+
+a:visited {
+	color: inherit;
+}
+
+a:hover {
+	color: inherit;
+}
+
+.hide {
+	display: none;
+}
+
+table {
+	margin-top: -20px;
+	width: 100%;
+	color: #B0B0B0;
+	border-color: #B0B0B0;
+	border-collapse: collapse;
+}
+
+table td,
+th {
+	width: 50%;
+	height: 40px;
+	font-weight: normal;
+	border: 1px solid #B0B0B0 !important;
+	text-align: center;
+}
+
+
+/*以上是全局css*/
+
+#contactus .weui_cells {
+	margin: 0;
+	line-height: 35px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+#contactus .weui_cell_ft {
+	width: 70%;
+	text-align: left;
+}
+
+
+/*以上是联系我们*/
+
+#wode {
+	background-color: #FFFFFF;
+}
+
+#wode header img {
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+#wode section {
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 30px;
+}
+
+#wode section>div {
+	height: 50px;
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 10px;
+}
+
+#wode section>div input {
+	line-height: 40px;
+	font-size: 18px;
+	width: 60%;
+	background-color: inherit;
+	border: none;
+	margin-top: 8px;
+	padding-left: 2px;
+}
+
+#wode .login {
+	margin-top: 60px;
+	color: #FFFFFF;
+}
+
+#wode section p {
+	text-align: center;
+	margin-top: 20px;
+	color: #B0B0B0;
+}
+
+#wode section p a {
+	color: #04BE02 !important;
+}
+
+#wode .laststep>div {
+	height: 50px;
+	width: 100%;
+	background-color: #FFFFFF;
+	padding: 10px 0px;
+	margin-bottom: 10px;
+}
+
+#wode .laststep div p {
+	width: 48px;
+	line-height: 50px;
+	float: left;
+	margin-right: 20px;
+	padding-left: 20px;
+}
+
+#wode .laststep div span {
+	width: 100px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	display: block;
+	float: left;
+	border: 1px solid #D7D7D7;
+	border-radius: 5px;
+	color: #999;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+
+#wode .laststep div .active {
+	border: 1px solid #04BE02;
+	color: #04BE02;
+}
+
+#wode .laststep div select {
+	width: 70%;
+	font-size: 16px;
+	height: 40px;
+	margin-top: 4px;
+	border: none;
+}
+
+#wode .laststep input {
+	height: 30px;
+	margin-top: 10px;
+	border: none;
+	font-size: 16px;
+}
+
+#wode .weui-row input {
+	width: 28px;
+}
+
+#wode .sj {
+	width: 15px;
+	float: right;
+	margin-right: 20px;
+	margin-top: 22px;
+}
+
+#wode .weui-row .sj {
+	float: right;
+	margin-right: 8px;
+}
+
+#wode .weui-row {
+	padding-left: 20px;
+}
+
+#wode .weui-row>div {
+	height: 50px;
+	line-height: 50px;
+	border-right: 1px solid #EFEFEF;
+}
+
+#wode .weui-row p {
+	padding-left: 0 !important;
+	margin: 0 !important;
+	width: 35px !important;
+}
+
+#wode .weui-row select {
+	width: 60% !important;
+	margin-top: 2px !important;
+}
+
+#wode .wc {
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 50px;
+	color: #FFFFFF;
+}
+
+@media (max-width: 320px) {
+	#wode .laststep div span {
+		width: 90px;
+	}
+}
+
+
+/*以上是个人中心*/
+
+#property {
+	background-color: #FFFFFF;
+}
+
+#property header img {
+	width: 100%;
+	max-height: 207px;
+}
+
+#property .top_xx {
+	height: 50px;
+	background-color: #E8E8E8;
+	padding-top: 10px;
+	margin-top: -8px;
+}
+
+#property section {
+	width: 94%;
+	margin-left: 3%;
+	border-radius: 30px;
+	background-color: #FFFFFF;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	padding: 5px 0;
+}
+
+#property section b {
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #f00;
+	float: left;
+}
+
+#property section #swiper-container1 {
+	float: left;
+	width: 50%;
+}
+
+#property section strong {
+	font-weight: normal;
+	float: right;
+	padding-right: 10px;
+	color: #999999;
+}
+
+#swiper-container2 {
+	height: 30px;
+	overflow: hidden;
+	width: 50%;
+	float: left;
+}
+
+#property .in_list .swiper-slide {
+	height: 30px !important;
+}
+
+#property .main .weui-row {
+	background-color: #FFFFFF;
+}
+
+#property .main .weui-row .weui-col-50 {}
+
+#property .main .weui-row .weui-col-50 img {
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+}
+
+#property .main .weui-row .weui-col-50 a {
+	padding-top: 15px;
+	display: block;
+}
+
+#property .main .weui-row .weui-col-50 p {
+	text-align: center;
+	padding: 10px 0;
+}
+
+
+/*以上是物业窗口*/
+
+#newslist ul li {
+	background-color: #FFFFFF;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+#newslist ul li strong {
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+	color: #999999;
+	padding-top: 3px;
+}
+
+#newslist ul li p {
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 35px;
+	text-indent: 2em;
+}
+
+
+/*以上是报修报事*/
+
+#bxbs .weui_cells {
+	margin-top: 0;
+	line-height: 30px;
+}
+
+#bxbs .weui_cell_ft {
+	text-align: left;
+	width: 70%;
+}
+
+#bxbs .laststep {
+	margin-top: 10px;
+	background-color: #FFFFFF;
+}
+
+#bxbs .laststep>div {
+	height: 50px;
+	width: 100%;
+	background-color: #FFFFFF;
+	padding: 10px 0px;
+}
+
+#bxbs .laststep div p {
+	width: 48px;
+	line-height: 50px;
+	float: left;
+	margin-right: 30px;
+	padding-left: 15px;
+}
+
+#bxbs .laststep div span {
+	width: 90px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	float: left;
+	border: 1px solid #D7D7D7;
+	border-radius: 5px;
+	color: #999;
+	margin-right: 20px;
+	margin-top: 8px;
+}
+
+#bxbs .laststep div .active {
+	border: 1px solid #04BE02;
+	color: #04BE02;
+}
+
+#bxbs textarea {
+	width: 88%;
+	margin-left: 5%;
+	border: 1px solid #E8E8E8;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 2%;
+	font-size: 14px;
+}
+
+#bxbs .uploadimg {
+	margin-top: 10px;
+	background-color: #FFFFFF;
+	padding-bottom: 25px;
+}
+
+#bxbs .uploadimg>div {
+	height: 30px;
+	width: 100%;
+	background-color: #FFFFFF;
+	padding: 10px 0px;
+}
+
+#bxbs .uploadimg div p {
+	width: 70%;
+	line-height: 30px;
+	float: left;
+	padding-left: 15px;
+}
+
+#bxbs .submit {
+	width: 90%;
+	margin-left: 5%;
+	color: #FFFFFF !important;
+}
+
+#bxbs .uploadimg section {
+	padding-left: 15px;
+	margin-bottom: 25px;
+	margin-top: 10px;
+}
+
+.closeIcon {
+	position: absolute;
+	top: -7.5px;
+	right: -7.5px;
+	height: 15px;
+	width: 15px;
+	display: block;
+	color: #FFFFFF;
+	background: #FF0000;
+	border-radius: 15px;
+	line-height: 12px;
+	text-indent: 1px;
+	text-align: center;
+	font-size: 15px;
+}
+
+#bxbs .uploadimg section .imgbox {
+	position: relative;
+	height: 60px;
+	width: 60px;
+	margin: 10px;
+}
+
+#bxbs .uploadimg section img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*以上是报修报事、投诉表扬、咨询建议*/
+
+#presslist ul li {
+	background-color: #FFFFFF;
+	padding: 15px;
+	margin-bottom: 10px;
+}
+
+#presslist ul li img {
+	width: 120px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	height: 80px;
+}
+
+#presslist ul li p {
+	margin: 0;
+	margin-bottom: 10px;
+	height: 45px;
+}
+
+#presslist ul li span img {
+	width: 20px;
+	margin-right: 5px;
+}
+
+#presslist ul li b {
+	font-weight: normal;
+	float: right;
+	font-size: 13px;
+	padding-top: 4px;
+}
+
+
+/*以上是新闻列表*/
+
+#presslistdetails {
+	padding: 15px;
+	background-color: #FFFFFF;
+}
+
+#presslistdetails h1 {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+#presslistdetails span {
+	line-height: 23px;
+	display: block;
+}
+
+#presslistdetails span img {
+	width: 20px;
+	margin-right: 5px;
+	display: block;
+	float: left;
+	padding-right: 5px;
+}
+
+#presslistdetails b {
+	float: right;
+	display: block;
+	font-weight: normal;
+	margin-top: -23px;
+	color: #666;
+}
+
+#presslistdetails section {
+	padding-top: 20px;
+}
+
+#presslistdetails section img {
+	width: 100%;
+}
+
+#presslistdetails section p {
+	text-indent: 2em;
+}
+
+
+/*以上是新闻详情*/
+
+#house {}
+
+#house header img {
+	width: 100%;
+	max-height: 207px;
+}
+
+#house .top_xx {
+	height: 50px;
+	background-color: #E8E8E8;
+	padding-top: 10px;
+	margin-top: -8px;
+}
+
+#house section {
+	width: 94%;
+	margin-left: 3%;
+	border-radius: 30px;
+	background-color: #FFFFFF;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	padding: 5px 0;
+}
+
+#house section b {
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #f00;
+	float: left;
+}
+
+#house section #swiper-container1 {
+	float: left;
+	width: 50%;
+}
+
+#house section strong {
+	font-weight: normal;
+	float: right;
+	padding-right: 10px;
+	color: #999999;
+}
+
+#swiper-container2 {
+	height: 30px;
+	overflow: hidden;
+	width: 50%;
+	float: left;
+}
+
+#house .in_list .swiper-slide {
+	height: 30px !important;
+}
+
+#house .main ul li {
+	padding: 15px;
+	background-color: #FFFFFF;
+	margin-bottom: 7px;
+	height: 85px;
+}
+
+#house .main ul li img {
+	width: 120px;
+	height: 100%;
+	display: block;
+	float: left;
+	margin-right: 15px;
+}
+
+#house .main ul li h1 {
+	font-size: 16px;
+	font-weight: normal;
+	height: 50px;
+}
+
+#house .main ul li span {
+	display: block;
+	font-size: 14px;
+	color: #FF0000;
+	margin-top: 2px;
+}
+
+#house .main ul li span b {
+	font-size: 25px;
+}
+
+
+/*以上是家政服务*/
+
+#housedetails header img {
+	width: 100%;
+	max-height: 207px;
+}
+
+#housedetails .hou_top {
+	background-color: #FFFFFF;
+	padding: 5px 20px;
+}
+
+#housedetails .hou_top h1 {
+	font-size: 16px;
+	font-weight: normal;
+}
+
+#housedetails .hou_top span {
+	display: block;
+	font-size: 14px;
+	color: #FF0000;
+	height: 35px;
+}
+
+#housedetails .hou_top span b {
+	font-size: 25px;
+}
+
+#housedetails .main {
+	background-color: #FFFFFF;
+	margin-top: 10px;
+	margin-bottom: 60px;
+}
+
+#housedetails .main ul {
+	border-bottom: 1px solid #04BE02;
+	height: 55px;
+	line-height: 55px;
+	margin-bottom: 20px;
+}
+
+#housedetails .main ul li:first-child {
+	border-right: 1px solid #04BE02;
+}
+
+#housedetails .main ul li {
+	width: 49.8%;
+	height: 47px;
+	line-height: 47px;
+	margin-top: 4px;
+	text-align: center;
+	float: left;
+	background-color: #FFFFFF;
+	font-size: 18px;
+	color: #666666;
+	font-weight: 500;
+}
+
+#housedetails .main ul .active {
+	color: #04BE02;
+}
+
+#housedetails .main section img {
+	width: 100%;
+}
+
+#housedetails .main section {
+	padding: 15px;
+}
+
+#housedetails footer {
+	height: 60px;
+	border-top: 1px solid #f1f1f1;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: #FFFFFF;
+}
+
+#housedetails footer a {
+	color: #FFFFFF;
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 10px;
+}
+
+
+/*以上是详情*/

@@ -1,0 +1,21 @@
+.layui-layout-admin .layui-header{
+	background-color: #09c !important;
+}
+.hideMenu{
+	background-color: #54ade8 !important;
+}
+.layui-body{
+	border-top: 5px solid #54ade8;
+    border-left: 2px solid #54ade8;
+}
+.layui-tab-title .layui-this{
+	background-color: #54ade8 !important;
+}
+.layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-this>a:hover{
+	background-color: #54ade8 !important;
+}
+.layui-elem-quote{
+	border-left: 5px solid #54ade8 !important;
+}
+
+

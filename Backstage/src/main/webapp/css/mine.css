@@ -1,0 +1,1066 @@
+.mineheader {
+	display: block;
+	width: 100%;
+	/*height: 33%;*/
+	height: 220px;
+	background-image: url(../img/wodetu@2x.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	overflow: auto;
+}
+
+.headerimgbox {
+	width: 80px;
+	height: 80px;
+	border-radius: 80px;
+	border: 3px solid #fff;
+	margin: 50px auto 0;
+}
+
+.headerimgbox img {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.mineheader h3 {
+	color: #fff;
+	font-size: 17px;
+	line-height: 1;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.mineheader p {
+	color: #fff;
+	font-size: 14px;
+	line-height: 1;
+	text-align: center;
+	padding-top: 8px;
+}
+
+.mine {
+	width: 100%;
+}
+
+.mine .weui_cell P {
+	color: #333333;
+	font-size: 15px;
+}
+
+.mine .weui_cell {
+	padding-left: 30px;
+}
+
+.mine .weui_cell:before {
+	left: 0;
+}
+
+.mine .weui_cells {
+	margin-top: 10px;
+}
+
+.mine .weui_cell_hd img {
+	width: 20px;
+	margin-right: 10px;
+	display: block;
+}
+
+
+/*我的*/
+
+.header .icon-youbian:before {
+	position: absolute;
+	color: #fff;
+	left: 15px;
+	display: inline-block;
+	transform: rotate(180deg);
+}
+
+.myprolist .weui_tab {
+	width: 100%;
+	height: auto;
+	position: fixed;
+	left: 0;
+	top: 45px;
+}
+
+.weui_panel_access .weui_panel_ft:active {
+	background-color: #fff;
+}
+
+.weui_panel_access .weui_panel_ft:not(.no_access):active {
+	background-color: #ececec;
+}
+
+.myprolist .weui_panel_hd {
+	font-size: 15px;
+}
+
+.weui_media_box .weui_media_title {
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+
+.weui_media_box .myproprice {
+	color: #333;
+	font-size: 13px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.weui_media_box .weui_media_desc {
+	color: #666;
+	font-size: 12px;
+}
+
+.weui_media_box.weui_media_appmsg .weui_media_hd {
+	width: 75px;
+	height: 75px;
+}
+
+.rightfont {
+	text-align: right;
+}
+
+.myprolist .weui_navbar+.weui_tab_bd {
+	padding-top: 55px;
+}
+
+.myprolist .weui_panel_ft:before,
+.myprolist .weui_media_box:before {
+	left: 0;
+}
+
+.myprolist .weui_panel_ft {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.promsg {
+	color: #333;
+	flex: 1;
+}
+
+.promsg p {
+	font-size: 14px;
+	color: inherit;
+}
+
+.promsg b {
+	font-weight: normal;
+}
+
+.myprobtn {
+	line-height: 2;
+	font-size: 15px;
+	margin: 0;
+}
+
+.price {
+	margin-left: 10px;
+}
+
+.pt45 {
+	padding-top: 45px;
+}
+
+.fixbottom {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.fixbottom .weui_panel_ft {
+	justify-content: flex-end;
+}
+
+.textright {
+	text-align: right;
+}
+
+.header .icon-add:before {
+	position: absolute;
+	color: #fff;
+	right: 15px;
+	top: 17.5px;
+	display: inline-block;
+}
+
+.icon-add {
+	font-size: 24px;
+	line-height: 1;
+	display: inline-block;
+}
+
+.noaddress {
+	margin-top: 33%;
+	text-align: center;
+	color: #999999;
+	font-size: 15px;
+	display: none;
+}
+
+.myaddress .weui_panel_ft {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mybtns {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.btnitem label {
+	position: relative;
+	display: inline-block;
+}
+
+.btnitem:active {
+	background-color: #ececec;
+}
+
+.btnitem {
+	padding-left: 23px;
+	margin-left: 12px;
+	color: #333333;
+}
+
+.btnitem label:before {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: -20px;
+	top: 3px;
+	background: url(../img/buxuan@2x.png) no-repeat;
+	background-size: 100% 100%;
+	width: 15px;
+	height: 15px;
+}
+
+.myaddress .weui_media_box .weui_media_desc {
+	font-size: 13px;
+}
+
+.myaddress .weui_media_box .weui_media_title {
+	font-size: 15px;
+}
+
+.myaddress .weui_media_box .weui_media_title i {
+	font-style: normal;
+	margin-left: 10px;
+	font-size: inherit;
+}
+
+.myaddress .weui_panel_ft:before {
+	content: none;
+}
+
+
+/*添加收获地址*/
+
+.addressadd .weui_input,
+.addressadd .weui_textarea,
+.addressadd .weui_label {
+	font-size: 15px;
+}
+
+.addressadd .weui_cell:before {
+	left: 0;
+}
+
+.addressadd .weui_cell {
+	padding: 7px 15px;
+	-webkit-box-align: baseline;
+	-webkit-align-items: baseline;
+	align-items: baseline;
+}
+
+.addressadd .weui_cell_select .weui_cell_bd:after {
+	border-color: #999;
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.addressadd .radiobox {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 25px;
+	font-size: 15px;
+}
+
+.addressadd .radiobox label:before {
+	width: 17px;
+	height: 17px;
+	left: -22px;
+	top: 2px;
+}
+
+.addressadd .radiobox label {
+	font-size: 15px;
+}
+
+.addressadd .mybtn {
+	width: 80%;
+	margin: 43px auto;
+	font-size: 18px;
+	background: #cf2a27;
+}
+
+
+/*投诉建议*/
+
+.advice .weui_cell:before {
+	content: none;
+}
+
+.singlecell.weui_cell {
+	padding: 7px 15px;
+}
+
+.advice .weui_cells_title {
+	color: #333333;
+	font-size: 15px;
+}
+
+.advice .weui_textarea {
+	font-size: 14px;
+	border: 1px solid #d2d2d2;
+	padding: 10px;
+	height: 165px;
+}
+
+.advice .weui_uploader_input_wrp:after {
+	content: none;
+}
+
+.advice .weui_uploader_input_wrp:before {
+	content: " ";
+	left: calc((100% - 36px)/2);
+	top: calc((100% - 32px)/2);
+	-webkit-transform: translate(0);
+	transform: translate(0);
+	width: 100%;
+	height: 100%;
+	background: url(../img/pic.png) no-repeat;
+	background-size: 36px 32px;
+}
+
+.advice .weui_input {
+	font-size: 14px;
+}
+
+.advice .weui_label {
+	font-size: 15px;
+	width: 65px;
+}
+
+.advice .mybtn {
+	width: 70%;
+	margin-top: 35px;
+	font-size: 18px;
+}
+
+
+/*消息*/
+
+.mymsglist .weui_media_bd p {
+	/*overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;*/
+	font-size: 13px;
+	padding-left: 15px;
+	color: #999999;
+}
+
+.mymsglist .time {
+	font-style: normal;
+	float: right;
+	color: #999999;
+	font-size: 12px;
+}
+
+.mymsglist .weui_media_title {
+	position: relative;
+	font-size: 15px;
+	padding-left: 15px;
+	color: #999;
+}
+
+.mymsglist .unread .weui_media_title {
+	color: #333;
+}
+
+.mymsglist .unread .weui_media_bd p {
+	color: #666666;
+}
+
+.mymsglist .unread .weui_media_title:before {
+	content: " ";
+	position: absolute;
+	left: 2px;
+	top: 5px;
+	width: 5px;
+	height: 5px;
+	border-radius: 5px;
+	background: #cf2a27;
+}
+
+.mymsglist .weui_media_box:before {
+	left: 0;
+}
+
+
+/*服装管理*/
+
+.searchheader {
+	height: 194px;
+	background: #eb3939;
+	position: static;
+	overflow: auto;
+}
+
+.searchheader .weui_search_text {
+	height: 30px;
+	border-radius: 30px;
+	width: 86%;
+	margin: 27px auto 0;
+	display: flex;
+	position: static;
+	justify-content: center;
+	align-items: center;
+}
+
+.searchheader .weui_icon_search:before {
+	content: " ";
+	background-image: url(../img/sousuoshenhui@2x.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 18px;
+	width: 17px;
+	vertical-align: sub;
+	margin-right: 3px;
+}
+
+.searchheader .weui_search_text span {
+	font-size: 15px;
+}
+
+.money {
+	width: 100%;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: baseline;
+	height: 137px;
+	line-height: 137px;
+	color: #FFFFFF;
+}
+
+.money h2 {
+	font-size: 45px;
+}
+
+.clear {
+	clear: both;
+}
+
+.searchbody {
+	margin-bottom: 50px;
+}
+
+.searchbody .weui_tab {
+	position: relative;
+	height: auto;
+}
+
+.clothlist {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 10px 0;
+}
+
+.clothlist a {
+	display: block;
+	width: 50%;
+	padding: 0 15px;
+}
+
+.clothlist .clothmsg {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 100%;
+	color: #747474;
+	font-size: 13px;
+}
+
+.clothlist b {
+	display: flex;
+	color: #cf2a27;
+}
+
+.clothlist i {
+	font-style: normal;
+	font-size: 12px;
+	line-height: 14px;
+	display: inline-block;
+	-webkit-transform: scale( 0.75, 0.75);
+	transform: scale(0.75, 0.75);
+	border: 1px solid #ff0000;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+.clothlist img {
+	width: 165px;
+	height: 170px;
+}
+
+.clothnum {
+	color: #999999;
+	font-size: 12px;
+}
+
+
+/*搜索*/
+
+.search.searchheader {
+	height: 64px;
+}
+
+.search .weui_search_cancel {
+	display: block;
+	color: #FFFFFF;
+}
+
+.search .weui_search_bar {
+	background: #eb3939;
+	margin-top: 20px;
+}
+
+.search .weui_search_bar:before,
+.search .weui_search_bar:after {
+	content: none;
+}
+
+.weui_search_outer:after {
+	border-radius: 30px;
+}
+
+.weui_search_inner {
+	height: 30px;
+	border-radius: 30px;
+}
+
+.weui_search_outer {
+	background: #eb3939;
+	height: 30px;
+}
+
+.weui_search_inner .weui_icon_search {
+	top: 2px;
+}
+
+.weui_search_inner .weui_search_input {
+	padding: 0;
+	width: 100%;
+	height: 30px;
+	border: 0;
+	font-size: 15px;
+	line-height: 30px;
+}
+
+.searchcells.weui_cells:before,
+.searchcells.weui_cells:after {
+	content: none;
+}
+
+.searchcells .weui_cell_primary {
+	font-size: 13px;
+}
+
+.timeicon {
+	width: 15px;
+	margin-right: 5px;
+	display: block
+}
+
+.searchbtn {
+	width: 40%;
+	margin-top: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #000000;
+	font-size: 12px;
+	text-indent: 10px;
+	padding: 7px 17px;
+}
+
+.shanchuicon {
+	display: block;
+	position: relative;
+	width: 15px;
+	height: 15px;
+}
+
+.shanchuicon:after {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-size: 100% 100%;
+	width: 15px;
+	height: 15px;
+	background-image: url(../img/shanchu@2x.png);
+}
+
+.searchbtn.weui_btn:after {
+	border: 1px solid #767676;
+}
+
+
+/*服装详情*/
+
+.backleft {
+	position: fixed;
+	left: 5%;
+	top: 26px;
+	background: rgba(51, 51, 51, 0.5);
+	display: block;
+	width: 34px;
+	height: 34px;
+	border-radius: 34px;
+	line-height: 34px;
+	font-size: 20px;
+	z-index: 10;
+}
+
+.backleft .iconfont {
+	color: #FFFFFF;
+	text-align: left;
+	display: block;
+	font-size: 20px;
+	text-indent: 9px;
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	/* IE 9 */
+	-moz-transform: rotate(180deg);
+	/* Firefox */
+	-webkit-transform: rotate(180deg);
+	/* Safari 和 Chrome */
+	-o-transform: rotate(180deg);
+	/* Opera */
+}
+
+.swiper-container.nomargin {
+	margin: 0;
+}
+
+.clothdetail {
+	width: 100%;
+	background: #FFFFFF;
+	margin-top: -8px;
+	padding-bottom: 5px;
+}
+
+.detailbtn {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	width: 100%;
+	background: #FF2600;
+	text-align: center;
+	line-height: 50px;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+.detailcells .weui_cell_primary p {
+	font-size: 15px;
+	color: #333333;
+}
+
+.noral {
+	margin: 10px auto;
+	font-size: 12px;
+	text-align: center;
+	position: relative;
+	display: block;
+	width: 46%;
+	height: 22px;
+	line-height: 22px;
+	color: #999999;
+}
+
+.noral:before {
+	content: " ";
+	width: 30px;
+	height: 1px;
+	background: #e4e4e4;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	/*transform: scaleY(0.5);
+				-webkit-transform: scaleY(0.5);*/
+}
+
+.noral:after {
+	content: " ";
+	width: 30px;
+	height: 1px;
+	background: #e4e4e4;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	/*transform: scaleY(0.5);
+				-webkit-transform: scaleY(0.5);*/
+}
+
+.detailcontainer img {
+	/*height: 350px;*/
+}
+
+.detailcontent {
+	margin-bottom: 60px;
+}
+
+.detailcontent img {
+	width: 100%;
+}
+
+.detailshowbox {
+	display: block;
+	width: 100%;
+	/*height: 67%;*/
+	min-height: 470px;
+	background: #FFFFFF;
+	z-index: 10;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.showboxtop {
+	width: calc(100% - 30px);
+	height: 110px;
+	margin: 0 auto;
+	border-bottom: 1px solid #e4e4e4;
+	position: relative;
+}
+
+.showimgbox {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -28px;
+	left: 10px;
+	border-radius: 4px;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, .1);
+	padding: 1px;
+	background-color: #fff;
+}
+
+.showimgbox img {
+	width: 100%;
+	height: 100%;
+}
+
+.closeicon {
+	position: absolute;
+	right: 0;
+	top: 10px;
+	font-size: 18px;
+}
+
+.showmsgbox {
+	position: absolute;
+	left: 126px;
+	top: 10px;
+	color: #666666;
+	font-size: 13px;
+}
+
+.sku-info {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	height: 36px;
+	overflow: hidden;
+}
+
+.showmsgbox h3 {
+	font-size: 16px;
+	color: #cf2a27;
+}
+
+.showboxbtn {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #cf2a27;
+	z-index: 100;
+	color: #FFFFFF;
+	font-size: 18px;
+}
+
+.showboxmain {
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	overflow: auto;
+	height: calc( 100% - 160px);
+}
+
+.typelist {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.typeitem {
+	position: relative;
+	display: inline-block;
+	border: 1px solid #f5f5f5;
+	background-color: #f5f5f5;
+	padding: 6px 12px;
+	border-radius: 8px;
+	font-size: 13px;
+	margin: 0 8px 8px 0;
+	color: #555;
+}
+
+.typeitem.active {
+	border-color: #FF0036;
+	background-color: #FF0036;
+	color: #fff;
+}
+
+.showtypeitem p {
+	padding: 10px 0;
+	color: #333333;
+}
+
+.showbox {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 500;
+	display: none;
+}
+
+.sumbox {
+	display: flex;
+	justify-content: center;
+	width: 100px;
+	margin-bottom: 10px;
+	border: 1px solid #d9d9d9;
+}
+
+.sumbox input {
+	width: 37px;
+	height: 30px;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+	font-size: 14px;
+	text-align: center;
+	color: #666666;
+}
+
+.sumbox i {
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 28px;
+	text-align: center;
+	font-style: normal;
+	font-size: 25px;
+	color: #cccccc;
+}
+
+i.jia {
+	color: #CF2A27;
+}
+
+
+/*地址选择*/
+
+.ifyoujibox {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	background: #FFFFFF;
+	border-bottom: #e4e4e4 solid 1px;
+}
+
+.ifhadaddress {
+	width: 59px;
+	display: block;
+	height: 29px;
+	line-height: 26px;
+	text-align: center;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	margin: 15px;
+	color: #333333;
+}
+
+.pt60 {
+	padding-top: 45px;
+}
+
+.myaddress .weui_media_box .weui_media_title i {
+	font-style: normal;
+	margin-left: 10px;
+	font-size: inherit;
+}
+
+.active {
+	color: #CF2A27;
+	border-color: #CF2A27;
+}
+
+.promsg.buymsg {
+	text-align: right;
+}
+
+.promsg.buymsg p {
+	font-size: 13px;
+}
+
+.mt55 {
+	margin-top: 55px;
+}
+
+.myaddress .weui_media_title b {
+	font-style: normal;
+	font-size: 12px;
+	line-height: 14px;
+	display: none;
+	-webkit-transform: scale( 0.75, 0.75);
+	transform: scale(0.75, 0.75);
+	border: 1px solid #ff0000;
+	padding: 2px 5px;
+	border-radius: 5px;
+	color: #CF2A27;
+}
+
+.myaddress.default .weui_media_title b {
+	display: inline-block;
+}
+
+
+/*提交订单*/
+
+.ifyoujibox {
+	display: flex;
+	align-items: center;
+	margin: 0 auto;
+	background: #FFFFFF;
+	border-bottom: #e4e4e4 solid 1px;
+}
+
+.ifhadaddress {
+	width: 59px;
+	display: block;
+	height: 29px;
+	line-height: 26px;
+	text-align: center;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	margin: 15px;
+	color: #333333;
+}
+
+.pt60 {
+	padding-top: 45px;
+}
+
+.myaddress .weui_media_box .weui_media_title i {
+	font-style: normal;
+	margin-left: 10px;
+	font-size: inherit;
+}
+
+.active {
+	color: #CF2A27;
+	border-color: #CF2A27;
+}
+
+.promsg.buymsg {
+	text-align: right;
+}
+
+.promsg.buymsg p {
+	font-size: 13px;
+}
+
+.weui_media_desc.unchoose {
+	color: #333333;
+	font-size: 15px;
+}
+
+.hadgobuybox {
+	margin-bottom: 50px;
+}
+
+.gobuybox {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 50px;
+	background: #FFFFFF;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.gobuybox p {
+	font-size: 18px;
+	color: #CF2A27;
+	margin-left: 15px;
+	flex: 1;
+}
+
+.gobuybox .myprobtn {
+	margin-right: 15px;
+	border-color: #333333;
+	color: #333333;
+}
+
+.weui_cells_access .weui_cell_ft:after {
+	content: " ";
+	display: inline-block;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	height: 6px;
+	width: 6px;
+	border-width: 2px 2px 0 0;
+	border-color: #c8c8cd;
+	border-style: solid;
+	position: relative;
+	top: -2px;
+	top: -1px;
+	margin-left: .3em;
+}

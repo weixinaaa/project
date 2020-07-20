@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 必须要有namespace 命名空间 指向某一个Dao -->
+<mapper namespace="com.huiyou.msfw.mapper.PCAMapper">
+<!-- 看sql语句是否有返回值，有的话就判断其类型；在看是否要传参 -->
+<!-- 既让语句能全查，又让语句能条件查的话,采用mybatis里的标签 -->
+	<select id="selPro" resultType="PCA" >
+		SELECT * FROM province 
+	</select>
+	
+	<select id="selCity" resultType="PCA" parameterType="Integer">
+    	SELECT * FROM city WHERE pid=#{proId}
+  </select>
+  
+    <select id="selArea" resultType="PCA" parameterType="Integer">
+  		SELECT * FROM area WHERE pid=#{cityId}
+  	</select>
+	
+
+</mapper>

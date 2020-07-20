@@ -1,0 +1,23 @@
+@import "../variable/color";
+
+.sidebar {
+  top: 50px !important;
+  background: @middel_grey;
+  .layui-nav {
+    background-color: transparent;
+    .layui-this {
+      background-color: @blue !important;
+      a {
+        background-color: @blue !important;
+      }
+    }
+    .layui-nav-itemd {
+      & > a {
+        background-color: @dark_grey;
+      }
+    }
+    .layui-nav-bar {
+      background-color: transparent;
+    }
+  }
+}

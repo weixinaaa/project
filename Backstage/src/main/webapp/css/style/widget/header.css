@@ -1,0 +1,94 @@
+.header {
+  height: 50px;
+  background-color: #09C !important;
+}
+.header .layui-main {
+  margin: 0;
+}
+.header .layui-main .logo {
+  float: left;
+  height: 50px;
+  padding: 0 20px;
+}
+.header .layui-main .logo p {
+  font-size: 18px;
+  color: #fff;
+  line-height: 50px;
+}
+.header .layui-main .header-right {
+  float: right;
+}
+.header .layui-main .header-right .refresh {
+  float: left;
+  padding: 0 15px;
+}
+.header .layui-main .header-right .refresh .layui-icon {
+  display: inline-block;
+  font-weight: bolder;
+  line-height: 50px;
+  color: #fff;
+}
+.header .layui-main .header-right .refresh:hover {
+  background-color: #008ebd;
+}
+.header .layui-main .header-right .admin {
+  float: left;
+  background-color: #09C;
+  padding: 0 10px;
+  position: relative;
+}
+.header .layui-main .header-right .admin a {
+  color: #fff;
+  line-height: 49px;
+}
+.header .layui-main .header-right .admin a .more {
+  display: inline-block;
+  border-color: #fff transparent transparent;
+  border-style: solid;
+  border-width: 6px 6px 0;
+  -webkit-transition: border-color 0.8s ease-in-out;
+  -moz-transition: border-color 0.8s ease-in-out;
+  transition: border-color 0.8s ease-in-out;
+}
+.header .layui-main .header-right .admin:hover {
+  background-color: #008ebd;
+}
+.header .layui-main .header-right .admin .admin_list {
+  display: none;
+  position: absolute;
+  top: 49px;
+  left: -1px;
+  width: 100%;
+  background-color: #fff;
+  border-left: solid 1px #e6e6e6;
+  border-bottom: solid 1px #e6e6e6;
+}
+.header .layui-main .header-right .admin .admin_list dd {
+  text-align: center;
+  border-top: solid 1px #e6e6e6;
+}
+.header .layui-main .header-right .admin .admin_list dd a {
+  font-size: 14px;
+  color: #000;
+  line-height: 39px;
+}
+.header .layui-main .header-right .admin .admin_list dd:hover {
+  background-color: #f1f1f1;
+}
+.header .layui-main .header-right .on {
+  background-color: #fff;
+}
+.header .layui-main .header-right .on a {
+  color: #000;
+}
+.header .layui-main .header-right .on a .more {
+  border-color: transparent transparent #000;
+  border-style: solid;
+  border-width: 0 6px 6px;
+}
+.header .layui-main .header-right .on:hover {
+  background-color: #fff;
+}
+.header .layui-main .header-right div {
+  border-left: solid 1px rgba(0, 0, 0, 0.1);
+}

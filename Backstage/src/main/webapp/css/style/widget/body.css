@@ -1,0 +1,148 @@
+.body {
+  top: 50px !important;
+}
+.body .content {
+  padding: 15px;
+}
+.body .content .table-box {
+  margin-top: 10px;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+  overflow: auto;
+}
+.body .content .table-box .layui-table {
+  margin: 0;
+  border-left: none;
+  border-right: none;
+}
+.body .content .table-box .layui-table thead tr {
+  background-color: #f5f6fa;
+}
+.body .content .table-box .layui-table thead tr th {
+  color: #999999;
+  font-weight: normal;
+}
+.body .content .table-box .layui-table th,
+.body .content .table-box .layui-table .nowrap {
+  white-space: nowrap;
+  text-align: center;
+}
+.body .content .table-box .layui-table td {
+  text-align: center;
+}
+.body .content .table-box .layui-table .ellipsis span {
+  display: block;
+  width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  text-align: center;
+}
+.body .content .table-box .layui-table tbody tr:hover {
+  background-color: #f8f8f8;
+}
+.body .content .table-box .layui-table tbody tr {
+  transition: all .1s!important;
+  -webkit-transition: all .1s!important;
+}
+.body .content .laypage {
+  position: relative;
+}
+.body .content .laypage .layui-box {
+  position: absolute;
+  right: 0;
+}
+.body .layui-form-checkbox[lay-skin=primary]:hover i {
+  border-color: #09C;
+}
+.body .layui-form-checked[lay-skin=primary] i {
+  border-color: #09C;
+  background-color: #09C;
+}
+.title {
+  width: 100%;
+  height: 48px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: solid 1px #e6e6e6;
+  position: relative;
+}
+.title .title_text {
+  display: inline-block;
+  font-size: 16px;
+  border-left: solid 2px #09C;
+  padding-left: 8px;
+}
+.title .button_list {
+  height: 48px;
+  padding: 8px 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.title .button_list .layui-btn {
+  float: left;
+}
+.title .button_list .layui-btn + .layui-btn {
+  margin-left: 10px;
+}
+.layui-form-item {
+  position: relative;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+.layui-form-item .head-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  position: absolute;
+  left: 29px;
+}
+.layui-form-item .layui-input-block .first {
+  font-size: 14px;
+}
+.layui-form-item .layui-input-block .first .name {
+  color: #09C;
+}
+.layui-form-item .layui-input-block .first .state {
+  color: #393D49;
+}
+.layui-form-item .layui-input-block .text {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.layui-form-item .layui-input-block .date {
+  font-size: 12px;
+  color: #bbbbbb;
+}
+.comment {
+  padding: 15px;
+  margin: 0;
+  border-top: dashed 1px #e6e6e6;
+}
+.layui-form-select dl .layui-this {
+  background-color: #09C !important;
+}
+.client_bg .client {
+  padding: 15px;
+}
+.client_bg .client .layui-table {
+  margin-top: 0;
+}
+.client_bg .client .record {
+  border: solid 1px #e2e2e2;
+}
+.client_bg .client .record .record-title {
+  display: block;
+  padding: 9px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: solid 1px #e6e6e6;
+  background-color: #f2f2f2;
+}

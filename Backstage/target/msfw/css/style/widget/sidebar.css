@@ -1,0 +1,19 @@
+.sidebar {
+  top: 50px !important;
+  background: #393D49;
+}
+.sidebar .layui-nav {
+  background-color: transparent;
+}
+.sidebar .layui-nav .layui-this {
+  background-color: #09C !important;
+}
+.sidebar .layui-nav .layui-this a {
+  background-color: #09C !important;
+}
+.sidebar .layui-nav .layui-nav-itemd > a {
+  background-color: #2B2E37;
+}
+.sidebar .layui-nav .layui-nav-bar {
+  background-color: transparent;
+}

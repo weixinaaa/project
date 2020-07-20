@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huiyou.msfw.mapper.RootMapper">
+	<!-- 添加role下的菜单 -->
+	<insert id="addRoot" parameterType="Integer">
+		INSERT INTO role_resource(role_id,resource_id,create_time)
+		<trim prefix="VALUES" suffixOverrides=",">
+			<foreach collection="resourceIds" item="resourceId">
+				(#{roleId},#{resourceId},NOW()),
+			</foreach>
+		</trim>
+	</insert>
+</mapper>
